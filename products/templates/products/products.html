@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="album py-5 bg-black">
+        <div class="container">
+            <div class="titulo h2 text-light text-center py-5 ">All Products</div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+                {% for product in products %}
+                <div class="col">
+                    <div class="card-1 shadow-sm">
+                        <img class="img-fluid" alt="No image found" src="{{ product.image.url }}">
+                        <div class="card-body">
+                            <p class="mb-0 text-light">{{product.name}}</p>
+                            <hr>
+
+                            <button data-product="{{product.id}}" data-action="add"
+                                class="btn btn-outline-secondary add-btn update-cart text-light">Add to Cart</button>
+
+                            <a class="btn btn-outline-success text-light" href="#">View</a>
+                            <h4 style="display: inline-block" class="text-light"><strong>${{product.price}}</strong></h4>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
