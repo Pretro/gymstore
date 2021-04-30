@@ -49,6 +49,33 @@ body {
 	background: black;
 	z-index: -1;
 }
+
+/*product detail section*/
+.product_title{
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    padding-top: 27px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+.product_text{
+    padding-right: 189px;
+    color: white;
+    font-size: 20px;
+}
+
+.product_description{
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.text-info{
+    font-size: 30px;
+}
 /*-------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
