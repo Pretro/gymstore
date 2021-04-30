@@ -1,7 +1,15 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product
+from django.db.models import Q
 
 # Create your views here.
+
+def search(request):
+    query = request.GET.get('query', '')
+    products = Product.objects.filter(
+        Q(name__icontains=query) | Q(description__icontains=query))
+
+    return render(request, 'products/products.html', {'products': products, 'query': query})
 
 
 def all_products(request):

@@ -1,9 +1,10 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=254)
-    friendly_name = models.CharField(max_length=254, null=True, blank=True)
+    name = models.CharField(max_length=250)
+    friendly_name = models.CharField(max_length=250, blank=True)
 
     class Meta:
         verbose_name_plural = 'categories'
