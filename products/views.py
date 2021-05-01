@@ -1,8 +1,18 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Product
+from .models import Product, Category
 from django.db.models import Q
 
 # Create your views here.
+
+
+def filter_products_by_category(request, category_id):
+    category_name = Category.objects.get(pk=category_id).name
+    products = Product.objects.filter(category__pk=category_id)
+    print('Products', products)
+    return render(request, 'products/products.html', {'products': products, 'category_name': category_name})
+
+
+
 
 def search(request):
     query = request.GET.get('query', '')
@@ -15,9 +25,27 @@ def search(request):
 def all_products(request):
 
     products = Product.objects.all()
+    sort = None
+    direction = None
+
+    if request.GET:
+        if 'sort' in request.GET:
+            sort_k = request.GET['sort']
+            sort = sort_k
+            if sort_k == 'name':
+                sort_k = 'lower_name'
+                products = products.annotate(lower_name=Lower('name'))
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sort_k = f'-{sort_k}'
+            products = products.order_by(sort_k)
+
+    curr_sort = f'{sort}_{direction}'
 
     context = {
         'products': products,
+        'curr_sort': curr_sort
     }
 
     return render(request, 'products/products.html', context)

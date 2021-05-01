@@ -13,7 +13,7 @@
 <main>
     <div class="album py-5 bg-black">
         <div class="container">
-            <div class="titulo h2 text-light text-center py-5 ">All Products</div>
+            <div class="titulo h2 text-light text-center py-5 ">{% firstof category_name  "All Products"%}</div>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
                 {% for product in products %}
                 <div class="col">
