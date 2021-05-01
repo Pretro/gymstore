@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product, Category
 from django.db.models import Q
+from django.db.models.functions import Lower
 
 # Create your views here.
 
@@ -9,9 +10,7 @@ def filter_products_by_category(request, category_id):
     category_name = Category.objects.get(pk=category_id).name
     products = Product.objects.filter(category__pk=category_id)
     print('Products', products)
-    return render(request, 'products/products.html', {'products': products, 'category_name': category_name})
-
-
+    return render(request, 'products/products.html', {'products': products, 'category_name': category_name})  # noqa:501
 
 
 def search(request):
@@ -19,7 +18,7 @@ def search(request):
     products = Product.objects.filter(
         Q(name__icontains=query) | Q(description__icontains=query))
 
-    return render(request, 'products/products.html', {'products': products, 'query': query})
+    return render(request, 'products/products.html', {'products': products, 'query': query})  # noqa:501
 
 
 def all_products(request):
