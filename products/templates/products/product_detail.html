@@ -28,15 +28,17 @@
         <h1 class="product_title ">{{product.name}}</h1>
         <h5 class="text-info font-italic mb-3">
           <span class="mr-1 ">€ </span> {{product.price}}
+          <br>
+          <small class="text-light"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
         </h5>
         <p class="product_description">Product Description</p>
         <p class="text-justify product_text">{{product.description}}</p>
-        <a href="{% url 'add_cart' product.id %}">
-          <button type="button" name="button" class="btn btn-secondary">
-            Add to Cart
-          </button>
+        {%if product.stock > 0 %}      
+          <a href="{% url 'add_cart' product.id %}" class="btn btn-secondary">
+                Add to Cart
           </a>
-            </div>
+          {%endif%}
+        </div>
         </div>
     </div>
         </div>

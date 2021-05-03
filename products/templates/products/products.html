@@ -27,7 +27,10 @@
                 {% for product in products %}
                 <div class="col">
                     <div class="card-1 shadow-sm">
-                        <img class="img-fluid" alt="No image found" src="{{ product.image.url }}">
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img class="img-fluid" alt="No image found" src="{{ product.image.url }}" title="Click to view">
+                        </a>
+                        
                         <div class="card-body">
                             <p class="mb-0 text-light">{{product.name}}</p>
                               {% if product.rating %}
@@ -41,9 +44,12 @@
                                                 </a>
                                             </p>
                             <hr>
-                            <button data-product="{% url 'add_cart' product.id %}" data-action="add"
-                                class="btn btn-outline-secondary add-btn update-cart text-light">Add to Cart</button>
-
+                             {%if product.stock > 0 %}               
+                            <a href="{% url 'add_cart' product.id %}"
+                                class="btn btn-outline-secondary add-btn update-cart text-light">Add to Cart</a>
+                            {%else%}
+                             <h5 style="color: white;">Out of stock</h5>
+                            {%endif%}
                             <a class="btn btn-outline-success text-light" href="{% url 'product_detail' product.id %}">View</a>
                             <h4 style="display: inline-block" class="text-light"><strong>${{product.price}}</strong></h4>
                         </div>
