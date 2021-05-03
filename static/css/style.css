@@ -89,6 +89,31 @@ body {
 .btt-link {
     cursor: pointer;
 }
+
+/*cart section*/
+.cart_table{
+    min-width: 400px;
+    font-size: 14px;
+}
+
+.cart_thead{
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    background-color: black !important;
+}
+
+.cart_icon{
+    text-decoration: none;
+    color: lightgreen !important;
+}
+.product_title{
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
 /*-------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

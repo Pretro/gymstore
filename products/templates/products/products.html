@@ -41,7 +41,7 @@
                                                 </a>
                                             </p>
                             <hr>
-                            <button data-product="{{product.id}}" data-action="add"
+                            <button data-product="{% url 'add_cart' product.id %}" data-action="add"
                                 class="btn btn-outline-secondary add-btn update-cart text-light">Add to Cart</button>
 
                             <a class="btn btn-outline-success text-light" href="{% url 'product_detail' product.id %}">View</a>
