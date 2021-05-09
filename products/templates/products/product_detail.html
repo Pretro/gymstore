@@ -33,6 +33,21 @@
         </h5>
         <p class="product_description">Product Description</p>
         <p class="text-justify product_text">{{product.description}}</p>
+        {% with product.has_sizes as s %}
+                            {% if s %}
+                                <div class="col-12">
+                                    <p><strong>Size:</strong></p>
+                                    <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
+                                        <option value="xs">XS</option>
+                                        <option value="s">S</option>
+                                        <option value="m" selected>M</option>
+                                        <option value="l">L</option>
+                                        <option value="xl">XL</option>
+                                    </select>
+                                </div>
+                            {% endif %}
+                            {% endwith %}
+
         {%if product.stock > 0 %}      
           <a href="{% url 'add_cart' product.id %}" class="btn btn-secondary">
                 Add to Cart

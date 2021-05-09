@@ -29,6 +29,7 @@ class Product(models.Model):
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     stock = models.IntegerField(null=True, blank=True)
+    has_sizes = models.BooleanField(default=True, null=True, blank=True)
 
     class Meta:
         ordering =('name',)

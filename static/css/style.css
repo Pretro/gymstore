@@ -114,6 +114,10 @@ body {
     padding-top: 15px;
     padding-bottom: 10px;
 }
+
+.text-info{
+    font-size: 16px;
+}
 /*-------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

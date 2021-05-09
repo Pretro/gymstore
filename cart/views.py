@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect, reverse,  get_object_or_404
 from products.models import Product, Category
-from .models import Cart, CartItem
 from django.core.exceptions import ObjectDoesNotExist
+from .models import Cart, CartItem
+from django.conf import settings
+from checkout.models import Order, OrderItem
 
 # Create your views here.
-
 
 def shopping_cart(request):
     return render(request, 'cart/cart.html')
