@@ -24,8 +24,8 @@ cart
         Your shopping cart
     </div>
 </div>
-<div class="row mx-auto">
-    <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
+<div class="row mx-auto justify-content-center">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center ">
         <table class="table cart_table">
             <thead class="cart_thead">
                 <tr>
@@ -73,52 +73,24 @@ cart
             </tr>
             {% endfor %}
         </table>
-    </div>
-    <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
-        <table class="table cart_table">
-            <thead class="cart_thead">
-                <tr>
-                    <th colspan="4" class="text-light">
-                        Check out
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="text-light">
-                        Please review your cart items before proceeding with the payment.
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-left text-light">
-                        Your total is: <strong>$ {{total}}</strong>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="mx-auto">
-            <form class="" action="" method="POST">
-                {% csrf_token %}
-                <script src="https://checkout.stripe.com/checkout.js"
-                class="stripe-button" 
-                data-key="{{data_key}}" 
-                data-amount="{{ stripe_total }}" 
-                data-name="Gymstore"
-                data-description="{{ description }}" 
-                data-locale="auto" 
-                data-currency="usd"
-                data-shipping-address="true" 
-                data-billing-address="true" 
-                data-zip-code="true">
-                </script>
-            </form>
-            <a href="{% url 'products' %}" style="text-decoration: none;">
-                <button type="button" class="btn btn-lg btn-block bg-dark text-white">
+        <div class="row">
+            <div class="col-md-6">
+        <a href="{% url 'products' %}" style="text-decoration: none;">
+                <button type="button" class="btn btn-lg btn-block boton-compra bg-success text-white">
                     Continue Shopping
                 </button>
             </a>
+            </div>
+            <div class="col-md-6">
+             <a href="{% url 'checkout' %}" style="text-decoration: none;">
+                <button type="button" class="btn btn-lg btn-block boton-compra bg-success text-white float-right">
+                    Continue to checkout
+                </button>
+            </a>
+            </div>
         </div>
     </div>
+   
 </div>
 {% endif %}
 {% endblock %}

@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'stripe',
-    'checkout'
+    'checkout',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -60,6 +61,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'gymstore.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -77,7 +80,12 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'products.context_processors.menu_links',
                 'products.context_processors.counter',
+                'cart.contexts.cart_contents',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]
@@ -158,10 +166,9 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STRIPE_PUBLISHABLE_KEY = 'pk_test_51IVIJFIFvJ6ESH8psZDN5mmk1nPAbJAY6UE2LI79Ucjug9rEm24ibEfuBtg3Plgj2sYV7u9mexbUrLYh4uvMBzr900P3LWaRMq'  # noqa:501
-STRIPE_SECRET_KEY = 'sk_test_51IVIJFIFvJ6ESH8ph4EBHOBa7PAngkypsJGyv85gORxxJl1ojjmsjXFpmACopoKjWVs6zhRups9Sm99QbquImbUZ00Ufm8xakZ'       # noqa:501
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+FREE_DELIVERY_THRESHOLD = 50
+STANDARD_DELIVERY_PERCENTAGE=3

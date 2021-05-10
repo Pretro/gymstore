@@ -90,6 +90,11 @@ body {
     cursor: pointer;
 }
 
+.boton-compra {
+    display: block;
+    width: 60%;
+}
+
 /*cart section*/
 .cart_table{
     min-width: 400px;
@@ -117,6 +122,10 @@ body {
 
 .text-info{
     font-size: 16px;
+}
+
+.w-50{
+    width: 10%;
 }
 /*-------------------------------- Media Queries */
 
