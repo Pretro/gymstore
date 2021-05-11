@@ -49,6 +49,8 @@ cart
                     Unit Price: $ {{cart_item.product.price}}
                     <br>
                     Qty: {{cart_item.quantity}} x {{cart_item.product.price}}
+                    <br>
+                    Size: </strong>{% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}
                 </td>
                 <td class="text-light">
                     Subtotal: $ {{cart_item.sub_total}}

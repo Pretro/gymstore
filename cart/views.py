@@ -7,6 +7,7 @@ from checkout.models import Order, OrderItem
 
 # Create your views here.
 
+
 def shopping_cart(request):
     return render(request, 'cart/cart.html')
 
@@ -26,6 +27,7 @@ def add_cart(request, product_id):
         cart = Cart.objects.create(
             cart_id=_cart_id(request)
         )
+
         cart.save()
     try:
         cart_item = CartItem.objects.get(product=product, cart=cart)

@@ -11,12 +11,12 @@ var stripe = Stripe(stripe_public_key);
 var elements = stripe.elements();
 var style = {
     base: {
-        color: 'white',
+        color: 'black',
         fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
         fontSmoothing: 'antialiased',
-        fontSize: '16px',
+        fontSize: '20px',
         '::placeholder': {
-            color: '#aab7c4'
+            color: 'black'
         }
     },
     invalid: {

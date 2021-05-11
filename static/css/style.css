@@ -127,6 +127,23 @@ body {
 .w-50{
     width: 10%;
 }
+
+/* Checkout section*/
+.parrafo {
+    color: white;
+    font-size: 20px;
+    padding: 0 0 0 15px;
+}
+
+.parrafo_2 {
+    color: white;
+    font-size: 30px;
+    padding: 0 0 0 15px;
+}
+
+.text-white {
+    font-size: 20px;
+}
 /*-------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

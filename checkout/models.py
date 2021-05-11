@@ -77,10 +77,7 @@ class OrderItem(models.Model):
         db_table = 'OrderItem'
 
     def sub_total(self):
-        return self.quantity * self._price
-
-    def __str__(self):
-        return self.product
+        return self.quantity * self.price
 
 
     def save(self, *args, **kwargs):
