@@ -9,7 +9,7 @@ import uuid
 class Order(models.Model):
     order_number = models.CharField(max_length=35, null=False, editable=False)
     emailAddress = models.EmailField(max_length=250, blank=True,verbose_name='Email Adress')  # noqa:501
-    phone = models.CharField(max_length=15, null=False, blank=False)
+    phone = models.CharField(max_length=15, null=False, default=0)
     created = models.DateTimeField(auto_now_add=True)
     billingName = models.CharField(max_length=250, blank=True)
     billingAdress1 = models.CharField(max_length=250, blank=True)
@@ -63,7 +63,7 @@ def save(self, *args, **kwargs):
 
 
 def __str__(self):
-        return self.order_number
+    return self.order_number
 
 
 class OrderItem(models.Model):
@@ -71,7 +71,7 @@ class OrderItem(models.Model):
     quantity = models.IntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='USD Price')  # noqa:501
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
-    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False, default=0)  # noqa:501
 
     class Meta:
         db_table = 'OrderItem'

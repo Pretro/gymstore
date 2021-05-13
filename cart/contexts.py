@@ -2,23 +2,24 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
-
+from cart.models import Cart, CartItem
 
 def cart_contents(request):
 
     cart_items = []
     total = 0
     product_count = 0
-    cart = request.session.get('cart', {})
-
-    for item_id, quantity in cart.items():
-        product = get_object_or_404(Product, pk=item_id)
-        total += quantity * product.price
-        product_count += quantity
+    cart_id = request.session.session_key
+    cart = Cart.objects.get(cart_id=cart_id)
+    items = CartItem.objects.filter(cart=cart)
+    for item in items:
+        # product = get_object_or_404(Product, pk=item_id)
+        total += item.quantity * item.product.price
+        product_count += item.quantity
         cart_items.append({
-            'item_id': item_id,
-            'quantity': quantity,
-            'product': product,
+            'item_id': item.pk,
+            'quantity': item.quantity,
+            'product': item.product,
         })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:

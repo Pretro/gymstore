@@ -3,7 +3,7 @@ from .models import Order, OrderItem
 # Register your models here.
 
 
-class OrderItemAdmin(admin.TabularInline):
+class OrderItemAdminInline(admin.TabularInline):
     model = OrderItem
     readonly_fields = ('lineitem_total')
 

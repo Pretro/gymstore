@@ -47,10 +47,10 @@
                         <div class="col-7">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                             <p class="my-0 small">{% if item.product.has_sizes %}Size: {{ item.product.size|upper }}{% else %}{% endif %}</p>
-                            <p class="my-0 small text-white">Qty: {{ item.quantity  | calc_subtotal:item.quantity  }}</p>
+                            <p class="my-0 small text-white">Qty: {{ item.quantity }} </p>
                         </div>
                         <div class="col-3 text-right">
-                            <p class="my-0 small text-white">${{ item.product.price }}</p>
+                            <p class="my-0 small text-white">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </div>
                     </div>
                 {% endfor %}
