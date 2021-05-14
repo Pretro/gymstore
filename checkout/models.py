@@ -8,22 +8,22 @@ import uuid
 # Model: Order
 class Order(models.Model):
     order_number = models.CharField(max_length=35, null=False, editable=False)
-    emailAddress = models.EmailField(max_length=250, blank=True,verbose_name='Email Adress')  # noqa:501
-    phone = models.CharField(max_length=15, null=False, default=0)
-    created = models.DateTimeField(auto_now_add=True)
     billingName = models.CharField(max_length=250, blank=True)
-    billingAdress1 = models.CharField(max_length=250, blank=True)
-    billingCity = models.CharField(max_length=250, blank=True)
-    billingPostcode = models.CharField(max_length=250, blank=True)
+    emailAddress = models.EmailField(max_length=250, blank=True, verbose_name='Email Adress')  # noqa:501
+    phone = models.CharField(max_length=15, null=False, default=0)
     billingCountry = models.CharField(max_length=250, blank=True)
+    billingPostcode = models.CharField(max_length=250, blank=True)
+    billingCity = models.CharField(max_length=250, blank=True)
+    billingAdress1 = models.CharField(max_length=250, blank=True)
     shippingName = models.CharField(max_length=250, blank=True)
     shippingAddress1 = models.CharField(max_length=250, blank=True)
     shippingCity = models.CharField(max_length=250, blank=True)
     shippingPostcode = models.CharField(max_length=250, blank=True)
     shippingCountry = models.CharField(max_length=250, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+    delivery_cost = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)   # noqa:501
     total = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='USD Order Total')  # noqa:501
-    order_total = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)
-    delivery_cost = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)
+    order_total = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)   # noqa:501
 
 
 def _generate_order_number(self):
@@ -47,11 +47,6 @@ def update_total(self):
         self.save()
 
 
-class Meta:
-    db_table = 'Order'
-    ordering = ['-created']
-
-
 def save(self, *args, **kwargs):
         """
         Override the original save method to set the order number
@@ -66,19 +61,15 @@ def __str__(self):
     return self.order_number
 
 
-class OrderItem(models.Model):
+class OrderLineItem(models.Model):
     product = models.CharField(max_length=250)
     quantity = models.IntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='USD Price')  # noqa:501
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False, default=0)  # noqa:501
 
-    class Meta:
-        db_table = 'OrderItem'
-
     def sub_total(self):
         return self.quantity * self.price
-
 
     def save(self, *args, **kwargs):
         """

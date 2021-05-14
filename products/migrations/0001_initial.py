@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Category',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),  # noqa:501
                 ('name', models.CharField(max_length=250, unique=True)),
                 ('slug', models.SlugField(max_length=250, unique=True)),
             ],
@@ -28,18 +28,18 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Product',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),   # noqa:501
                 ('name', models.CharField(max_length=250, unique=True)),
                 ('sku', models.CharField(blank=True, max_length=250)),
                 ('description', models.TextField(blank=True)),
-                ('price', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('rating', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('image', models.ImageField(blank=True, null=True, upload_to='')),
+                ('price', models.DecimalField(decimal_places=2, max_digits=10)),   # noqa:501
+                ('rating', models.DecimalField(decimal_places=2, max_digits=10)),   # noqa:501
+                ('image', models.ImageField(blank=True, null=True, upload_to='')),   # noqa:501
                 ('stock', models.IntegerField()),
                 ('available', models.BooleanField(default=True)),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now=True)),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='products.category')),
+                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='products.category')),   # noqa:501
             ],
             options={
                 'verbose_name': 'product',

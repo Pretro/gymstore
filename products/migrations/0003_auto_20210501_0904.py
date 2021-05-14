@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterModelOptions(
             name='product',
-            options={'ordering': ('name',), 'verbose_name': 'product', 'verbose_name_plural': 'products'},
+            options={'ordering': ('name',), 'verbose_name': 'product', 'verbose_name_plural': 'products'},  # noqa:501
         ),
         migrations.RemoveField(
             model_name='category',
@@ -40,6 +40,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='product',
             name='rating',
-            field=models.DecimalField(blank=True, decimal_places=2, max_digits=6, null=True),
+            field=models.DecimalField(blank=True, decimal_places=2, max_digits=6, null=True),  # noqa:501
         ),
     ]

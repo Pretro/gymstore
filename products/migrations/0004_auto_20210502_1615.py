@@ -14,13 +14,13 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='product',
             name='category',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='products.category'),
+            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='products.category'),  # noqa:501
             preserve_default=False,
         ),
         migrations.AlterField(
             model_name='product',
             name='rating',
-            field=models.DecimalField(blank=True, decimal_places=2, max_digits=6),
+            field=models.DecimalField(blank=True, decimal_places=2, max_digits=6),  # noqa:501
         ),
         migrations.AlterField(
             model_name='product',
