@@ -32,7 +32,7 @@ class Product(models.Model):
     has_sizes = models.BooleanField(default=True, null=True, blank=True)
 
     class Meta:
-        ordering =('name',)
+        ordering = ('name',)
         verbose_name = 'product'
         verbose_name_plural = 'products'
 

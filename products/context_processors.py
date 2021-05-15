@@ -6,7 +6,7 @@ from cart.views import _cart_id
 def counter(request):
     item_count = 0
     grand_total = 0
-    
+
     if 'admin' in request.path:
         return{}
     else:

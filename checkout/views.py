@@ -10,9 +10,8 @@ import stripe
 
 
 def checkout(request):
-    stripe_public_key = settings.STRIPE_PUBLIC_KEY 
-    stripe_secret_key = settings.STRIPE_SECRET_KEY 
-
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     cart = Cart.objects.get(cart_id=request.session.session_key)
     cart_items = list(CartItem.objects.filter(cart=cart))
@@ -31,12 +30,15 @@ def checkout(request):
     )
 
     print(intent)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3e14a58ecc09e090cbbc16ca2600c9c136a14ac3
     order_form = OrderForm()
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
-        'stripe_public_key': 'pk_test_51IVIJFIFvJ6ESH8psZDN5mmk1nPAbJAY6UE2LI79Ucjug9rEm24ibEfuBtg3Plgj2sYV7u9mexbUrLYh4uvMBzr900P3LWaRMq',
+        'stripe_public_key': 'pk_test_51IVIJFIFvJ6ESH8psZDN5mmk1nPAbJAY6UE2LI79Ucjug9rEm24ibEfuBtg3Plgj2sYV7u9mexbUrLYh4uvMBzr900P3LWaRMq',  # noqa:501
         'client_secret': 'test client secret',
         'cart_items': cart_items
     }

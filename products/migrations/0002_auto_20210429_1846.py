@@ -53,7 +53,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='product',
             name='category',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='products.category'),  # noqa:501 
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='products.category'),  # noqa:501
         ),
         migrations.AlterField(
             model_name='product',
@@ -73,7 +73,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='product',
             name='rating',
-            field=models.DecimalField(blank=True, decimal_places=2, max_digits=8, null=True),
+            field=models.DecimalField(blank=True, decimal_places=2, max_digits=8, null=True),  # noqa:501
         ),
         migrations.AlterField(
             model_name='product',

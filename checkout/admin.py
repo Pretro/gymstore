@@ -5,7 +5,11 @@ from .models import Order, OrderLineItem
 
 class OrderLineItemAdminInline(admin.TabularInline):
     model = OrderLineItem
+<<<<<<< HEAD
     readonly_fields = ('lineitem_total',)
+=======
+    readonly_fields = ('lineitem_total')
+>>>>>>> 3e14a58ecc09e090cbbc16ca2600c9c136a14ac3
 
 
 class OrderAdmin(admin.ModelAdmin):

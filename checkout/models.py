@@ -9,7 +9,11 @@ from products.models import Product
 class Order(models.Model):
     order_number = models.CharField(max_length=35, null=False, editable=False)
     billingName = models.CharField(max_length=250, blank=True)
+<<<<<<< HEAD
     emailAddress = models.EmailField(max_length=250, blank=True,verbose_name='Email Adress')  # noqa:501
+=======
+    emailAddress = models.EmailField(max_length=250, blank=True, verbose_name='Email Adress')  # noqa:501
+>>>>>>> 3e14a58ecc09e090cbbc16ca2600c9c136a14ac3
     phone = models.CharField(max_length=15, null=False, default=0)
     billingCountry = models.CharField(max_length=250, blank=True)
     billingPostcode = models.CharField(max_length=250, blank=True)
@@ -21,9 +25,15 @@ class Order(models.Model):
     shippingPostcode = models.CharField(max_length=250, blank=True)
     shippingCountry = models.CharField(max_length=250, blank=True)
     created = models.DateTimeField(auto_now_add=True)
+<<<<<<< HEAD
     delivery_cost = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)
     total = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='USD Order Total')  # noqa:501
     grand_total = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)
+=======
+    delivery_cost = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)   # noqa:501
+    total = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='USD Order Total')  # noqa:501
+    order_total = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)   # noqa:501
+>>>>>>> 3e14a58ecc09e090cbbc16ca2600c9c136a14ac3
 
 
 def _generate_order_number(self):
@@ -57,12 +67,22 @@ def __str__(self):
 
 
 class OrderLineItem(models.Model):
+<<<<<<< HEAD
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     product_size = models.CharField(max_length=2, null=True, blank=True) # XS, S, M, L, XL
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+=======
+    product = models.CharField(max_length=250)
+    quantity = models.IntegerField()
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='USD Price')  # noqa:501
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False, default=0)  # noqa:501
 
+    def sub_total(self):
+        return self.quantity * self.price
+>>>>>>> 3e14a58ecc09e090cbbc16ca2600c9c136a14ac3
 
     def save(self, *args, **kwargs):
         """
