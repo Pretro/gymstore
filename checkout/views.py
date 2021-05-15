@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.conf import settings
 from .forms import OrderForm
+from .models import Order, OrderLineItem
 from cart.contexts import cart_contents
 from cart.models import Cart, CartItem
 
@@ -16,8 +17,8 @@ def checkout(request):
     cart = Cart.objects.get(cart_id=request.session.session_key)
     cart_items = list(CartItem.objects.filter(cart=cart))
     if not cart:
-        messages.error(request, "There is nothing in the cart at the moment")
-        return redirect(reverse('products'))
+            messages.error(request, "There is nothing in the cart at the moment")  # noqa:501
+            return redirect(reverse('products'))
 
     current_cart = cart_contents(request)
     total = current_cart['final_total']
@@ -30,7 +31,7 @@ def checkout(request):
     )
 
     print(intent)
-    
+
     order_form = OrderForm()
     template = 'checkout/checkout.html'
     context = {

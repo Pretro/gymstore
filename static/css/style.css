@@ -128,6 +128,11 @@ body {
     width: 10%;
 }
 
+.tallas{
+    padding: 0 0 25px 0;
+    max-width: 22%;
+}
+
 /* Checkout section*/
 .parrafo {
     color: white;

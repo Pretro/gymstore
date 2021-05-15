@@ -34,8 +34,8 @@
                 <p class="text-justify product_text">{{product.description}}</p>
                     {% with product.has_sizes as s %}
                     {% if s %}
-                    <div class="col-12">
-                        <p><strong>Size:</strong></p>
+                    <div class="col-12 tallas">
+                        <p><strong class="text-white">Size:</strong></p>
                         <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
                             <option value="xs">XS</option>
                             <option value="s">S</option>

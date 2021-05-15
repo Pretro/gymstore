@@ -3,7 +3,7 @@ from products.models import Product, Category
 from django.core.exceptions import ObjectDoesNotExist
 from .models import Cart, CartItem
 from django.conf import settings
-from checkout.models import Order, OrderItem
+from checkout.models import Order, OrderLineItem
 
 # Create your views here.
 
