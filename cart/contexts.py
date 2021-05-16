@@ -4,10 +4,7 @@ from django.shortcuts import get_object_or_404
 from products.models import Product
 from cart.models import Cart, CartItem
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 3e14a58ecc09e090cbbc16ca2600c9c136a14ac3
 def cart_contents(request):
     try:
         cart_items = []
@@ -22,17 +19,11 @@ def cart_contents(request):
             cart_items.append({
                 'item_id': item.pk,
                 'quantity': item.quantity,
-                'product': item.product,
-<<<<<<< HEAD
-        })
-    except:
-          pass
-
-=======
+                'product': item.product
             })
+
     except:
-            pass
->>>>>>> 3e14a58ecc09e090cbbc16ca2600c9c136a14ac3
+        pass
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)

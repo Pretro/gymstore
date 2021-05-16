@@ -110,8 +110,17 @@ The images taken from the gymgrossisten page are only use as images of the produ
 
 * Login page where only register users can have access to.
 
-* The use of stripe as a payment method for purchases made by users
+* The use of stripe as a payment method for purchases.
 
+* Product page ordered in different categories.
+
+* The option to search products by categories, price and rating.
+
+* Shopping cart page where users can see a list of products they have been purchased. Also manage to increase or delete the products they want.
+
+* Checkout page where the payment is generated.
+
+* Email sending to users with details of their purchases
 
 
 
