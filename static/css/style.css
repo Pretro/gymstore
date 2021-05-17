@@ -50,6 +50,9 @@ body {
 	z-index: -1;
 }
 
+/*navbar*/
+
+
 /*product detail section*/
 .product_title{
     font-size: 25px;
@@ -148,4 +151,24 @@ body {
 
 .text-white {
     font-size: 20px;
+}
+
+
+/* Media Queries*/
+@media (min-width: 280px) and (max-width: 768px){
+    .product_title {
+        font-size: 10px;
+    }
+    .mt-3, .my-3 {
+    margin-top: -2rem!important;
+}
+    .product_description{
+        font-size: 10px;
+    }
+
+  .product_text{
+    color: white;
+    font-size: 20px;
+}
+
 }

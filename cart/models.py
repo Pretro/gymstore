@@ -15,6 +15,9 @@ class Cart(models.Model):
     def __str__(self):
         return self.cart_id
 
+    def total(self):
+        total = 0
+
 
 class CartItem(models.Model):
     product = models.ForeignKey(Product, blank=False, on_delete=models.CASCADE)  # noqa:501

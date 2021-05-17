@@ -123,16 +123,24 @@ The images taken from the gymgrossisten page are only use as images of the produ
 * Email sending to users with details of their purchases
 
 
-
 ## __Features left to implement in the future__
 
 * A function that makes it possible to recover user password.
 
+* Make it possible to have the ecommerce site in several languages, not just in english.
+
+* Create more product areas with their categories, turning this not only into an ecommerce store but rather a kind of online gallery.
+
+* Add another payment system such as PayPal, giving the user the option to choose the payment system that is most convenient for them.
+
+* A map where the user can mark the cities and places he/she has visited.
+
+* Create a function that allows to send advertasing for new products to registered users.
 
 
 ## __Technologies Used__
 
-+ For the making of this project, the following technologies has been used__
++ For the making of this project, the following technologies has been used
 
 ##### __Languages__
 
@@ -209,3 +217,88 @@ The images taken from the gymgrossisten page are only use as images of the produ
 + [Reposinator](https://www.responsinator.com/)
 
 + [Devtool](https://developers.google.com/web/tools/chrome-devtools)
+
+
+# Data schema
+
+*******
+
+## Testing
+
+   During the testing time, the following code validates are use. 
+
++ [W3C](https://validator.w3.org/) Validator HTML.
+
++ [CSS](https://jigsaw.w3.org/css-validator/#validate_by_input) validator CSS.
+
++ [Pep8](http://pep8online.com/) validator Python
+
++ [JSHint](https://jshint.com/) JavaScript
+
+
+## __Testing User Stories from User Experience (UX) Section__ 
+
+1. As a user, i want to be able to easily understand what the site is about so that i can decide if this is a site of my interest.
+
+    i. Entering the page, there is a title, a paragraph and a picture in which it is clearly read what the site is about.
+
+2. As a user, i want to easy navigate through the different pages so that i can use the site.
+
+    i. The main page has a navigation menu in which there are some options. One  is a product where the categories are shown. There is also the option to search for products either by price, rating and a search engine where the user also searches by product name. 
+    
+    A section of entry and registration of members of the page as well as the option of shopping bag shown with an icon.
+
+3. As a user, i want to register an account so that i can become a member.
+
+    i. The user has the option of registering a user account in the navigation menu. Once this is done, the user is a registered member.
+
+4. As a user, i want the process of registration to be simple so that i can start make use of the site and not lose interest with registration processes that take a long time.
+
+    i. To register choose a username of your choice and a password. Then you can start using the site. This process avoids a delayed registration process and that the user loses interest in the site.
+
+5. As a user, i want to view a description of the products so that i can see if it is what I am really looking for and it interests me.
+
+    i. There are two ways to get to the product description page. The first is by pressing the "Shop now" button on the main page. The second is by going to the navigation menu and pressing the option of products. There the user can choose to go to the page of all products or view by categories.
+
+    ii. Once on the products page press the "view" button, being directed to the product description page.
+
+6. As a user, i would like to easily be able to add products to the cart.
+
+    i. On the "all products" page, as well as on the product detail page, there is the "add to cart" button which allows the chosen product to be entered into the shopping cart.
+
+7. As a user, i want to see a list of the products that I buy so that i can be able to take an order of my purchases.
+
+    i. Once the "add to cart" button is pressed, the user is directed to the cart page a detail list of the products to buy appears.
+
+8. As a user, i want to add and delete products from my shopping cart.
+
+    i. On the cart page, the user also has the possibility of adding, reducing or completely eliminating the product from the shopping cart. This is achieved through icons on each product detail card.
+
+9. As a user, i want the checkout form to be as clear as possible. i want to see/fill my user information. See a list of what I have bought and have in my cart, the total amount to pay.
+
+
+# __Further Testing__
+
+******
+
+### __The website has been checked in different browser, such as.__
+
+1. Chrome
+
+2. Firefox
+
+3. Safari
+
+4. Microsoft edge
+
+* The responsive part has also been tested in http://www.responsinator.com/ for
+
+1. Ipad
+
+2. Iphone
+
+3. Android
+
+4. Laptop
+
+Friends and family tested the site by login in and writing about their stories. This was also made to point out any bugs and/or user experience issues.
