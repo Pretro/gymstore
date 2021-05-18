@@ -17,6 +17,22 @@ def calculate_order_total(cart_items):
         total += price * item.quantity
     return total
 
+def save_order_details(order, cart_items):
+    for item in cart_items:
+        print("order", order)
+        try:
+            product = item.product
+            price = product.price
+            order_line_item = OrderLineItem(
+                order=order,
+                product=product,
+                quantity=item.quantity,
+                lineitem_total=price * item.quantity,
+            )
+            order_line_item.save()
+        except Product.DoesNotExist:
+            raise
+
 
 
 def checkout(request):
@@ -30,7 +46,9 @@ def checkout(request):
             return redirect(reverse('products'))
 
     if request.method == 'POST':
+        print('HERE 1')
         total = calculate_order_total(cart_items)
+        delivery = total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         form_data = {
             'billingName': request.POST['billingName'],
             'emailAddress': request.POST['emailAddress'],
@@ -44,33 +62,30 @@ def checkout(request):
             'shippingCity': request.POST['shippingCity'],
             'shippingPostcode': request.POST['shippingPostcode'],
             'shippingCountry': request.POST['shippingCountry'],
-            'total': total
+            # 'grand_total': total + delivery,
+            'total': total ,
+            # 'delivery': delivery
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            order = order_form.save()
-            for item in cart_items:
-                try:
-                    product = item.product
-                    price = product.price
-                    if isinstance(price, int):
-                        order_line_item = OrderLineItem(
-                            order=order,
-                            product=product,
-                            quantity=price,
-                        )
-                        order_line_item.save()
-                except Product.DoesNotExist:
-                    messages.error(request, (
+            try:
+                order = order_form.save()
+                order.grand_total = total + delivery
+                order.delivery = delivery
+                order.save()
+                save_order_details(order, cart_items)
+
+                request.session['save_info'] = 'save-info' in request.POST
+                return redirect(reverse('checkout_success', args=[order.order_number]))  # noqa:501
+            except:
+                messages.error(request, (
                         "One of the products in your bag wasn't found in our database. "
                         "Please call us for assistance!")
                     )
-                    order.delete()
-                    return redirect(reverse('cart'))
-
-            request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))  # noqa:501
+                order.delete()
+                return redirect(reverse('cart'))
         else:
+            print('BAD FORM')
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
