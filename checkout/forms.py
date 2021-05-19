@@ -8,7 +8,8 @@ class OrderForm(forms.ModelForm):
         fields = ('billingName', 'emailAddress', 'phone',
                   'billingAdress1', 'billingCity', 'billingPostcode',
                   'billingCountry', 'shippingName', 'shippingAddress1',
-                  'shippingCity', 'shippingPostcode', 'shippingCountry', 'total')
+                  'shippingCity', 'shippingPostcode', 'shippingCountry', 'total',
+                  )
        
         
 
