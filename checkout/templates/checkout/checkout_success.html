@@ -61,7 +61,11 @@
                             </p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
+<<<<<<< HEAD
                             <p class="small mb-0">{{ item.quantity }} @ ${{ item.product.price }} each</p>
+=======
+                            <p class="small mb-0 text-white">{{ item.quantity }} * ${{ item.product.price }} each</p>
+>>>>>>> 561572997eb5b09a5cee9d4a6f0efbeeff5f5dd2
                         </div>
                     </div>
                     {% endfor %}
@@ -177,7 +181,11 @@
                             <p class="mb-0 text-white font-weight-bold">Order Total</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
+<<<<<<< HEAD
                             <p class="mb-0 text-white">{{ order.total }}</p>
+=======
+                            <p class="mb-0 text-white">${{ order.total }}</p>
+>>>>>>> 561572997eb5b09a5cee9d4a6f0efbeeff5f5dd2
                         </div>
                     </div>
                     <div class="row">
@@ -185,7 +193,11 @@
                             <p class="mb-0 text-white font-weight-bold">Delivery</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
+<<<<<<< HEAD
                             <p class="mb-0 text-white">{{ order.delivery_cost }}</p>
+=======
+                            <p class="mb-0 text-white">${{ delivery | floatformat:2 }}</p>
+>>>>>>> 561572997eb5b09a5cee9d4a6f0efbeeff5f5dd2
                         </div>
                     </div>
 
@@ -194,7 +206,11 @@
                             <p class="mb-0 text-white font-weight-bold">Grand Total</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
+<<<<<<< HEAD
                             <p class="mb-0 text-white">{{ order.grand_total }}</p>
+=======
+                            <p class="mb-0 text-white">${{ final_total | floatformat:2 }}</p>
+>>>>>>> 561572997eb5b09a5cee9d4a6f0efbeeff5f5dd2
                         </div>
                     </div>
                 </div>

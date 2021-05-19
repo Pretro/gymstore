@@ -21,7 +21,6 @@ def cart_contents(request):
                 'quantity': item.quantity,
                 'product': item.product
             })
-
     except:
         pass
 
