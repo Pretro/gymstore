@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse # noqa:501
+from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
+
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from cart.contexts import cart_contents
@@ -8,6 +10,24 @@ from cart.models import Cart, CartItem
 from products.models import Product
 
 import stripe
+import json
+
+@require_POST
+def cache_checkout_data(request):
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'cart': json.dumps(request.session.get('cart', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, 'Sorry, your payment cannot be \
+            processed right now. Please try again later.')
+        return HttpResponse(content=e, status=400)
+
 
 def calculate_order_total(cart_items):
     total = 0
@@ -16,6 +36,7 @@ def calculate_order_total(cart_items):
         price = product.price
         total += price * item.quantity
     return total
+
 
 def save_order_details(order, cart_items):
     for item in cart_items:
@@ -32,7 +53,6 @@ def save_order_details(order, cart_items):
             order_line_item.save()
         except Product.DoesNotExist:
             raise
-
 
 
 def checkout(request):
