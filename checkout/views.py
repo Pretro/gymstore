@@ -83,9 +83,7 @@ def checkout(request):
             'shippingCity': request.POST['shippingCity'],
             'shippingPostcode': request.POST['shippingPostcode'],
             'shippingCountry': request.POST['shippingCountry'],
-            # 'grand_total': total + delivery,
-            'total': total ,
-            # 'delivery': delivery
+            'total': total,
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
@@ -100,7 +98,7 @@ def checkout(request):
                 return redirect(reverse('checkout_success', args=[order.order_number]))  # noqa:501
             except:
                 messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
+                        "One of the products in your bag wasn't found in our database. "  # noqa:501
                         "Please call us for assistance!")
                     )
                 order.delete()

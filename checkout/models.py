@@ -2,6 +2,9 @@ import uuid
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
+
+from django_countries.fields import CountryField
+
 from products.models import Product
 
 
@@ -11,7 +14,7 @@ class Order(models.Model):
     billingName = models.CharField(max_length=250, blank=True)
     emailAddress = models.EmailField(max_length=250, blank=True, verbose_name='Email Adress')  # noqa:501
     phone = models.CharField(max_length=15, null=False, default=0)
-    billingCountry = models.CharField(max_length=250, blank=True)
+    billingCountry =  CountryField(blank_label='Country *', null=False, blank=False)  # noqa:501
     billingPostcode = models.CharField(max_length=250, blank=True)
     billingCity = models.CharField(max_length=250, blank=True)
     billingAdress1 = models.CharField(max_length=250, blank=True)
@@ -19,12 +22,13 @@ class Order(models.Model):
     shippingAddress1 = models.CharField(max_length=250, blank=True)
     shippingCity = models.CharField(max_length=250, blank=True)
     shippingPostcode = models.CharField(max_length=250, blank=True)
-    shippingCountry = models.CharField(max_length=250, blank=True)
+    shippingCountry =  CountryField(blank_label='Country *', null=False, blank=False)
     created = models.DateTimeField(auto_now_add=True)
     delivery_cost = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)  # noqa:501
     total = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='USD Order Total')  # noqa:501
     grand_total = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)  # noqa:501
-
+    original_cart = models.TextField(null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
 
     def _generate_order_number(self):
         return uuid.uuid4().hex.upper()
