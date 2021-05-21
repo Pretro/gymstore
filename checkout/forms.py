@@ -10,8 +10,6 @@ class OrderForm(forms.ModelForm):
                   'billingCountry', 'shippingName', 'shippingAddress1',
                   'shippingCity', 'shippingPostcode', 'shippingCountry', 'total',
                   )
-       
-        
 
     def __init__(self, *args, **kwargs):
         """
