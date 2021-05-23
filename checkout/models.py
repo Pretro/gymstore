@@ -24,24 +24,24 @@ class Order(models.Model):
     shippingAddress1 = models.CharField(max_length=250, blank=True)
     shippingCity = models.CharField(max_length=250, blank=True)
     shippingPostcode = models.CharField(max_length=250, blank=True)
-    shippingCountry =  CountryField(blank_label='Country *', null=False, blank=False)
+    shippingCountry =  CountryField(blank_label='Country *', null=False, blank=False) # noqa:501
     created = models.DateTimeField(auto_now_add=True)
     delivery_cost = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)  # noqa:501
-    total = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='USD Order Total')  # noqa:501
+    total = models.DecimalField(max_digits=10, null=True, decimal_places=2, verbose_name='USD Order Total')  # noqa:501
     grand_total = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)  # noqa:501
     original_cart = models.TextField(null=False, blank=False, default='')
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')  # noqa:501
 
     def _generate_order_number(self):
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0  # noqa:501
-        if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
-            self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100  # noqa:501
+        self.total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0  # noqa:501
+        if self.total < settings.FREE_DELIVERY_THRESHOLD:
+            self.delivery_cost = self.total * settings.STANDARD_DELIVERY_PERCENTAGE / 100  # noqa:501
         else:
             self.delivery_cost = 0
-            self.total = self.order_total + self.delivery_cost
+            self.total = self.total + self.delivery_cost
             self.save()
 
     def save(self, *args, **kwargs):

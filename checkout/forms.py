@@ -8,7 +8,7 @@ class OrderForm(forms.ModelForm):
         fields = ('billingName', 'emailAddress', 'phone',
                   'billingAdress1', 'billingCity', 'billingPostcode',
                   'billingCountry', 'shippingName', 'shippingAddress1',
-                  'shippingCity', 'shippingPostcode', 'shippingCountry', 'total',
+                  'shippingCity', 'shippingPostcode', 'shippingCountry', 'total',  # noqa:501
                   )
 
     def __init__(self, *args, **kwargs):
@@ -18,7 +18,7 @@ class OrderForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'billingName': 'Name',
+            'billingName': 'Billing Name',
             'emailAddress': 'Email',
             'phone': 'Phone Number',
             'billingAdress1': 'Billing Adress1',
@@ -30,7 +30,7 @@ class OrderForm(forms.ModelForm):
             'shippingCity': 'Shipping City',
             'shippingPostcode': 'Shipping Postcode',
             'shippingCountry': 'Shipping Country',
-            'total': 'Order Total'
+            'total': 'Order Total',
         }
 
         self.fields['billingName'].widget.attrs['autofocus'] = True

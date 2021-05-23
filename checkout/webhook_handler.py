@@ -41,17 +41,17 @@ class StripeWH_Handler:
         # Check if the order exists
         order_exists = False
         attempt = 1
+        print(billing_details)
+        print(shipping_details)
         while attempt <= 5:
             try:
                 order = Order.objects.get(
-                    billingName__iexact=shipping_details.billingName,
-                    emailAddress__iexact=billing_details.emailAddress,
-                    phone_number__iexact=shipping_details.phone,
-                    shippingAddress1__iexact=shipping_details.address.shippingAddress1,  # noqa:501
-                    shippingPostcode__iexact=shipping_details.address.shippingPostcode,  # noqa:501
-                    city__iexact=shipping_details.address.city,
-                    street_address1__iexact=shipping_details.address.line1,
-                    shippingCity__iexact=shipping_details.address.shippingCity,
+                    billingName__iexact=shipping_details.name,
+                    emailAddress__iexact=billing_details.email,
+                    phone__iexact=shipping_details.phone,
+                    shippingAddress1__iexact=shipping_details.address.line1,  # noqa:501
+                    shippingPostcode__iexact=shipping_details.address.postal_code,  # noqa:501
+                    billingCity__iexact=billing_details.address.city,
                     grand_total=grand_total,
                     original_cart=cart,
                     stripe_pid=pid,
@@ -69,14 +69,10 @@ class StripeWH_Handler:
             order = None
             try:
                 order = Order.objects.create(
-                    billingName=shipping_details.billingName,
-                    emailAddress=billing_details.emailAddress,
-                    phone_number=shipping_details.phone,
-                    shippingAddress=shipping_details.address.shippingAddress1,
-                    shippingPostcode=shipping_details.address.shippingPostcode,
-                    city=shipping_details.address.city,
-                    street_address1=shipping_details.address.line1,
-                    shippingCity=shipping_details.address.shippingCity,
+                    phone=shipping_details.phone,
+                    shippingPostcode=shipping_details.address.postal_code,
+                    billingCountry=billing_details.address.country,
+                    shippingCountry=shipping_details.address.country,
                     grand_total=grand_total,
                     original_cart=cart,
                     stripe_pid=pid,
@@ -100,6 +96,7 @@ class StripeWH_Handler:
                             )
                             order_line_item.save()
             except Exception as e:
+                print(repr(e))
                 if order:
                     order.delete()
                 return HttpResponse(

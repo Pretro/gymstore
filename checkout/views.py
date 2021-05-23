@@ -87,6 +87,7 @@ def checkout(request):
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
+            print("form_valid")
             try:
                 order = order_form.save()
                 order.grand_total = total + delivery
