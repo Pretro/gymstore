@@ -7,6 +7,8 @@ from .forms import OrderForm
 from .models import Order, OrderLineItem
 from cart.contexts import cart_contents
 from cart.models import Cart, CartItem
+from profiles.models import UserProfile
+from profiles.forms import UserProfileForm
 from products.models import Product
 
 import stripe
@@ -54,6 +56,7 @@ def save_order_details(order, cart_items):
             order_line_item.save()
         except Product.DoesNotExist:
             raise
+        order.save()
 
 
 def checkout(request):
@@ -67,7 +70,6 @@ def checkout(request):
             return redirect(reverse('products'))
 
     if request.method == 'POST':
-        print('HERE 1')
         total = calculate_order_total(cart_items)
         delivery = total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         form_data = {
@@ -87,12 +89,16 @@ def checkout(request):
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            print("form_valid")
             try:
-                order = order_form.save()
+                order = order_form.save(commit=False)
+                pid = request.POST.get('client_secret').split('_secret')[0]
+                order.stripe_pid = pid
                 order.grand_total = total + delivery
                 order.delivery = delivery
                 order.save()
+                print("orderform")
+                print(order_form)
+
                 save_order_details(order, cart_items)
 
                 request.session['save_info'] = 'save-info' in request.POST
@@ -110,7 +116,7 @@ def checkout(request):
                 Please double check your information.')
     else:
         current_cart = cart_contents(request)
-        total = current_cart['final_total']
+        total = current_cart['grand_total']
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
@@ -118,7 +124,23 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        order_form = OrderForm()
+       # Attempt to prefill the form with any info the user maintains in their profile
+        if request.user.is_authenticated:
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                order_form = OrderForm(initial={
+                    'full_name': profile.user.get_full_name(),
+                    'email': profile.user.email,
+                    'phone': profile.default_phone,
+                    'Country': profile.default_billingCountry,
+                    'Postcode': profile.default_billingPostcode,
+                    'City': profile.default_billingCity,
+                    'street_address1': profile.default_billingAdress1,
+                })
+            except UserProfile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            order_form = OrderForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
@@ -130,6 +152,7 @@ def checkout(request):
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
     }
+
     return render(request, template, context)
 
 
@@ -139,6 +162,30 @@ def checkout_success(request, order_number):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+    print("Order", order)
+
+    profile = UserProfile.objects.get(user=request.user)
+    print(profile)
+    # Attach the user's profile to the order
+    order.user_profile = profile
+    order.save()
+    print(order.user_profile)
+
+    # Save the user's info
+    if save_info:
+        profile_data = {
+            'default_phone': order.phone,
+            'default_billingCountry': order.billingCountry,
+            'default_billingPostcode': order.billingPostcode,
+            'default_billingCity': order.billingCity,
+            'default_billingAdress1': order.billingAdress1
+        }
+        user_profile_form = UserProfileForm(profile_data, instance=profile)
+        print("UPF", user_profile_form)
+        if user_profile_form.is_valid():
+            print("UPF Valid")
+            user_profile_form.save()
+
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.emailAddress}.')
@@ -152,4 +199,3 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
-

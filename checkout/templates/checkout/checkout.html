@@ -67,7 +67,7 @@
                     <div class="col-3 text-white">
                         <p class="my-0">${{ grand_total | floatformat:2 }}</p>
                         <p class="my-0">${{ delivery | floatformat:2 }}</p>
-                        <p class="my-0"><strong>${{ final_total | floatformat:2 }}</strong></p>
+                        <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
                     </div>
                 </div>
             </div>
@@ -125,7 +125,7 @@
 							<span class="icon text-white">
 								<i class="fas fa-exclamation-circle"></i>
 							</span>
-							<span>Your card will be charged <strong>${{ final_total | floatformat:2 }}</strong></span>
+							<span>Your card will be charged <strong>${{ grand_total | floatformat:2 }}</strong></span>
 						</p>
 					</div>
                 </form>

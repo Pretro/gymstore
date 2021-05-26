@@ -8,11 +8,11 @@ from django_countries.fields import CountryField
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    phone = models.CharField(max_length=15, null=True, blank=True)
-    billingCountry =  CountryField(blank_label='Country *', null=True, blank=True)  # noqa:501
-    billingPostcode = models.CharField(max_length=250, blank=True)
-    billingCity = models.CharField(max_length=250, blank=True)
-    billingAdress1 = models.CharField(max_length=250, blank=True)
+    default_phone = models.CharField(max_length=15, null=True, blank=True)
+    default_billingAdress1 = models.CharField(max_length=250, blank=True)
+    default_billingCountry = CountryField(blank_label='Country', null=True, blank=True)  # noqa:501
+    default_billingPostcode = models.CharField(max_length=250, blank=True)
+    default_billingCity = models.CharField(max_length=250, blank=True)
 
     def __str__(self):
         return self.user.username
@@ -25,3 +25,4 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
         UserProfile.objects.create(user=instance)
     # Existing users: just save the profile
     instance.userprofile.save()
+
