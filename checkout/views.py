@@ -96,8 +96,6 @@ def checkout(request):
                 order.grand_total = total + delivery
                 order.delivery = delivery
                 order.save()
-                print("orderform")
-                print(order_form)
 
                 save_order_details(order, cart_items)
 
@@ -124,18 +122,19 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-       # Attempt to prefill the form with any info the user maintains in their profile
+       # Attempt to prefill the form with any info the user maintains in their profile  # noqa:501
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
                 order_form = OrderForm(initial={
-                    'full_name': profile.user.get_full_name(),
-                    'email': profile.user.email,
+                    'user_profile': profile.user.get_full_name(),
+                    'emailAddress': profile.user.email,
                     'phone': profile.default_phone,
-                    'Country': profile.default_billingCountry,
-                    'Postcode': profile.default_billingPostcode,
-                    'City': profile.default_billingCity,
-                    'street_address1': profile.default_billingAdress1,
+                    'billingAdress1': profile.default_billingAdress1,
+                    'billingCountry': profile.default_billingCountry,
+                    'billingPostcode': profile.default_billingPostcode,
+                    'billingCity': profile.default_billingCity,
+                    
                 })
             except UserProfile.DoesNotExist:
                 order_form = OrderForm()
