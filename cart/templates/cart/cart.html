@@ -38,8 +38,13 @@ cart
             {% for cart_item in cart_items %}
             <tr>
                 <td>
+                    
                     <a href="{% url 'product_detail' cart_item.product.id %}">
+                        {% if item.product.image %}
                         <img src="{{cart_item.product.image.url}}" width="100" height="100" alt="">
+                         {% else %}
+                        <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                        {% endif %}
                     </a>
                 </td>
                 <td class="text-left text-light">

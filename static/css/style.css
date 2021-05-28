@@ -54,7 +54,7 @@ body {
 
 
 /*product detail section*/
-.product_title{
+.logo-font{
     font-size: 25px;
     text-transform: uppercase;
     letter-spacing: .2em;
@@ -174,7 +174,6 @@ body {
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
-	/* btn */
 	display: inline-block;
     font-weight: 400;
     color: #fff;
@@ -190,7 +189,6 @@ body {
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0;
-
     /* standard bootstrap btn transitions */
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
@@ -204,6 +202,24 @@ body {
 
 .allauth-form-inner-content a {
 	color: #17a2b8; /* text-info */
+}
+
+/*Add_product template*/
+.prod_title{
+    font-size: 25px;
+    color: white;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    color: white;
+}
+
+.form-control-file, .form-control-range {
+    display: block;
+    width: 100%;
+    color: white;
 }
 
 /* fixed top navbar only on medium and up */
