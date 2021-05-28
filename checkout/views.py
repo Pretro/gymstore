@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse # noqa:501
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse  # noqa:501
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -43,7 +43,6 @@ def calculate_order_total(cart_items):
 
 def save_order_details(order, cart_items):
     for item in cart_items:
-        print("order", order)
         try:
             product = item.product
             price = product.price
@@ -66,8 +65,8 @@ def checkout(request):
         cart = Cart.objects.get(cart_id=request.session.session_key)
         cart_items = list(CartItem.objects.filter(cart=cart))
     except:
-            messages.error(request, "There's nothing in your bag at the moment")
-            return redirect(reverse('products'))
+        messages.error(request, "There's nothing in your bag at the moment")
+        return redirect(reverse('products'))
 
     if request.method == 'POST':
         total = calculate_order_total(cart_items)
@@ -109,7 +108,6 @@ def checkout(request):
                 order.delete()
                 return redirect(reverse('cart'))
         else:
-            print('BAD FORM')
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
@@ -122,7 +120,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-       # Attempt to prefill the form with any info the user maintains in their profile  # noqa:501
+        # Attempt to prefill the form with any info the user maintains in their profile  # noqa:501
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -134,7 +132,7 @@ def checkout(request):
                     'billingCountry': profile.default_billingCountry,
                     'billingPostcode': profile.default_billingPostcode,
                     'billingCity': profile.default_billingCity,
-                    
+
                 })
             except UserProfile.DoesNotExist:
                 order_form = OrderForm()
@@ -161,29 +159,25 @@ def checkout_success(request, order_number):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    print("Order", order)
 
-    profile = UserProfile.objects.get(user=request.user)
-    print(profile)
-    # Attach the user's profile to the order
-    order.user_profile = profile
-    order.save()
-    print(order.user_profile)
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # Attach the user's profile to the order
+        order.user_profile = profile
+        order.save()
 
-    # Save the user's info
-    if save_info:
-        profile_data = {
-            'default_phone': order.phone,
-            'default_billingCountry': order.billingCountry,
-            'default_billingPostcode': order.billingPostcode,
-            'default_billingCity': order.billingCity,
-            'default_billingAdress1': order.billingAdress1
-        }
-        user_profile_form = UserProfileForm(profile_data, instance=profile)
-        print("UPF", user_profile_form)
-        if user_profile_form.is_valid():
-            print("UPF Valid")
-            user_profile_form.save()
+        # Save the user's info
+        if save_info:
+            profile_data = {
+                'default_phone': order.phone,
+                'default_billingCountry': order.billingCountry,
+                'default_billingPostcode': order.billingPostcode,
+                'default_billingCity': order.billingCity,
+                'default_billingAdress1': order.billingAdress1
+            }
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
 
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
