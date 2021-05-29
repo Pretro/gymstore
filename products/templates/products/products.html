@@ -29,7 +29,7 @@
                 <div class="col">
                     <div class="card-1 shadow-sm">
                         <a href="{% url 'product_detail' product.id %}">
-                            <img class="img-fluid" alt="No image found" src="{{ product.image.url }}"
+                            <img class="img-fluid" alt="No image found" src="{{ product.get_image }}"
                                 title="Click to view">
                         </a>
 

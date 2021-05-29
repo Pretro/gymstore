@@ -183,8 +183,7 @@ def checkout_success(request, order_number):
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.emailAddress}.')
 
-    if 'cart' in request.session:
-        del request.session['cart']
+    request.session.create()
 
     template = 'checkout/checkout_success.html'
     context = {
