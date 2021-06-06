@@ -159,6 +159,14 @@ The images taken from the gymgrossisten page are only use as images of the produ
 
   Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
 
+* [Django Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)
+
+  This is used for register, sign up and sign out pages.
+
+* [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
+
+  Used for all forms in this project.
+  
 #### __Integrations__
 
 + [Fontawesome](https://fontawesome.com/)
@@ -192,6 +200,10 @@ The images taken from the gymgrossisten page are only use as images of the produ
 + [Balsamic](https://balsamiq.com/)
 
   Program use for the making of the wireframes for this project.
+  
++ [Stripe](https://stripe.com/en-gb-se)
+
+  I use stripe for the project payment system. In addition, it is one of the requirements of this project.
 
 + [YouTube](https://www.youtube.com/)
 
@@ -204,6 +216,12 @@ The images taken from the gymgrossisten page are only use as images of the produ
 +  [W3schools](https://www.w3schools.com/)
 
   I use this site to get answers to questions about the programming languages used. 
+  
++ [Amazon Web Services](https://aws.amazon.com/)
+
+  I use Amazon to store the static and media files.This procedure is performed by saving the corresponding information in the AWS S3 bucket.
+  
+  https://aws.amazon.com/
 
 ## The code is validated in the following pages for error correction:
 
