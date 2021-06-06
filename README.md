@@ -37,6 +37,7 @@ As a user of this site, I want to
 
 11. As a User, i want to receive emails with details of my purchases so that I can compare when you arrive the products that everything is received in order to how it was purchased.
 
+12. As a User, i want to easily recover my password incase I forget it.
 
 ## __The purpose of the GymStore is to :__
 
@@ -221,7 +222,95 @@ The images taken from the gymgrossisten page are only use as images of the produ
 
 # Data schema
 
-*******
+Django works with SQL databases by default. Sqlite3 has been used in the development environment. Instead, when deploying to Heroku, it provides a PostgreSQL database for deployment.
+
+## __Product App__
+
+__Product Model__
+
+   Title                 |      Db Key             |   Data Type   |      Comments                                                              |
+-----                    | -                       |             - | -                                                                          |
+Category                 | category                | ForeignKey    |  on_delete=models.CASCADE                                                  |
+Sku                      | sku                     | CharField     | max_length=250, blank=True                                                 |
+Name                     | name                    | CharField     | max_length=250                                                             |
+Description              | description             | TextField     |                                                                            |
+Price                    | price                   | DecimalField  | max_digits=6, decimal_places=2                                             |
+Rating                   | rating                  | DecimalField  | max_digits=6, decimal_places=2, blank=True                                 |
+Image url                | image_url               | URLField      | max_length=1024, null=True, blank=True                                     |
+Image                    | image                   | ImageField    | null=True, blank=True                                                      |
+Stock                    | stock                   | IntegerField  | null=True, blank=True                                                      |
+Has sizes                | has_sizes               | BooleanFieldv | default=True, null=True, blank=True                                        |
+
+
+__Category Model__
+   Title                 |      Db Key             |   Data Type   |                                 Comments                                   |
+-----                    | -                       |             - | -                                                                          |
+Name                     | name                    | CharField     | max_length=250                                                             |
+Friendly Name            | friendly_name           | CharField     | max_length=250, blank=True                                                 |
+
+## __Cart App__
+
+__Cart Model__
+   Title                 |      Db Key             |   Data Type   |                                 Comments                                   |
+-----                    | -                       |             - | -                                                                          |
+Cart id                  | cart_id                 | CharField     | max_length=250, blank=True                                                 |
+Date added               | date_added              | DateField     | auto_now_add=True                                                          |
+
+__Cart_item Model__
+   Title                 |      Db Key             |   Data Type   |                                 Comments                                   |
+-----                    | -                       |             - | -                                                                          |
+Product                  | product                 | ForeignKey    | blank=False, on_delete=models.CASCADE                                      |
+Cart                     | cart                    | ForeignKey    | on_delete=models.CASCADE                                                   |
+Quantity                 | quantity                | IntegerField  |                                                                            |
+Active                   | active                  | BooleanField  | default=True                                                               |
+
+## __Checkout App__
+
+__Order__ 
+   Title                 |      Db Key             |   Data Type   |                                 Comments                                   |
+-----                    | -                       |             - | -                                                                          |
+Order Number             | order_number            | CharField     | max_length=35, null=False, editable=False                                  |
+User Profile             | user_profile            | ForeignKey    | on_delete=models.SET_NULL, null=True, blank=True, related_name='orders'    |
+Billing Name             | billingName             | CharField     | max_length=250, blank=True                                                 |
+Email Address            | emailAddress            | EmailField    | max_length=250, blank=True, verbose_name='Email Adress'                    |
+Phone                    | phone                   | CharField     | max_length=15, null=False, default=0                                       |
+Billing Country          | billingCountry          | CountryField  | blank_label='Country *', null=False, blank=False                           |
+Billing Postcode         | billingPostcode         | CharField     | max_length=250, blank=True                                                 |
+Billing City             | billingCity             | CharField     | max_length=250, blank=True                                                 |
+Billing Address          | billingAdress1          | CharField     | max_length=250, blank=True                                                 |
+Shipping Name            | shippingName            | CharField     | max_length=250, blank=True                                                 |
+Shipping Address         | shippingAddress1        | CharField     | max_length=250, blank=True                                                 |
+Shipping City            | shippingCity            | CharField     | max_length=250, blank=True                                                 |
+Shipping Postcode.       | shippingPostcode        | CharField     | max_length=250, blank=True                                                 |
+Shipping Country         | shippingCountry         | CountryField  | blank_label='Country *', null=False, blank=False                           |
+created                  | created                 | DateTimeField | auto_now_add=True                                                          |
+Delivery Cost            | delivery_cost           | DecimalField  | max_digits=8, decimal_places=2, null=False, default=0                      |
+Total                    | total                   | DecimalField  | max_digits=10, null=True, decimal_places=2, verbose_name='USD Order Total' |
+Grand Total              | grand_total             | DecimalField  | max_digits=8, decimal_places=2, null=False, default=0                      |
+Original Cart            | original_cart           | TextField     | null=False, blank=False, default=''                                        |
+Stripe Pid               | stripe_pid              | CharField     | max_length=254, null=False, blank=False, default=''                        |
+
+__Order Line Item__ 
+   Title                 |      Db Key             |   Data Type   |                                 Comments                                   |
+-----                    | -                       |             - | -                                                                          |
+Order                    | order                   | ForeignKey    | null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems |
+Product                  | product                 | ForeignKey    | null=False, blank=False, on_delete=models.CASCADE                          |
+Product size             | product_size.           | CharField     | max_length=2, null=True, blank=True                                        |
+Quantity                 | quantity.               | IntegerField  | null=False, blank=False, default=0                                         |
+Lineitem total           | lineitem_total          | DecimalField  | max_digits=6, decimal_places=2, null=False, blank=False, editable=False    |
+
+## __Profile App__
+
+__User Profile__
+   Title                 |      Db Key             |   Data Type   | Comments                                                                   |
+-----                    | -                       |             - | -                                                                          |
+User                     | user                    | OneToOneField | on_delete=models.CASCADE                                                   |
+Default Phone            | default_phone           | CharField     | max_length=15, null=True, blank=True                                       |
+Default Billing Address  | default_billingAdress1  | CharField     | max_length=250, blank=True                                                 |
+Default Billing Country  | default_billingCountry  | CountryField  | blank_label='Country', null=True, blank=True                               |
+Default Billing Postcode | default_billingPostcode | CharField     | max_length=250, blank=True                                                 |
+Default Billing City     | default_billingCity     | CharField     | max_length=250, blank=True                                                 |
+
 
 ## Testing
 
