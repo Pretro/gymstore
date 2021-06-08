@@ -19,25 +19,25 @@ As a user of this site, I want to
 
 2. As a user, i want to easy navigate through the different pages so that i can use the site.
 
-3. As a user, i want to register an account so that i can become a member.
+3. As a user, i want to search for products by price and rating so that I can compare which one is better for me to buy.
 
-4. As a user, i want the process of registration to be simple so that i can start make use of the site and not lose interest with registration processes that take a long time.
+4. As a user, i want to register an account so that i can become a member.
 
-5. As a user, i want to view a description of the products so that i can see if it is what I am really looking for and it interests me.
+5. As a user, i want the process of registration to be simple so that i can start make use of the site and not lose interest with registration processes that take a long time.
 
-6. As a user, i would like to easily be able to add products to the cart . 
+6. As a user, i want to view a description of the products so that i can see if it is what I am really looking for and it interests me.
 
-7. As a user, i want to see a list of the products that I buy so that i can be able to take an order of my purchases .
+7. As a user, i would like to easily be able to add products to the cart . 
 
-8. As a user, i want to add and delete products from my shopping cart.
+8. As a user, i want to see a list of the products that I buy so that i can be able to take an order of my purchases .
 
-9. As a user, i want the checkout form to be as clear as possible. i want to see/fill my user information. See a list of what I have bought and have in my cart, the total amount to pay.
+9. As a user, i want to add and delete products from my shopping cart.
 
-10. As a user, i want to have a safe payment alternative so that i can be sure that my card details will not fall into the wrong hands.
+10. As a user, i want the checkout form to be as clear as possible. i want to see/fill my user information. See a list of what I have bought and have in my cart, the total amount to pay.
 
 11. As a User, i want to receive emails with details of my purchases so that I can compare when you arrive the products that everything is received in order to how it was purchased.
 
-12. As a User, i want to easily recover my password incase I forget it.
+12. As a User, i want to easily recover my password in case I forget it.
 
 ## __The purpose of the GymStore is to :__
 
@@ -81,6 +81,7 @@ The colours that I used for the site:
 * (Grey) is the hover color for the add to cart button in the all product page and the color main color for the button in the product detail page.
 
 The reason why these colors were chosen is because since the background color is black. It was necessary to use strong colors that contrast with the environment. This contrast allows the user to be more focused 
+
 on what they need and also gives at the same time a typical atmosphere of the gym world. Since in most of these sites and from the site in which this project was inspired, the main background color is black.
 
 
@@ -91,6 +92,7 @@ on what they need and also gives at the same time a typical atmosphere of the gy
 ### __Imagery__
 
 The images used for the creation of this project were taken from the Swedish website [gymgrossisten](https://www.gymgrossisten.com/). The picture in the home page is from pexels.com. The reason for this choice is that being an online store for exercise products, it is important that the first impression of the user when entering is to understand what the site is about. 
+
 The images taken from the gymgrossisten page are only use as images of the products available in the online store.
 
 ## __Wireframes__
@@ -351,42 +353,121 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 2. As a user, i want to easy navigate through the different pages so that i can use the site.
 
-    i. The main page has a navigation menu in which there are some options. One  is a product where the categories are shown. There is also the option to search for products either by price, rating and a search engine where the user also searches by product name. 
-    
+    i. The main page has a navigation menu in which there are some options. One is a product section where the categories are shown. 
+
     A section of entry and registration of members of the page as well as the option of shopping bag shown with an icon.
 
-3. As a user, i want to register an account so that i can become a member.
+3. As a user, i want to search for products by price and rating so that I can compare which one is better for me to buy.
 
-    i. The user has the option of registering a user account in the navigation menu. Once this is done, the user is a registered member.
+    i. There is a search option for products where the user can search either by price, rating or product name. 
 
-4. As a user, i want the process of registration to be simple so that i can start make use of the site and not lose interest with registration processes that take a long time.
+4. As a user, i want to register an account so that i can become a member.
 
-    i. To register choose a username of your choice and a password. Then you can start using the site. This process avoids a delayed registration process and that the user loses interest in the site.
+    i. The user has the option of registering an account in the navigation menu. Once this is done, the user is a registered member.
 
-5. As a user, i want to view a description of the products so that i can see if it is what I am really looking for and it interests me.
+5. As a user, i want the process of registration to be simple so that i can start make use of the site and not lose interest with registration processes that take a long time.
 
-    i. There are two ways to get to the product description page. The first is by pressing the "Shop now" button on the main page. The second is by going to the navigation menu and pressing the option of products. There the user can choose to go to the page of all products or view by categories.
+    i. To register, enter your email, choose a username and a password in the register form. 
+
+6. As a user, i want to view a description of the products so that i can see if it is what I am really looking for.
+
+    i. There are two ways to get to the product description page. The first is by pressing the "Shop now" button on the main page. The second is by going to the navigation menu and pressing the all product option.
 
     ii. Once on the products page press the "view" button, being directed to the product description page.
 
-6. As a user, i would like to easily be able to add products to the cart.
+7. As a user, i would like to easily be able to add products to the cart.
 
     i. On the "all products" page, as well as on the product detail page, there is the "add to cart" button which allows the chosen product to be entered into the shopping cart.
 
-7. As a user, i want to see a list of the products that I buy so that i can be able to take an order of my purchases.
+8. As a user, i want to see a list of the products that I buy so that i can be able to take an order of my purchases.
 
     i. Once the "add to cart" button is pressed, the user is directed to the cart page a detail list of the products to buy appears.
 
-8. As a user, i want to add and delete products from my shopping cart.
+9. As a user, i want to add and delete products from my shopping cart.
 
     i. On the cart page, the user also has the possibility of adding, reducing or completely eliminating the product from the shopping cart. This is achieved through icons on each product detail card.
 
-9. As a user, i want the checkout form to be as clear as possible. i want to see/fill my user information. See a list of what I have bought and have in my cart, the total amount to pay.
+10. As a user, i want the checkout form to be as clear as possible.
 
+    i. Once the products have been chosen, the user is taken to the checkout page, where a list of the products purchased is displayed, in addition to a form to fill out with their personal data.
+  
+   ii. In this section there is also the payment section, where the user can fill in the credit card details and proceed to pay for the purchase. 
+
+11. As a User, i want to receive emails with details of my purchases so that I can compare that everything is received in order to how it was purchased.
+
+    i. When the data is filled in at the checkout, the email is also filled out. At the end of the purchase, an email is sent with the details to the email that was entered in the checkout form.
+
+12. As a User, i want to easily recover my password in case I forget it.
+
+    i. In the sign in form there is an option "forgot password". The user is sent to the reset form, where it should enter the email which use to register the account.
+
+   ii. The user receives an email with a link where they will be taken to the reset form. There it can write the new password.
+
+* During my test period i focus on the user stories.
 
 # __Further Testing__
 
-******
+## The testing of the Navbar and pages. 
+
+### __Home Page__
+
++ Test result: The user is directed to the "All Products" page when pressing the "Shop now" button in the home page. 
+
++ Test result: The user is directed to the home page when pressing the logo in the site.
+
++ Test result: The user is directed to the "All Product page" when pressing the "Products" option in the navbar.
+
++ Test result: The user can choose different categories when pressing the "Products" option in the navbar, a menu with a list of different categories is displayed.
+
++ Test result: The user can search products by rating and price when pressing the "Sort" option in the navbar.
+
++ Test result: The user can search products by name, brand and category in the search box in all the pages where it is displayed.
+
++ Test result: The user can log and register in the "My Account" icon and label in all the pages where it is displayed.
+
++ Test result: The user is directed to the cart page when pressing the bag icon in the navbar.
+
+### __Product Page__
+
++ Test result: The user can view the description of the product by presing the "view" button on the product page. 
+
++ Test result: The user can add products to the shopping cart by pressing the "Add product" button in the product page.
+
+### __Product detail Page__
+
++ Test result: The user can add products to the shopping cart by pressing the "Add product" in the product detail page.
+
++ Test result: The user can choose sizes for the products with this option available and added to the cart in the product detail page.
+
+### __Cart Page__
+
++ Test result: The user can add, remove and delete products.
+
++ Test result: The user has the possibility to continue shopping by pressing the button "Continue shopping".
+
++ Test result: The user can add, remove and delete products from the cart page.
+
++ Test result: The user can go to the checkout page by pressing the "Continue to checkout" button.
+
+### __Checkout Page__
+
++ Test result: The user was able to fill in his data in the checkout form and complete the order by pressing the button "Complete order"
+
+
+### __Sign Up Page__
+
++ Test result: The user can fill in their data in the form to create a new account.
+
++ Test result: The user is directed to the "Sign in" page when pressing the sign in label message text.
+
+### __Sign In Page__
+
++ Test result: The user can sign in by filling the sign in form on the page with the data that he/she registered when creating the account.
+
++ Test result: The user can sign in by filling the sign in form on the page with the data that he/she registered when creating the account.
+
+
+
 
 ### __The website has been checked in different browser, such as.__
 
