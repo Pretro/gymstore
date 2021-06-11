@@ -22,16 +22,16 @@ def _cart_id(request):
 def add_cart_size(request, product_id, product_size):
     product = Product.objects.get(id=product_id)
     product_size = ProductSize.objects.get(pk=product_size)
+    print('size', product_size)
     try:
         cart = Cart.objects.get(cart_id=_cart_id(request))
     except Cart.DoesNotExist:
         cart = Cart.objects.create(
             cart_id=_cart_id(request)
         )
-
         cart.save()
     try:
-        cart_item = CartItem.objects.get(product=product, cart=cart)
+        cart_item = CartItem.objects.get(product=product, cart=cart, size=product_size.name)
         if cart_item.quantity < cart_item.product.stock:
             cart_item.quantity += 1
         cart_item.save()
@@ -39,7 +39,8 @@ def add_cart_size(request, product_id, product_size):
         cart_item = CartItem.objects.create(
             product=product,
             quantity=1,
-            cart=cart
+            cart=cart,
+            size=product_size.name
         )
         cart_item.save()
 
