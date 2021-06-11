@@ -261,7 +261,6 @@ Image                    | image                   | ImageField    | null=True, 
 Stock                    | stock                   | IntegerField  | null=True, blank=True                                                      |
 Has sizes                | has_sizes               | BooleanFieldv | default=True, null=True, blank=True                                        |
 
-
 __Category Model__
    Title                 |      Db Key             |   Data Type   |                                 Comments                                   |
 -----                    | -                       |             - | -                                                                          |
@@ -439,6 +438,16 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 + Test result: The user can choose sizes for the products with this option available and added to the cart in the product detail page.
 
+### __Product add__
+
++ Test result: The administrator can add products by logging into his account. Then choose "Product management" under "My account".
+
+### __Product edit__
+
++ Test result: The administrator can edit products by going to the Products option in the navbar. Choosing the option of all the products or a category".
+
++ Test result: The administrator can delete products. The procedure is as shown above ".
+
 ### __Cart Page__
 
 + Test result: The user can add, remove and delete products.
@@ -466,8 +475,13 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 + Test result: The user can sign in by filling the sign in form on the page with the data that he/she registered when creating the account.
 
+### __Profile Page__
 
++ Test result: The user can see his profile page. Once entered the system, go to "My account" and then press "My Profile".
 
++ Test result: The user can change his information by changing his data in the form "Deafult delivery information".
+
++ Test result: The user can view his order history in the order history section.
 
 ### __The website has been checked in different browser, such as.__
 
@@ -490,3 +504,55 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 4. Laptop
 
 Friends and family tested the site by login in and writing about their stories. This was also made to point out any bugs and/or user experience issues.
+
+## __Known Bugs__
+
++ *** 
+
+## __Deployment__
+
+### __Heroku__
+
+The Project is deployed to Heroku using the following steps..
+
+ 1.- Navigate to [Heroku](https://www.heroku.com/) and log into your account.
+
+ 2.- Press the "new" button in the dashboard and choose "Create new app" option.
+ 
+ 3.- Write you apps name and choose the region according to where you live.
+
+ 4.- Then press the "create app" button.
+ 
+ 5.- Go to the Resources tab. Under the Add-ons label in the search box, type "postgres".
+
+ 6.- Choose "Heroku Postgres" and the free plan. 
+
+ 7.- Then go to the gitpod terminal, and install the following.
+
++ pip3 install dj_database url 
++ pip3 install psycopg2 binary 
+ 
+ 8.- Freeze the requirements in the requirements.txt file by typing: pip3 freeze > requirements.txt
+ 
+ 9.- To get the database setup. Go to settings.py and import dj_database_url:
+    ![Image of the settings file](media/pic1.png)
+
+ 10.- Next, in the database settings, comment out default configuration and replace the default database with a call to dj_database_url.parse. 
+
+ 10 Migrate, type in the terminal:
+
++ python3 manage.py migrate
+ 
+10.- Back in the settings file. Replace in the Database enviroment with this code shown below. This is to connect to Postgres when the app is running on Heroku.
+
+    ![Image of the settings](media/pic2.png)
+
+11. Create a superuser.This is to be able to login into the Django admin. The command is
+    
++ python3 manage.py createsuperuser
+
+12. Install unicorn, which acts as the webserver, then freeze that into requirements.txt
+
+13. Create a Procfile and write the following in this file. 
+
++ web: gunicorn gymstore.wsgi:application

@@ -44,3 +44,13 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ProductSize(models.Model):
+    product = models.ForeignKey('Product', on_delete=models.CASCADE)
+    name = models.CharField(max_length=250)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'Size'
+        verbose_name_plural = 'Sizes'

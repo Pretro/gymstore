@@ -38,28 +38,38 @@
                 {% endif %}
                 <p class="product_description">Product Description</p>
                 <p class="text-justify product_text">{{product.description}}</p>
-                {% with product.has_sizes as s %}
-                {% if s %}
-                <div class="col-12 tallas">
-                    <p><strong class="text-white">Size:</strong></p>
-                    <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
-                        <option value="xs">XS</option>
-                        <option value="s">S</option>
-                        <option value="m" selected>M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                    </select>
-                </div>
+                {% if sizes%}
+                    <div class="col-12 tallas">
+                        <p><strong class="text-white">Size:</strong></p>
+                        <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
+                            <option value="-1">Select an option</option>
+                            {%for size in sizes %}
+                                <option value="{{size.pk}}">{{size.name}}</option>
+                            {%endfor%}
+                        </select>
+                    </div>
                 {% endif %}
-                {% endwith %}
                 {%if product.stock > 0 %}
-                <a href="{% url 'add_cart' product.id %}" class="btn btn-secondary">
-                    Add to Cart
-                </a>
+                    {% if sizes%}
+                        <a href="{% url 'add_cart_size' product.id 1 %}" class="btn btn-secondary">
+                            Add to Cart
+                        </a>
+                    {%else%}
+                        <a href="{% url 'add_cart' product.id%}" class="btn btn-secondary">
+                            Add to Cart
+                        </a>
+                    {%endif%}
                 {%endif%}
             </div>
         </div>
     </div>
 </div>
 </div>
+
+<script>
+    $('#id_product_size').on('change', function(event){
+        console.log('selected', $(this).val());
+    });
+
+</script>
 {% endblock %}
