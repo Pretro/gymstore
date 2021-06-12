@@ -670,4 +670,3 @@ AWS is a cloud based storage service, used to store static files and images
 + Now click save.
 
 + The last thing to do, is to go to the access control list tab, and set the list objects permission for everyone under the Public Access section.
-
