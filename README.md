@@ -548,7 +548,7 @@ The Project is deployed to Heroku using the following steps..
 
 13.- Scroll down to "Config vars" and copy the "DATABASE_URL"
     ![Image of the settings file](media/pic5.png)
-=======
+
 ![Image of the settings file](media/pictures/pic1.png)
 
 10.- Next, in the database settings, comment out default configuration.
@@ -564,14 +564,13 @@ The Project is deployed to Heroku using the following steps..
 13.- Scroll down to "Config vars" and copy the "DATABASE_URL"
 
 ![Image of the settings file](media/pic5.png)
->>>>>>> eabfc3d1699f7e5b430d8a420d27b390a9af554d
 
 14.- Back in the settings file. Paste the Database_url code within the parentheses after "...url.parse" (look at the image in point 11).
 
 15.- Save and migrate the changes.
 
 16.- Now, to import all of the product data use the fixtures by loading first the categories and then the products.
-<<<<<<< HEAD
+
 + python3 manage.py loaddata categories
 + python3 manage.py loaddata products
 
@@ -583,7 +582,8 @@ The Project is deployed to Heroku using the following steps..
 19.- When this is done, commit the changes.
 
 20.- Go to the settings file and write an if statement. This is done so that when our app is running on Heroku, where database URL environment variable is defined, we connect to Postgres, and not to sqlite.
-    ![Image of the settings file](media/pic6.png)
+
+![Image of the settings file](media/pic6.png)
 
 21.- Next install unicorn, which acts as our webserver.
 + pip3 install unicorn
@@ -593,7 +593,6 @@ The Project is deployed to Heroku using the following steps..
 
 23.- Now lets create our Procfile. This will tell Heroku to create a web dyno, that will run unicorn and serve our django app.
     ![Image of the settings file](media/pic7.png)
-=======
 
 + python3 manage.py loaddata categories
 
@@ -707,4 +706,3 @@ AWS is a cloud based storage service, used to store static files and images
 
 + The last thing to do, is to go to the access control list tab, and set the list objects permission for everyone under the Public Access section.
 
->>>>>>> eabfc3d1699f7e5b430d8a420d27b390a9af554d
