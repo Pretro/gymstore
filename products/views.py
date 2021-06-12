@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
-from .models import Product, Category
+from .models import Product, Category, ProductSize
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
@@ -57,9 +57,9 @@ def all_products(request):
 def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
-
+    product_sizes = list(ProductSize.objects.filter(product=product))
     context = {
-        'product': product,
+        'product': product, 'sizes': product_sizes
     }
 
     return render(request, 'products/product_detail.html', context)

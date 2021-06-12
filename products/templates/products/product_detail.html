@@ -51,7 +51,7 @@
                 {% endif %}
                 {%if product.stock > 0 %}
                     {% if sizes%}
-                        <a href="{% url 'add_cart_size' product.id 1 %}" class="btn btn-secondary">
+                        <a href="{% url 'add_cart_size' product.id 1 %}" class="btn btn-secondary" id="add_to_cart">
                             Add to Cart
                         </a>
                     {%else%}
@@ -68,7 +68,13 @@
 
 <script>
     $('#id_product_size').on('change', function(event){
-        console.log('selected', $(this).val());
+        selected_size = $(this).val();
+        href = $('#add_to_cart').attr('href');
+        href_len = href.length - 1;
+        console.log(href_len)
+        new_href = href.substr(0, href_len) + selected_size
+        console.log(new_href);
+        $('#add_to_cart').attr('href', new_href)
     });
 
 </script>

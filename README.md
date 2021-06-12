@@ -537,22 +537,40 @@ The Project is deployed to Heroku using the following steps..
  9.- To get the database setup. Go to settings.py and import dj_database_url:
     ![Image of the settings file](media/pic1.png)
 
- 10.- Next, in the database settings, comment out default configuration and replace the default database with a call to dj_database_url.parse. 
+10.- Next, in the database settings, comment out default configuration.
+    ![Image of the settings file](media/pic3.png)
 
- 10 Migrate, type in the terminal:
+11.- Replace the default database with a call to dj_database_url.parse.
+    ![Image of the settings file](media/pic4.png)
 
-+ python3 manage.py migrate
- 
-10.- Back in the settings file. Replace in the Database enviroment with this code shown below. This is to connect to Postgres when the app is running on Heroku.
+12.- Go to your heroku account and to "Seetings".
 
-    ![Image of the settings](media/pic2.png)
+13.- Scroll down to "Config vars" and copy the "DATABASE_URL"
+    ![Image of the settings file](media/pic5.png)
 
-11. Create a superuser.This is to be able to login into the Django admin. The command is
-    
-+ python3 manage.py createsuperuser
+14.- Back in the settings file. Paste the Database_url code within the parentheses after "...url.parse" (look at the image in point 11).
 
-12. Install unicorn, which acts as the webserver, then freeze that into requirements.txt
+15.- Save and migrate the changes.
 
-13. Create a Procfile and write the following in this file. 
+16.- Now, to import all of the product data use the fixtures by loading first the categories and then the products.
++ python3 manage.py loaddata categories
++ python3 manage.py loaddata products
 
-+ web: gunicorn gymstore.wsgi:application
+17.- Create a superuser with the following command.
++ python3 manage.py create superuser
+
+18.- After creating the superuser. Go back to the settings file, remove the Heroku database config and uncomment the original (look at pictures in point 10 and 11). This is to so that the database url dont end up in version control. 
+
+19.- When this is done, commit the changes.
+
+20.- Go to the settings file and write an if statement. This is done so that when our app is running on Heroku, where database URL environment variable is defined, we connect to Postgres, and not to sqlite.
+    ![Image of the settings file](media/pic6.png)
+
+21.- Next install unicorn, which acts as our webserver.
++ pip3 install unicorn
+
+22.- Then freeze that into our requirements.txt file.
++ pip3 freeze > requirements.txt 
+
+23.- Now lets create our Procfile. This will tell Heroku to create a web dyno, that will run unicorn and serve our django app.
+    ![Image of the settings file](media/pic7.png)
