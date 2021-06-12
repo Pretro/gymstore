@@ -537,7 +537,6 @@ The Project is deployed to Heroku using the following steps..
  
  9.- To get the database setup. Go to settings.py and import dj_database_url:
 
-<<<<<<< HEAD
 10.- Next, in the database settings, comment out default configuration.
     ![Image of the settings file](media/pic3.png)
 
