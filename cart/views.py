@@ -31,7 +31,7 @@ def add_cart_size(request, product_id, product_size):
         )
         cart.save()
     try:
-        cart_item = CartItem.objects.get(product=product, cart=cart, size=product_size.name)  # noqa:501
+        cart_item = CartItem.objects.get(product=product, cart=cart, size=product_size.name)
         if cart_item.quantity < cart_item.product.stock:
             cart_item.quantity += 1
         cart_item.save()
@@ -71,6 +71,7 @@ def add_cart(request, product_id):
         cart_item.save()
 
     return redirect('cart_detail')
+
 
 
 def cart_detail(request, total=0, counter=0, cart_items=None):

@@ -530,33 +530,41 @@ The Project is deployed to Heroku using the following steps..
  7.- Then go to the gitpod terminal, and install the following.
 
 + pip3 install dj_database url 
+
 + pip3 install psycopg2 binary 
  
  8.- Freeze the requirements in the requirements.txt file by typing: pip3 freeze > requirements.txt
  
  9.- To get the database setup. Go to settings.py and import dj_database_url:
-    ![Image of the settings file](media/pic1.png)
+
+![Image of the settings file](media/pictures/pic1.png)
 
 10.- Next, in the database settings, comment out default configuration.
-    ![Image of the settings file](media/pic3.png)
+
+![Image of the settings file](media//pictures/pic3.png)
 
 11.- Replace the default database with a call to dj_database_url.parse.
-    ![Image of the settings file](media/pic4.png)
+
+![Image of the settings file](media/pic4.png)
 
 12.- Go to your heroku account and to "Seetings".
 
 13.- Scroll down to "Config vars" and copy the "DATABASE_URL"
-    ![Image of the settings file](media/pic5.png)
+
+![Image of the settings file](media/pic5.png)
 
 14.- Back in the settings file. Paste the Database_url code within the parentheses after "...url.parse" (look at the image in point 11).
 
 15.- Save and migrate the changes.
 
 16.- Now, to import all of the product data use the fixtures by loading first the categories and then the products.
+
 + python3 manage.py loaddata categories
+
 + python3 manage.py loaddata products
 
 17.- Create a superuser with the following command.
+
 + python3 manage.py create superuser
 
 18.- After creating the superuser. Go back to the settings file, remove the Heroku database config and uncomment the original (look at pictures in point 10 and 11). This is to so that the database url dont end up in version control. 
@@ -564,41 +572,102 @@ The Project is deployed to Heroku using the following steps..
 19.- When this is done, commit the changes.
 
 20.- Go to the settings file and write an if statement. This is done so that when our app is running on Heroku, where database URL environment variable is defined, we connect to Postgres, and not to sqlite.
-    ![Image of the settings file](media/pic6.png)
+
+![Image of the settings file](media/pictures/pic6.png)
 
 21.- Next install unicorn, which acts as our webserver.
+
 + pip3 install unicorn
 
 22.- Then freeze that into our requirements.txt file.
+
 + pip3 freeze > requirements.txt 
 
 23.- Now lets create our Procfile. This will tell Heroku to create a web dyno, that will run unicorn and serve our django app.
-    ![Image of the settings file](media/pic7.png)
+
+![Image of the settings file](media/pictures/pic7.png)
 
 24.- Now temporarily disable collecstatic. In the terminal type the following.
-    ![Image of the settings file](media/pic8.png)
 
-25.- Add the hostname of our Heroku app to allowed hosts in settings.py, add localhost and: ALLOWED_HOSTS = ['YOUR-APP-NAME.herokuapp.com', 'localhost']
+![Image of the settings file](media/pictures/pic8.png)
+
+25.- Add the hostname of our Heroku app to allowed hosts in settings.py, add localhost and: ALLOWED_HOSTS = ['YOUR-APP-NAME.herokuapp.com', 'localhost'].
 
 26.- Commit the changes and push to Heroku with.
-    ![Image of the settings file](media/pic9.png)
+
+![Image of the settings file](media/pictures/pic9.png)
 
 27.- To automatically deploy on Heroku when we push to github, take the following steps.
+
 + Go to your Heroku app and in into the "Deploy" tab. 
+
 + In the "Deployment method" section set it to "connect to github"
+
 + Search for the repository you are using and then click connect.
 
-![Image of the settings file](media/pic10.png)
+![Image of the settings file](media/pictures/pic10.png)
 
 28.-Next step is top enable automatic deploys. To do that click the "Enable Automatic Deploys" button in the Automatic deploys section.
-![Image of the settings file](media/pic11.png)
+
+![Image of the settings file](media/pictures/pic11.png)
 
 29.- You will need a new secret key to enter in your Heroku Config Vars (you can create one by using an online [Django secret key generator](https://miniwebtool.com/django-secret-key-generator/).
 
 30.- Once you got your secret key, go to your heroku app and enter the key into the cofig vars in settings.
-![Image of the settings file](media/pic12.png)
 
-31.- Now go back to you settings file and replace the secret key with the call to get it from the environment:
-![Image of the settings file](media/pic13.png)
+![Image of the settings file](media/pictures/pic12.png)
+
+31.- Now go back to you settings file and replace the secret key with the call to get it from the environment.
+
+![Image of the settings file](media/pictures/pic13.png)
 
 32.- Finally, commit and push this changes to github.
+
+### __AWS account__
+
+AWS is a cloud based storage service, used to store static files and images
+
+1.- To create an account, go to [aws.amazon.com](https://aws.amazon.com/) and click "Create an AWS Account".
+
+2.- After filling the required information and creating the account (using the free version will be sufficient).
+
+3.- Go back tto [aws.amazon.com](https://aws.amazon.com/) and sign into "AWS Management Console", located in the upper right part of the screen under "My Account".
+
+4.- Once you signed in, search for the S3 service.
+
+5.- Open S3 and create a new bucket. This will be use to store our files.
+
+6.- Choose a name for your bucket and select the region closest to you, just like you did in the Heroku app.
+
+7.- Uncheck "Block all public access" and acknowledge that the bucket will be public. This must be done so that our static files can have public access.
+
+8.- Once the bucket is creted, we must set a few settings.
+
+9.- Go to the properties tab and turn on "Static website hosting".
+
+10.- In the index and error document , just fill some deafult values since they will not be use. 
+
+![Image of the settings file](media/pictures/pic16.png)
+
+11.- Next, got to the "Permissions" tab and make three changes.
+
++ First, paste a CORS configuration. This is to set up the required access between the Heroku app and the s3 Bucket.
+
+![Image of the settings file](media/pictures/pic14.png)
+
++ Go to the bucket policy tab and select policy generator so we can create a security policy for this bucket.
+
++ The policy type is going to be s3 bucket policy. This will allow all principals by using a star, and the action will be, get object
+
+![Image of the settings file](media/pictures/pic15.png)
+
++ Next copy the ARN which stands for Amazon resource name from bucket policy tab and paste it into the ARN box here at the bottom, click Add Statement, click Generate Policy and copy the policy into the bucket policy editor.
+
+![Image of the settings file](media/pictures/pic17.png)
+
++ Before clicking Save, add a slash star into the end of the resource key. This is done so we can have allow access to all resources in the bucket.
+
++ Now click save.
+
++ The last thing to do, is to go to the access control list tab, and set the list objects permission for everyone under the Public Access section.
+

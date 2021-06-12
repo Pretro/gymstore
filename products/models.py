@@ -56,4 +56,4 @@ class ProductSize(models.Model):
         verbose_name_plural = 'Sizes'
 
     def __str__(self):
-        return "%s - %s"  % (self.name, self.product.name)
+        return "%s - %s" % (self.name, self.product.name)
