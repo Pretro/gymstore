@@ -537,6 +537,17 @@ The Project is deployed to Heroku using the following steps..
  
  9.- To get the database setup. Go to settings.py and import dj_database_url:
 
+10.- Next, in the database settings, comment out default configuration.
+    ![Image of the settings file](media/pic3.png)
+
+11.- Replace the default database with a call to dj_database_url.parse.
+    ![Image of the settings file](media/pic4.png)
+
+12.- Go to your heroku account and to "Seetings".
+
+13.- Scroll down to "Config vars" and copy the "DATABASE_URL"
+    ![Image of the settings file](media/pic5.png)
+
 ![Image of the settings file](media/pictures/pic1.png)
 
 10.- Next, in the database settings, comment out default configuration.
@@ -558,6 +569,29 @@ The Project is deployed to Heroku using the following steps..
 15.- Save and migrate the changes.
 
 16.- Now, to import all of the product data use the fixtures by loading first the categories and then the products.
+
++ python3 manage.py loaddata categories
++ python3 manage.py loaddata products
+
+17.- Create a superuser with the following command.
++ python3 manage.py create superuser
+
+18.- After creating the superuser. Go back to the settings file, remove the Heroku database config and uncomment the original (look at pictures in point 10 and 11). This is to so that the database url dont end up in version control. 
+
+19.- When this is done, commit the changes.
+
+20.- Go to the settings file and write an if statement. This is done so that when our app is running on Heroku, where database URL environment variable is defined, we connect to Postgres, and not to sqlite.
+
+![Image of the settings file](media/pic6.png)
+
+21.- Next install unicorn, which acts as our webserver.
++ pip3 install unicorn
+
+22.- Then freeze that into our requirements.txt file.
++ pip3 freeze > requirements.txt 
+
+23.- Now lets create our Procfile. This will tell Heroku to create a web dyno, that will run unicorn and serve our django app.
+    ![Image of the settings file](media/pic7.png)
 
 + python3 manage.py loaddata categories
 
