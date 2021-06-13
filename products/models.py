@@ -57,4 +57,7 @@ class ProductSize(models.Model):
 
     def __str__(self):
         return "%s - %s"  % (self.name, self.product.name)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4ff8071ba9ea7490658d4bcd6c8c8ff069358d7c
