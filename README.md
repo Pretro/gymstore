@@ -1,6 +1,6 @@
 # __GymStore__
 
-The goal of this project is to create an e-commerce webpage that allows users to create buying orders. Users can navigate through the site and choose products to buy as they 
+The goal of this project is to create an ecommerce webpage that allows users to create buying orders. Users can navigate through the site and choose products to buy as they 
 
 please. This project aims to create a real environment like that of a shopping site. This virtual store has a profile section area which allows users to become members and save information about their purchases. 
 
@@ -8,7 +8,14 @@ You can also buy without having the need to become a member of the�
 
 In future updates, the goal is to make the store already in real mode, selling products and making payments and not only in a demo enviroment. One other more ambitious update is that the store will be available in other languages, 
 
+<<<<<<< HEAD
 this will make it possible to expand the branch of clients that visit the store. This is the fourth ms4 project from Code Institute.
+=======
+In future updates, the goal is to make the store already in real mode, selling products and making payments and not only in a demo enviroment. One other more ambitious update is 
+that the store will be available in other languages, this will make it possible to expand the branch of clients that visit the store. 
+
+This is the fourth ms4 project from Code Institute.
+>>>>>>> 89928a394cfc18bcaa194c250b70d418065926e9
 
 # User Experience __(UX)__
 
@@ -34,9 +41,13 @@ As a user of this site, I want to
 
 9. As a user, i want to add and delete products from my shopping cart.
 
-10. As a user, i want the checkout form to be as clear as possible. i want to see/fill my user information. See a list of what I have bought and have in my cart, the total amount to pay.
+10. As a user, i want the checkout form to be as clear as possible. i want to see/fill my user information. See a list of what I have bought and have in my cart, the total 
 
-11. As a User, i want to receive emails with details of my purchases so that I can compare when you arrive the products that everything is received in order to how it was purchased.
+amount to pay.
+
+11. As a User, i want to receive emails with details of my purchases so that I can compare when you arrive the products that everything is received in order to how it was 
+
+purchased.
 
 12. As a User, i want to easily recover my password in case I forget it.
 
@@ -46,9 +57,13 @@ As a user of this site, I want to
 
 + Create an environment of commerce that assimilates as much as possible to reality.
 
-+ Today online shopping is more common than before. The sale of products from different areas has become a lifestyle. Which opens a way to competition between different companies.
++ Today online shopping is more common than before. The sale of products from different areas has become a lifestyle. Which opens a way to competition between different 
 
-The idea of ​​making this online store was born from the ms4 project for Code Institute. The inspiration for this site comes from the Swedish site [gymgrossisten](https://www.gymgrossisten.com/).
+companies.
+
+The idea of making this online store was born from the ms4 project for Code Institute. The inspiration for this site comes from the Swedish site [gymgrossisten]
+
+(https://www.gymgrossisten.com/).
 
 
 ### __Project Strategy__
@@ -88,13 +103,25 @@ on what they need and also gives at the same time a typical atmosphere of the gy
 
 ### __Typography__
 
-"Roboto" and Sans-Serif font has been used in the website. The reason why this font was chosen is because it makes the text of the site more clear. Roboto has a dual nature. It has a mechanical skeleton and the forms are largely geometric. Roboto also allows letters to be settled into their natural width. This makes the reading rhythm to be more natural.
+"Roboto" and Sans-Serif font has been used in the website. The reason why this font was chosen is because it makes the text of the site more clear. Roboto has a dual nature. It
+
+has a mechanical skeleton and the forms are largely geometric. Roboto also allows letters to be settled into their natural width. This makes the reading rhythm to be more 
+
+natural.
     
 ### __Imagery__
 
+<<<<<<< HEAD
 The images used for the creation of this project were taken from the Swedish website [gymgrossisten](https://www.gymgrossisten.com/). 
 
 The picture in the home page is from [Pexels](https://www.pexels.com/)pexels.com. The reason for this choice is that being an online store for exercise products, it is important that the first impression of the user when entering is to understand what the site is about. 
+=======
+The images used for the creation of this project were taken from the Swedish website [gymgrossisten](https://www.gymgrossisten.com/). The picture in the home page is from 
+
+pexels.com. The reason for this choice is that being an online store for exercise products, it is important that the first impression of the user when entering is to understand 
+
+what the site is about. 
+>>>>>>> 89928a394cfc18bcaa194c250b70d418065926e9
 
 The images taken from the gymgrossisten page are only use as images of the products available in the online store.
 
@@ -191,7 +218,9 @@ The images taken from the gymgrossisten page are only use as images of the produ
 
 + [Booststrap](https://getbootstrap.com/)
 
-  Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS- and (optionally) JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.
+  Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS- and (optionally) JavaScript-based design 
+  
+  templates for typography, forms, buttons, navigation, and other interface components.
 
 ### __Repository, workspace__
 
@@ -251,7 +280,9 @@ The images taken from the gymgrossisten page are only use as images of the produ
 
 # Data schema
 
-Django works with SQL databases by default. Sqlite3 has been used in the development environment. Instead, when deploying to Heroku, it provides a PostgreSQL database for deployment.
+Django works with SQL databases by default. Sqlite3 has been used in the development environment. Instead, when deploying to Heroku, it provides a PostgreSQL database for 
+
+deployment.
 
 ## __Product App__
 
@@ -377,7 +408,9 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 6. As a user, i want to view a description of the products so that i can see if it is what I am really looking for.
 
-    i. There are two ways to get to the product description page. The first is by pressing the "Shop now" button on the main page. The second is by going to the navigation menu and pressing the all product option.
+    i. There are two ways to get to the product description page. The first is by pressing the "Shop now" button on the main page. The second is by going to the navigation menu 
+    
+    and pressing the all product option.
 
     ii. Once on the products page press the "view" button, being directed to the product description page.
 
@@ -391,17 +424,23 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 9. As a user, i want to add and delete products from my shopping cart.
 
-    i. On the cart page, the user also has the possibility of adding, reducing or completely eliminating the product from the shopping cart. This is achieved through icons on each product detail card.
+    i. On the cart page, the user also has the possibility of adding, reducing or completely eliminating the product from the shopping cart. This is achieved through icons on
+    
+    each product detail card.
 
 10. As a user, i want the checkout form to be as clear as possible.
 
-    i. Once the products have been chosen, the user is taken to the checkout page, where a list of the products purchased is displayed, in addition to a form to fill out with their personal data.
+    i. Once the products have been chosen, the user is taken to the checkout page, where a list of the products purchased is displayed, in addition to a form to fill out with 
+    
+    their personal data.
   
    ii. In this section there is also the payment section, where the user can fill in the credit card details and proceed to pay for the purchase. 
 
 11. As a User, i want to receive emails with details of my purchases so that I can compare that everything is received in order to how it was purchased.
 
-    i. When the data is filled in at the checkout, the email is also filled out. At the end of the purchase, an email is sent with the details to the email that was entered in the checkout form.
+    i. When the data is filled in at the checkout, the email is also filled out. At the end of the purchase, an email is sent with the details to the email that was entered in 
+    
+    the checkout form.
 
 12. As a User, i want to easily recover my password in case I forget it.
 
@@ -584,22 +623,29 @@ The Project is deployed to Heroku using the following steps..
 17.- Create a superuser with the following command.
 + python3 manage.py create superuser
 
-18.- After creating the superuser. Go back to the settings file, remove the Heroku database config and uncomment the original (look at pictures in point 10 and 11). This is to so that the database url dont end up in version control. 
+18.- After creating the superuser. Go back to the settings file, remove the Heroku database config and uncomment the original (look at pictures in point 10 and 11). This is to 
+
+so that the database url dont end up in version control. 
 
 19.- When this is done, commit the changes.
 
-20.- Go to the settings file and write an if statement. This is done so that when our app is running on Heroku, where database URL environment variable is defined, we connect to Postgres, and not to sqlite.
+20.- Go to the settings file and write an if statement. This is done so that when our app is running on Heroku, where database URL environment variable is defined, we connect to 
+
+Postgres, and not to sqlite.
 
 ![Image of the settings file](media/pic6.png)
 
 21.- Next install unicorn, which acts as our webserver.
+
 + pip3 install unicorn
 
 22.- Then freeze that into our requirements.txt file.
+
 + pip3 freeze > requirements.txt 
 
 23.- Now lets create our Procfile. This will tell Heroku to create a web dyno, that will run unicorn and serve our django app.
-    ![Image of the settings file](media/pic7.png)
+
+![Image of the settings file](media/pic7.png)
 
 + python3 manage.py loaddata categories
 
@@ -609,11 +655,15 @@ The Project is deployed to Heroku using the following steps..
 
 + python3 manage.py create superuser
 
-18.- After creating the superuser. Go back to the settings file, remove the Heroku database config and uncomment the original (look at pictures in point 10 and 11). This is to so that the database url dont end up in version control. 
+18.- After creating the superuser. Go back to the settings file, remove the Heroku database config and uncomment the original (look at pictures in point 10 and 11). This is to 
+
+so that the database url dont end up in version control. 
 
 19.- When this is done, commit the changes.
 
-20.- Go to the settings file and write an if statement. This is done so that when our app is running on Heroku, where database URL environment variable is defined, we connect to Postgres, and not to sqlite.
+20.- Go to the settings file and write an if statement. This is done so that when our app is running on Heroku, where database URL environment variable is defined, we connect to 
+
+Postgres, and not to sqlite.
 
 ![Image of the settings file](media/pictures/pic6.png)
 
@@ -703,7 +753,9 @@ AWS is a cloud based storage service, used to store static files and images
 
 ![Image of the settings file](media/pictures/pic15.png)
 
-+ Next copy the ARN which stands for Amazon resource name from bucket policy tab and paste it into the ARN box here at the bottom, click Add Statement, click Generate Policy and copy the policy into the bucket policy editor.
++ Next copy the ARN which stands for Amazon resource name from bucket policy tab and paste it into the ARN box here at the bottom, click Add Statement, click Generate Policy and 
+
+  copy the policy into the bucket policy editor.
 
 ![Image of the settings file](media/pictures/pic17.png)
 
@@ -761,7 +813,9 @@ AWS is a cloud based storage service, used to store static files and images
 
 ![Image of the settings file](media/pictures/pic22.png)
 
-28.- Go to Heroku and add your AWS keys to the "Config variables". Also the key called "USE_AWS" and set it to true. This is for the settings file knows to use AWS configuration when making a deploy toi Heroku.
+28.- Go to Heroku and add your AWS keys to the "Config variables". Also the key called "USE_AWS" and set it to true. This is for the settings file knows to use AWS configuration 
+
+when making a deploy toi Heroku.
 
 29.- Next remove the disable collectstatic variable.
 
