@@ -239,7 +239,6 @@ The images taken from the gymgrossisten page are only use as images of the produ
 
 + [Devtool](https://developers.google.com/web/tools/chrome-devtools)
 
-
 # Data schema
 
 Django works with SQL databases by default. Sqlite3 has been used in the development environment. Instead, when deploying to Heroku, it provides a PostgreSQL database for deployment.
@@ -330,7 +329,6 @@ Default Billing Country  | default_billingCountry  | CountryField  | blank_label
 Default Billing Postcode | default_billingPostcode | CharField     | max_length=250, blank=True                                                 |
 Default Billing City     | default_billingCity     | CharField     | max_length=250, blank=True                                                 |
 
-
 ## Testing
 
    During the testing time, the following code validates are use. 
@@ -342,7 +340,6 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 + [Pep8](http://pep8online.com/) validator Python
 
 + [JSHint](https://jshint.com/) JavaScript
-
 
 ## __Testing User Stories from User Experience (UX) Section__ 
 
@@ -462,7 +459,6 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 + Test result: The user was able to fill in his data in the checkout form and complete the order by pressing the button "Complete order"
 
-
 ### __Sign Up Page__
 
 + Test result: The user can fill in their data in the form to create a new account.
@@ -511,6 +507,8 @@ Friends and family tested the site by login in and writing about their stories. 
 
 ## __Deployment__
 
+## __Deployment__
+
 ### __Heroku__
 
 The Project is deployed to Heroku using the following steps..
@@ -537,7 +535,6 @@ The Project is deployed to Heroku using the following steps..
  
  9.- To get the database setup. Go to settings.py and import dj_database_url:
 
-<<<<<<< HEAD
 10.- Next, in the database settings, comment out default configuration.
     ![Image of the settings file](media/pic3.png)
 
@@ -548,7 +545,7 @@ The Project is deployed to Heroku using the following steps..
 
 13.- Scroll down to "Config vars" and copy the "DATABASE_URL"
     ![Image of the settings file](media/pic5.png)
-=======
+
 ![Image of the settings file](media/pictures/pic1.png)
 
 10.- Next, in the database settings, comment out default configuration.
@@ -564,14 +561,13 @@ The Project is deployed to Heroku using the following steps..
 13.- Scroll down to "Config vars" and copy the "DATABASE_URL"
 
 ![Image of the settings file](media/pic5.png)
->>>>>>> eabfc3d1699f7e5b430d8a420d27b390a9af554d
 
 14.- Back in the settings file. Paste the Database_url code within the parentheses after "...url.parse" (look at the image in point 11).
 
 15.- Save and migrate the changes.
 
 16.- Now, to import all of the product data use the fixtures by loading first the categories and then the products.
-<<<<<<< HEAD
+
 + python3 manage.py loaddata categories
 + python3 manage.py loaddata products
 
@@ -583,7 +579,8 @@ The Project is deployed to Heroku using the following steps..
 19.- When this is done, commit the changes.
 
 20.- Go to the settings file and write an if statement. This is done so that when our app is running on Heroku, where database URL environment variable is defined, we connect to Postgres, and not to sqlite.
-    ![Image of the settings file](media/pic6.png)
+
+![Image of the settings file](media/pic6.png)
 
 21.- Next install unicorn, which acts as our webserver.
 + pip3 install unicorn
@@ -593,7 +590,6 @@ The Project is deployed to Heroku using the following steps..
 
 23.- Now lets create our Procfile. This will tell Heroku to create a web dyno, that will run unicorn and serve our django app.
     ![Image of the settings file](media/pic7.png)
-=======
 
 + python3 manage.py loaddata categories
 
@@ -707,4 +703,110 @@ AWS is a cloud based storage service, used to store static files and images
 
 + The last thing to do, is to go to the access control list tab, and set the list objects permission for everyone under the Public Access section.
 
->>>>>>> eabfc3d1699f7e5b430d8a420d27b390a9af554d
+12.- Now we need to create a user to access the bucket. This is done by using another service called IAM which stands for Identity and Access Management.
+
+13.- Go to the services menu and click IAM.
+
+14.- Click groups under "Access management" and create a new group (keep clicking "next" button to Create Group).
+
+15.- Create the policy to access our bucket by clicking policies and then create policy.
+
+16.- Next, go to the JSON tab and then select import managed policy, search for s3 in the list and import the s3 full access policy.
+
+17.- Get the bucket ARN from the bucket policy page in s3, and paste it in the JSON section.
+
+18.- Click review policy, give it a name and a description, and then click create policy.
+
+19.- Go to groups and click the group you created. And last click attach policy.
+
+20.- Search for the policy you just created, select it and click "Attach policy" button.
+
+![Image of the settings file](media/pictures/pic19.png)
+
+21.- Create a user to put in the group. On the user's page, click "add user", create a user ("YOUR_STORE_NAME-staticfiles-user) , give them programmatic access, and select "next".
+
+![Image of the settings file](media/pictures/pic20.png)
+
+22.- Now add the user to your group. You can verify that also the policy is attached. Click through to the end and create the user.
+
+![Image of the settings file](media/pictures/pic21.png)
+
+23.- Now download the CSV file which will contain this users access key and secret access key which we'll use to authenticate them from our Django app.
+
++ Important! After downloading the CSV file save it. This is because once you go through this process, you can't download it again.
+
+24.- To Connect Django to s3 bucket, Install 2 new packages:
+
++ pip3 install boto3
+
++ pip3 install django-storages
+
+25.- Then freeze requirements.
+
++ pip3 freeze > requirements.txt
+
+26.- Next add storages to the installed app since Django need to know about it.
+
+27.- To connect Django to s3 you need to add some settings in settings.py to tell it which bucket it should be communicating with.
+![Image of the settings file](media/pictures/pic22.png)
+
+28.- Go to Heroku and add your AWS keys to the "Config variables". Also the key called "USE_AWS" and set it to true. This is for the settings file knows to use AWS configuration when making a deploy toi Heroku.
+
+29.- Next remove the disable collectstatic variable.
+
+30.- In our settings file, we need to tell django where our static files will be coming from in production.
+
+![Image of the settings file](media/pictures/pic23.png)
+
+31.- Create custom storages file.
+
+![Image of the settings file](media/pictures/pic24.png)
+
+32.- Go to settings.py, and write the following code for "Static and media files" and also the code to override and set the URLs for static and media files.
+
+![Image of the settings file](media/pictures/pic25.png)
+
+33.- Last thing to do, is to Add/commit changes and git push. This will trigger an automatic deployment to heroku.
+
+### __Credits__
+
+__Code__
+
+[Bootstrap](https://getbootstrap.com/)
+
++ Library used throughout the project in the making of the website and to make it responsive.
+
+* [Online Tutorials](https://www.youtube.com/watch?v=enBAFo2kEfE)
+
++ For the use of button effects and other features of the site. I search information from Open tutorials
+
+* [Websolutions](https://www.websolutions.com/blog/7-of-the-most-common-website-errors-and-what-they-mean/)
+
++ I use this site to get information about the website errors encounter in this project.
+
+__Content__
+
++ I use the Boutique Ado project tutorial from Code Institute as a guidance in the making of this project. 
+
++ Part of the code written is my code and ideas and guidance from my mentor Antonio Rodriguez.
+
++ I use the readme file template from Code Institute for the making of my readme file.
+
+__Media__
+
+All Images are from the following site:
++ [Pexels](https://www.pexels.com/sv-se/)
+
++ [Gymgrossisten](https://www.gymgrossisten.com/)
+
+__Acknowledgements__
+
++ My beautiful wife and journalist Sara Johansson for her patience, understanding and use of the system.
+
++ My Mentor Antonio Rodriguez for continuous helpful feedback.
+
++ Tutor support at Code Institute for their support and help.
+
++ My friend Christian Mossberg for guidance and support.
+
+

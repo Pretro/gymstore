@@ -15,10 +15,10 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='OrderLineItem',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('product_size', models.CharField(blank=True, max_length=2, null=True)),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),  # noqa:501
+                ('product_size', models.CharField(blank=True, max_length=2, null=True)),  # noqa:501
                 ('quantity', models.IntegerField(default=0)),
-                ('lineitem_total', models.DecimalField(decimal_places=2, editable=False, max_digits=6)),
+                ('lineitem_total', models.DecimalField(decimal_places=2, editable=False, max_digits=6)),  # noqa:501
             ],
         ),
         migrations.RenameField(
@@ -37,11 +37,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='orderlineitem',
             name='order',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='lineitems', to='checkout.order'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='lineitems', to='checkout.order'),  # noqa:501
         ),
         migrations.AddField(
             model_name='orderlineitem',
             name='product',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='products.product'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='products.product'), # noqa:501
         ),
     ]
