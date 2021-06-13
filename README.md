@@ -2,15 +2,13 @@
 
 The goal of this project is to create an e-commerce webpage that allows users to create buying orders. Users can navigate through the site and choose products to buy as they 
 
-please. This project aims to create a real environment like that of a shopping site.
+please. This project aims to create a real environment like that of a shopping site. This virtual store has a profile section area which allows users to become members and save information about their purchases. 
 
-This virtual store has a profile section area which allows users to become members and save information about their purchases. You can also buy without having the need to 
+You can also buy without having the need to become a member of the store. In the making of this project CRUD functionality where programmed in python.
 
-become a member of the store. In the making of this project CRUD functionality where programmed in python.
+In future updates, the goal is to make the store already in real mode, selling products and making payments and not only in a demo enviroment. One other more ambitious update is that the store will be available in other languages, 
 
-In future updates, the goal is to make the store already in real mode, selling products and making payments and not only in a demo enviroment. One other more ambitious update is 
-
-that the store will be available in other languages, this will make it possible to expand the branch of clients that visit the store. This is the fourth ms4 project from Code Institute.
+this will make it possible to expand the branch of clients that visit the store. This is the fourth ms4 project from Code Institute.
 
 # User Experience __(UX)__
 
@@ -94,13 +92,22 @@ on what they need and also gives at the same time a typical atmosphere of the gy
     
 ### __Imagery__
 
-The images used for the creation of this project were taken from the Swedish website [gymgrossisten](https://www.gymgrossisten.com/). The picture in the home page is from pexels.com. The reason for this choice is that being an online store for exercise products, it is important that the first impression of the user when entering is to understand what the site is about. 
+The images used for the creation of this project were taken from the Swedish website [gymgrossisten](https://www.gymgrossisten.com/). 
+
+The picture in the home page is from [Pexels](https://www.pexels.com/)pexels.com. The reason for this choice is that being an online store for exercise products, it is important that the first impression of the user when entering is to understand what the site is about. 
 
 The images taken from the gymgrossisten page are only use as images of the products available in the online store.
 
 ## __Wireframes__
 
-*******
++ [Wireframe 1](/static/wireframes/home.png)
++ [Wireframe 2](/static/wireframes/product_page.png)
++ [Wireframe 3](/static/wireframes/product_detail.png)
++ [Wireframe 4](/static/wireframes/login.png)
++ [Wireframe 5](/static/wireframes/register.png)
++ [Wireframe 6](/static/wireframes/profile.png)
++ [Wireframe 7](/static/wireframes/product_management.png)
++ [Wireframe 8](/static/wireframes/mobile_version.png)
 
 ## __Features__ 
 
