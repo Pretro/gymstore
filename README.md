@@ -111,17 +111,9 @@ natural.
     
 ### __Imagery__
 
-<<<<<<< HEAD
 The images used for the creation of this project were taken from the Swedish website [gymgrossisten](https://www.gymgrossisten.com/). 
 
 The picture in the home page is from [Pexels](https://www.pexels.com/)pexels.com. The reason for this choice is that being an online store for exercise products, it is important that the first impression of the user when entering is to understand what the site is about. 
-=======
-The images used for the creation of this project were taken from the Swedish website [gymgrossisten](https://www.gymgrossisten.com/). The picture in the home page is from 
-
-pexels.com. The reason for this choice is that being an online store for exercise products, it is important that the first impression of the user when entering is to understand 
-
-what the site is about. 
->>>>>>> 89928a394cfc18bcaa194c250b70d418065926e9
 
 The images taken from the gymgrossisten page are only use as images of the products available in the online store.
 
