@@ -71,8 +71,10 @@ cart
                     <a href="{% if cart_item.size %} {% url 'cart_remove_size' cart_item.product.id cart_item.size %} {%else%} {% url 'cart_remove' cart_item.product.id %} {%endif%}">
                         <i class="fas fa-minus-circle cart_icon"></i>
                     </a>
-                    &nbsp;<a href="{% url 'cart_remove_product' cart_item.product.id %}">
-                        <i class="fas fa-trash-alt cart_icon"></i></a>
+                    &nbsp;
+                     <a href="{% if cart_item.size %} {% url 'cart_remove_product_size' cart_item.product.id cart_item.size %} {%else%} {% url 'cart_remove_product' cart_item.product.id %} {%endif%}">
+                        <i class="fas fa-trash-alt cart_icon"></i>
+                    </a>
                 </td>
                 {% else %}
                 <td>

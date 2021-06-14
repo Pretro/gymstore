@@ -18,13 +18,13 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='UserProfile',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('phone', models.CharField(blank=True, max_length=15, null=True)),
-                ('billingCountry', django_countries.fields.CountryField(blank=True, max_length=2, null=True)),
-                ('billingPostcode', models.CharField(blank=True, max_length=250)),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),  # noqa:501
+                ('phone', models.CharField(blank=True, max_length=15, null=True)),  # noqa:501
+                ('billingCountry', django_countries.fields.CountryField(blank=True, max_length=2, null=True)),  # noqa:501
+                ('billingPostcode', models.CharField(blank=True, max_length=250)),  # noqa:501
                 ('billingCity', models.CharField(blank=True, max_length=250)),
-                ('billingAdress1', models.CharField(blank=True, max_length=250)),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('billingAdress1', models.CharField(blank=True, max_length=250)),  # noqa:501
+                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),  # noqa:501
             ],
         ),
     ]

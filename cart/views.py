@@ -31,7 +31,7 @@ def add_cart_size(request, product_id, product_size):
         )
         cart.save()
     try:
-        cart_item = CartItem.objects.get(product=product, cart=cart, size=product_size.name)
+        cart_item = CartItem.objects.get(product=product, cart=cart, size=product_size.name)  # noqa:501
         if cart_item.quantity < cart_item.product.stock:
             cart_item.quantity += 1
         cart_item.save()
@@ -113,5 +113,13 @@ def cart_remove_product(request, product_id):
     cart = Cart.objects.get(cart_id=_cart_id(request))
     product = get_object_or_404(Product, id=product_id)
     cart_item = CartItem.objects.get(product=product, cart=cart)
+    cart_item.delete()
+    return redirect('cart_detail')
+
+
+def cart_remove_product_size(request, product_id, size):
+    cart = Cart.objects.get(cart_id=_cart_id(request))
+    product = get_object_or_404(Product, id=product_id)
+    cart_item = CartItem.objects.get(product=product, cart=cart, size=size)
     cart_item.delete()
     return redirect('cart_detail')

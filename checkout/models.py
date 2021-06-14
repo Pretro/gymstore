@@ -16,7 +16,7 @@ class Order(models.Model):
     billingName = models.CharField(max_length=250, blank=True)
     emailAddress = models.EmailField(max_length=250, blank=True, verbose_name='Email Adress')  # noqa:501
     phone = models.CharField(max_length=15, null=False, default=0)
-    billingCountry =  CountryField(blank_label='Country *', null=False, blank=False)  # noqa:501
+    billingCountry = CountryField(blank_label='Country *', null=False, blank=False)  # noqa:501
     billingPostcode = models.CharField(max_length=250, blank=True)
     billingCity = models.CharField(max_length=250, blank=True)
     billingAdress1 = models.CharField(max_length=250, blank=True)
@@ -24,7 +24,7 @@ class Order(models.Model):
     shippingAddress1 = models.CharField(max_length=250, blank=True)
     shippingCity = models.CharField(max_length=250, blank=True)
     shippingPostcode = models.CharField(max_length=250, blank=True)
-    shippingCountry =  CountryField(blank_label='Country *', null=False, blank=False) # noqa:501
+    shippingCountry = CountryField(blank_label='Country *', null=False, blank=False)  # noqa:501
     created = models.DateTimeField(auto_now_add=True)
     delivery_cost = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)  # noqa:501
     total = models.DecimalField(max_digits=10, null=True, decimal_places=2, verbose_name='USD Order Total')  # noqa:501

@@ -42,6 +42,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='orderlineitem',
             name='product',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='products.product'), # noqa:501
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='products.product'),  # noqa:501
         ),
     ]
