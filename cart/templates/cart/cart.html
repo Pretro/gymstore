@@ -64,8 +64,12 @@ cart
                 {% if cart_item.quantity < cart_item.product.stock %}
                 <td>
                     &nbsp;
-                    <a href="{% url 'add_cart' cart_item.product.id %}">
+                    <a href="{% if cart_item_size %} {% url 'add_cart_size' cart_item.product.id cart_product.size %} {%else%} {% url 'add_cart' cart_item.product.id %} {%endif%}">
                         <i class="fas fa-plus-circle cart_icon"></i>
+                    </a>
+                    &nbsp;
+                    <!--<a href="{% url 'add_cart' cart_item.product.id %}">
+                        <i class="fas fa-plus-circle cart_icon"></i>-->
                     </a>
                     &nbsp;
                     <a href="{% if cart_item.size %} {% url 'cart_remove_size' cart_item.product.id cart_item.size %} {%else%} {% url 'cart_remove' cart_item.product.id %} {%endif%}">
@@ -104,7 +108,6 @@ cart
             </div>
         </div>
     </div>
-   
 </div>
 {% endif %}
 {% endblock %}

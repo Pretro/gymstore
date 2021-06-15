@@ -1,6 +1,6 @@
 # __GymStore__
 
-The goal of this project is to create an ecommerce webpage that allows users to create buying orders. Users can navigate through the site and choose products to buy as they 
+The goal of this project is to create an e-commerce webpage that allows users to create buying orders. Users can navigate through the site and choose products to buy as they 
 
 please. This project aims to create a real environment like that of a shopping site. This virtual store has a profile section area which allows users to become members and save information about their purchases. 
 
@@ -8,14 +8,7 @@ You can also buy without having the need to become a member of the�
 
 In future updates, the goal is to make the store already in real mode, selling products and making payments and not only in a demo enviroment. One other more ambitious update is that the store will be available in other languages, 
 
-<<<<<<< HEAD
-this will make it possible to expand the branch of clients that visit the store. This is the fourth ms4 project from Code Institute.
-=======
-In future updates, the goal is to make the store already in real mode, selling products and making payments and not only in a demo enviroment. One other more ambitious update is 
-that the store will be available in other languages, this will make it possible to expand the branch of clients that visit the store. 
-
-This is the fourth ms4 project from Code Institute.
->>>>>>> 89928a394cfc18bcaa194c250b70d418065926e9
+this will make it possible to expand the branch of clients that visit the store. This is the fourth MS4 project from Code Institute.
 
 # User Experience __(UX)__
 
@@ -96,14 +89,14 @@ The colours that I used for the site:
 
 * (Grey) is the hover color for the add to cart button in the all product page and the color main color for the button in the product detail page.
 
-The reason why these colors were chosen is because since the background color is black. It was necessary to use strong colors that contrast with the environment. This contrast allows the user to be more focused 
+The reason why did i choose these colors is because since the background color is black. It was necessary to use strong colors that contrast with the environment. This contrast allows the user to be more focused 
 
 on what they need and also gives at the same time a typical atmosphere of the gym world. Since in most of these sites and from the site in which this project was inspired, the main background color is black.
 
 
 ### __Typography__
 
-"Roboto" and Sans-Serif font has been used in the website. The reason why this font was chosen is because it makes the text of the site more clear. Roboto has a dual nature. It
+"Roboto" and Sans-Serif font is used in the website. The reason why this font was chosen is because it makes the text of the site more clear. Roboto has a dual nature. It
 
 has a mechanical skeleton and the forms are largely geometric. Roboto also allows letters to be settled into their natural width. This makes the reading rhythm to be more 
 
@@ -113,19 +106,26 @@ natural.
 
 The images used for the creation of this project were taken from the Swedish website [gymgrossisten](https://www.gymgrossisten.com/). 
 
-The picture in the home page is from [Pexels](https://www.pexels.com/)pexels.com. The reason for this choice is that being an online store for exercise products, it is important that the first impression of the user when entering is to understand what the site is about. 
+The picture in the home page is from [Pexels](https://www.pexels.com/). The reason for this choice is that being an online store for exercise products, it is important that the first impression of the user when entering is to understand what the site is about. 
 
 The images taken from the gymgrossisten page are only use as images of the products available in the online store.
 
 ## __Wireframes__
 
 + [Wireframe 1](/static/wireframes/home.png)
+
 + [Wireframe 2](/static/wireframes/product_page.png)
+
 + [Wireframe 3](/static/wireframes/product_detail.png)
+
 + [Wireframe 4](/static/wireframes/login.png)
+
 + [Wireframe 5](/static/wireframes/register.png)
+
 + [Wireframe 6](/static/wireframes/profile.png)
+
 + [Wireframe 7](/static/wireframes/product_management.png)
+
 + [Wireframe 8](/static/wireframes/mobile_version.png)
 
 ## __Features__ 
@@ -138,9 +138,7 @@ The images taken from the gymgrossisten page are only use as images of the produ
 
 * Designed with HTML5, CSS, Python3, JavaScript, Bootstrap, and Django.
 
-* Register members page where users can register.
-
-* Login page where only register users can have access to.
+* Register members page and login page.
 
 * The use of stripe as a payment method for purchases.
 
@@ -148,27 +146,23 @@ The images taken from the gymgrossisten page are only use as images of the produ
 
 * The option to search products by categories, price and rating.
 
-* Shopping cart page where users can see a list of products they have been purchased. Also manage to increase or delete the products they want.
+* Shopping cart page where users can see a list of products they have been purchased. 
+
+* Increase and delete the products in the shopping cart.
 
 * Checkout page where the payment is generated.
 
 * Email sending to users with details of their purchases
 
-
 ## __Features left to implement in the future__
 
-* A function that makes it possible to recover user password.
+* Make it possible to have the e-commerce site in several languages, not just in english.
 
-* Make it possible to have the ecommerce site in several languages, not just in english.
+* Create more product areas with their categories.
 
-* Create more product areas with their categories, turning this not only into an ecommerce store but rather a kind of online gallery.
-
-* Add another payment system such as PayPal, giving the user the option to choose the payment system that is most convenient for them.
-
-* A map where the user can mark the cities and places he/she has visited.
+* Add another payment system, giving the user the option to choose the payment system that is most convenient for them.
 
 * Create a function that allows to send advertasing for new products to registered users.
-
 
 ## __Technologies Used__
 
@@ -253,8 +247,6 @@ The images taken from the gymgrossisten page are only use as images of the produ
 + [Amazon Web Services](https://aws.amazon.com/)
 
   I use Amazon to store the static and media files.This procedure is performed by saving the corresponding information in the AWS S3 bucket.
-  
-  https://aws.amazon.com/
 
 ## The code is validated in the following pages for error correction:
 
@@ -278,11 +270,11 @@ deployment.
 
 ## __Product App__
 
-__Product Model__
+__Product__
 
    Title                 |      Db Key             |   Data Type   |      Comments                                                              |
 -----                    | -                       |             - | -                                                                          |
-Category                 | category                | ForeignKey    |  on_delete=models.CASCADE                                                  |
+Category                 | category                | ForeignKey    | on_delete=models.CASCADE                                                  |
 Sku                      | sku                     | CharField     | max_length=250, blank=True                                                 |
 Name                     | name                    | CharField     | max_length=250                                                             |
 Description              | description             | TextField     |                                                                            |
@@ -293,21 +285,27 @@ Image                    | image                   | ImageField    | null=True, 
 Stock                    | stock                   | IntegerField  | null=True, blank=True                                                      |
 Has sizes                | has_sizes               | BooleanFieldv | default=True, null=True, blank=True                                        |
 
-__Category Model__
+__Category__
    Title                 |      Db Key             |   Data Type   |                                 Comments                                   |
 -----                    | -                       |             - | -                                                                          |
 Name                     | name                    | CharField     | max_length=250                                                             |
 Friendly Name            | friendly_name           | CharField     | max_length=250, blank=True                                                 |
 
+__ProductSize__
+   Title                 |      Db Key             |   Data Type   |                                 Comments                                   |
+-----                    | -                       |             - | -                                                                          |
+Product                  | product                 | ForeignKey    | on_delete=models.CASCADE                                                   |
+Name                     | name                    | CharField     | max_length=250,                                                            |
+
 ## __Cart App__
 
-__Cart Model__
+__Cart__
    Title                 |      Db Key             |   Data Type   |                                 Comments                                   |
 -----                    | -                       |             - | -                                                                          |
 Cart id                  | cart_id                 | CharField     | max_length=250, blank=True                                                 |
 Date added               | date_added              | DateField     | auto_now_add=True                                                          |
 
-__Cart_item Model__
+__Cart_item__
    Title                 |      Db Key             |   Data Type   |                                 Comments                                   |
 -----                    | -                       |             - | -                                                                          |
 Product                  | product                 | ForeignKey    | blank=False, on_delete=models.CASCADE                                      |
@@ -384,7 +382,7 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
     i. The main page has a navigation menu in which there are some options. One is a product section where the categories are shown. 
 
-    A section of entry and registration of members of the page as well as the option of shopping bag shown with an icon.
+   ii. A section of entry and registration of members of the page as well as the option of shopping bag shown with an icon.
 
 3. As a user, i want to search for products by price and rating so that I can compare which one is better for me to buy.
 
@@ -394,7 +392,7 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
     i. The user has the option of registering an account in the navigation menu. Once this is done, the user is a registered member.
 
-5. As a user, i want the process of registration to be simple so that i can start make use of the site and not lose interest with registration processes that take a long time.
+5. As a user, i want the process of registration to be simple so that i can start make use of the site and not lose interest with registration processes that takes a long time.
 
     i. To register, enter your email, choose a username and a password in the register form. 
 
@@ -510,8 +508,6 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 + Test result: The user can sign in by filling the sign in form on the page with the data that he/she registered when creating the account.
 
-+ Test result: The user can sign in by filling the sign in form on the page with the data that he/she registered when creating the account.
-
 ### __Profile Page__
 
 + Test result: The user can see his profile page. Once entered the system, go to "My account" and then press "My Profile".
@@ -542,13 +538,11 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 Friends and family tested the site by login in and writing about their stories. This was also made to point out any bugs and/or user experience issues.
 
-## __Known Bugs__
+### __Known Bugs__
 
-+ *** 
+ *****
 
-## __Deployment__
-
-## __Deployment__
+### __Deployment__
 
 ### __Heroku__
 
@@ -577,17 +571,18 @@ The Project is deployed to Heroku using the following steps..
  9.- To get the database setup. Go to settings.py and import dj_database_url:
 
 10.- Next, in the database settings, comment out default configuration.
-    ![Image of the settings file](media/pic3.png)
+
+![Image of the settings file](media/pictures/pic3.png)
 
 11.- Replace the default database with a call to dj_database_url.parse.
-    ![Image of the settings file](media/pic4.png)
+
+![Image of the settings file](media/pictures/pic4.png)
 
 12.- Go to your heroku account and to "Seetings".
 
 13.- Scroll down to "Config vars" and copy the "DATABASE_URL"
-    ![Image of the settings file](media/pic5.png)
 
-![Image of the settings file](media/pictures/pic1.png)
+![Image of the settings file](media/pictures/pic5.png)
 
 10.- Next, in the database settings, comment out default configuration.
 
@@ -610,9 +605,11 @@ The Project is deployed to Heroku using the following steps..
 16.- Now, to import all of the product data use the fixtures by loading first the categories and then the products.
 
 + python3 manage.py loaddata categories
+
 + python3 manage.py loaddata products
 
 17.- Create a superuser with the following command.
+
 + python3 manage.py create superuser
 
 18.- After creating the superuser. Go back to the settings file, remove the Heroku database config and uncomment the original (look at pictures in point 10 and 11). This is to 
@@ -637,39 +634,11 @@ Postgres, and not to sqlite.
 
 23.- Now lets create our Procfile. This will tell Heroku to create a web dyno, that will run unicorn and serve our django app.
 
-![Image of the settings file](media/pic7.png)
+![Image of the settings file](media/pictures/pic7.png)
 
 + python3 manage.py loaddata categories
 
 + python3 manage.py loaddata products
-
-17.- Create a superuser with the following command.
-
-+ python3 manage.py create superuser
-
-18.- After creating the superuser. Go back to the settings file, remove the Heroku database config and uncomment the original (look at pictures in point 10 and 11). This is to 
-
-so that the database url dont end up in version control. 
-
-19.- When this is done, commit the changes.
-
-20.- Go to the settings file and write an if statement. This is done so that when our app is running on Heroku, where database URL environment variable is defined, we connect to 
-
-Postgres, and not to sqlite.
-
-![Image of the settings file](media/pictures/pic6.png)
-
-21.- Next install unicorn, which acts as our webserver.
-
-+ pip3 install unicorn
-
-22.- Then freeze that into our requirements.txt file.
-
-+ pip3 freeze > requirements.txt 
-
-23.- Now lets create our Procfile. This will tell Heroku to create a web dyno, that will run unicorn and serve our django app.
-
-![Image of the settings file](media/pictures/pic7.png)
 
 24.- Now temporarily disable collecstatic. In the terminal type the following.
 
