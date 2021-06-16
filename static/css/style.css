@@ -8,6 +8,7 @@ body {
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Lato';
+    width: 100% !important;
 }
 
 /* from Bulma */
@@ -23,21 +24,24 @@ body {
 .shop-button {
     background: red;
     color: white;
-    min-width: 260px;
+    max-width: 260px;
     border-radius: 20%;
 }
 
 .indice {
     flex-basis: 50%;
     min-width: 300px;
-    margin: 200px 0 0 0;
-    padding: 50px 0 0 250px;
+    /*padding: 50px 0 0 250px;*/
 
+}
+.content {
+    margin-top:10vh;
+    padding-left: 15vw;
+    padding-right:15vw;
 }
 
 .col-6 img {
-    max-width: 60%;
-    padding: 50px 0;
+ min-width:50%;
 }
 
 .overlay {
@@ -51,10 +55,17 @@ body {
 }
 
 /*navbar*/
+.imagenes {
+    max-width: 100%;
+    height: auto;
+    margin-top: -140px;
+}
 
-
+.navegacion{
+    margin-top: -40px;
+}
 /*product detail section*/
-.logo-font{
+.product_title{
     font-size: 25px;
     text-transform: uppercase;
     letter-spacing: .2em;
@@ -100,7 +111,7 @@ body {
 
 /*cart section*/
 .cart_table{
-    min-width: 400px;
+    /*min-width: 400px;*/
     font-size: 14px;
 }
 
@@ -121,7 +132,6 @@ body {
     letter-spacing: .2em;
     padding-top: 15px;
     padding-bottom: 10px;
-    color:white;
 }
 
 .text-info{
@@ -153,6 +163,49 @@ body {
 .text-white {
     font-size: 20px;
 }
+/*Sign in form*/
+.signin{
+    font-size: 40px;
+    color: white;
+}
+
+/*Sign up form*/
+.signups {
+    color: white;
+    font-size: 30px;
+    padding: 0 0 0 800px;
+}
+
+#signup_form {
+    padding: 0 0 0 800px;
+}
+
+.signup_par{
+    padding: 0 0 0 800px;
+}
+
+.knapp{
+    color: white;
+    background: red;
+}
+
+/*Sign out form*/
+.signout{
+    padding: 0 0 0 800px;
+    color: white;
+}
+
+.pregunta{
+    padding: 0 0 0 800px;
+    color: white;
+}
+
+.knapp_sub{
+    color: white;
+    background-color: red;
+    padding: 0 0 0 800px;
+}
+
 /* Allauth form formatting */
 
 .allauth-form-inner-content p {
@@ -175,6 +228,7 @@ body {
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
+	/* btn */
 	display: inline-block;
     font-weight: 400;
     color: #fff;
@@ -190,6 +244,7 @@ body {
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0;
+
     /* standard bootstrap btn transitions */
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
@@ -205,24 +260,6 @@ body {
 	color: #17a2b8; /* text-info */
 }
 
-/*Add_product template*/
-.prod_title{
-    font-size: 25px;
-    color: white;
-}
-
-label {
-    display: inline-block;
-    margin-bottom: .5rem;
-    color: white;
-}
-
-.form-control-file, .form-control-range {
-    display: block;
-    width: 100%;
-    color: white;
-}
-
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -232,56 +269,66 @@ label {
         left: 0;
         z-index: 1030;
     }
-
+    .shop-button {
+    background: red;
+    color: white;
+    min-width: 260px;
+    border-radius: 20%;
+}
     .header-container {
         padding-top: 164px;
     }
 }
 
-/* Product Form */
-
-.btn-file {
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-file input[type="file"] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.custom-checkbox .custom-control-label::before {
-    border-radius: 0;
-    border-color: #dc3545;
-}
-
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #dc3545;
-    border-color: #dc3545;
-    border-radius: 0;
-}
-
 
 /* Media Queries*/
-@media (min-width: 280px) and (max-width: 768px){
+@media (min-width: 280px) and (max-width: 768px) {
     .product_title {
         font-size: 10px;
     }
+
     .mt-3, .my-3 {
-    margin-top: -2rem!important;
-}
-    .product_description{
+        margin-top: -2rem !important;
+    }
+
+    .product_description {
         font-size: 10px;
     }
 
-  .product_text{
-    color: white;
-    font-size: 20px;
-}
+    .product_text {
+        color: white;
+        font-size: 20px;
+    }
+    .nav-last{
+        justify-content:center !important;
+        margin-top: 15px !important;
+        margin-left: 4px !important;
+    }
+    .logo-small{
+        max-width: 110px;
 
+    }
+    .main-nav{
+        justify-content:center !important;
+    }
+
+    .img-fluid{
+        visibility: hidden;
+    }
+
+
+}
+.logo-small{
+    max-width: 120px;
+    max-height: 80px;
+    margin-top: -7px;
+
+}
+.nav-link{
+        padding: 5px !important;
+
+    }
+.navbar-brand{
+    margin-right: 0px !important;
+    padding:0!important;
 }

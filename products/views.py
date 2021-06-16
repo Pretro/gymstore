@@ -80,6 +80,7 @@ def add_product(request):
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')  # noqa:501
+    else:
         form = ProductForm()
 
     template = 'products/add_product.html'

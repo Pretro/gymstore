@@ -21,7 +21,7 @@ def _cart_id(request):
 
 def add_cart_size(request, product_id, product_size):
     product = Product.objects.get(id=product_id)
-    product_size = ProductSize.objects.get(pk=product_size)
+    # product_size = ProductSize.objects.get(pk=product_size)
     print('size', product_size)
     try:
         cart = Cart.objects.get(cart_id=_cart_id(request))
@@ -31,7 +31,7 @@ def add_cart_size(request, product_id, product_size):
         )
         cart.save()
     try:
-        cart_item = CartItem.objects.get(product=product, cart=cart, size=product_size.name)  # noqa:501
+        cart_item = CartItem.objects.get(product=product, cart=cart, size=product_size)  # noqa:501
         if cart_item.quantity < cart_item.product.stock:
             cart_item.quantity += 1
         cart_item.save()
@@ -40,7 +40,7 @@ def add_cart_size(request, product_id, product_size):
             product=product,
             quantity=1,
             cart=cart,
-            size=product_size.name
+            size=product_size
         )
         cart_item.save()
 
