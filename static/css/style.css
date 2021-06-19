@@ -64,6 +64,7 @@ body {
 .navegacion{
     margin-top: -40px;
 }
+
 /*product detail section*/
 .product_title{
     font-size: 25px;
@@ -178,10 +179,12 @@ body {
 
 #signup_form {
     padding: 0 0 0 800px;
+    color: white;
 }
 
 .signup_par{
     padding: 0 0 0 800px;
+    color: white;
 }
 
 .knapp{
@@ -280,55 +283,81 @@ body {
     }
 }
 
-
 /* Media Queries*/
 @media (min-width: 280px) and (max-width: 768px) {
-    .product_title {
-        font-size: 10px;
+
+    .shop-button{
+        margin: 20px 0 0 80px;
     }
 
     .mt-3, .my-3 {
         margin-top: -2rem !important;
     }
 
-    .product_description {
+    .product_description, .product_title {
         font-size: 10px;
     }
 
-    .product_text {
-        color: white;
-        font-size: 20px;
-    }
     .nav-last{
         justify-content:center !important;
         margin-top: 15px !important;
         margin-left: 4px !important;
     }
-    .logo-small{
-        max-width: 110px;
-
-    }
     .main-nav{
         justify-content:center !important;
     }
 
-    .img-fluid{
-        visibility: hidden;
+   .imagen_model{
+       visibility: hidden;
+   }
+    .navegacion {
+        margin-top: 0px;
     }
 
+    .logo-small{
+        max-width: 220px;
+        max-height: 80px;
+        margin-top: -7px;
 
-}
-.logo-small{
-    max-width: 120px;
-    max-height: 80px;
-    margin-top: -7px;
-
-}
-.nav-link{
+    }
+    .nav-link{
         padding: 5px !important;
 
     }
-.navbar-brand{
-    margin-right: 0px !important;
-    padding:0!important;
+    .navbar-brand{
+        margin-right: 0px !important;
+        padding:0!important;
+    }
+    .titulos{
+        color: white;
+        padding: 0 0 0 50px;
+        font-size: 30px;
+        margin-top: 10%;
+    }
+
+    .titulos2{
+        padding: 0 0 0 50px;
+    }
+
+    .prod_titu{
+        margin-top: 4%;
+    }
+    .product_text{
+        padding: 0 19px 5px 1px;
+        font-size: 12px;
+    }
+
+    .boton-compra {
+        margin: 0 0 15px 0;
+    }
+
+    .signup_par, .signups, #signup_form{
+    padding: 0 0 0 0px;
+    font-size: 14px;
+    margin: 20px 0 0 10px;
+    }
+    .prod_title{
+        color:white;
+    }
+   
 }

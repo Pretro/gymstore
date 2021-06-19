@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light bg-black navegacion">
     <a href="/" class="col sm-6 navbar-brand">
-        <img src="{{ MEDIA_URL }}logo.png" alt="logo"  class="col-6 logo" style="max-width: 40%;" />
+        <img src="{{ MEDIA_URL }}logo.png" alt="logo"  class="col-6 logo">
     </a>
     <button type="button"  class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav" name="button">
         <span class="navbar-toggler-icon"></span>
@@ -25,10 +25,9 @@
             </li>
             {% if item_count > 0 %}
                 <li class="nav-item">
-                        <a  class="nav-link text-light text-uppercase font-weight-bold px-3" href="{% url 'cart_detail' %}">
+                    <a  class="nav-link text-light text-uppercase font-weight-bold px-3" href="{% url 'cart_detail' %}">
                         <i class="fas fa-shopping-cart"></i> ({{item_count}})
                     </a>
-                
                 </li>
              {% endif %}
         </ul>
