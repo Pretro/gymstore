@@ -42,7 +42,7 @@
                     <div class="col-12 tallas">
                         <p><strong class="text-white">Size:</strong></p>
                         <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
-                            <option value="-1">Select an option</option>
+                           <!-- <option value="-1">Select an option</option>-->
                             {%for size in sizes %}
                                 <option value="{{size.name}}">{{size.name}}</option>
                             {%endfor%}
@@ -76,6 +76,5 @@
         console.log(new_href);
         $('#add_to_cart').attr('href', new_href)
     });
-
 </script>
 {% endblock %}
