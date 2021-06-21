@@ -54,7 +54,7 @@
                             </p>
                             <hr>
                             {%if product.stock > 0 %}
-                            <a href="{% url 'add_cart' product.id %}"
+                            <a href=" {%if product.has_sizes %} {% url 'product_detail' product.id %} {% else %}{% url 'add_cart' product.id %}{% endif %}"
                                 class="btn btn-outline-secondary add-btn update-cart text-light">Add to Cart</a>
                             {%else%}
                             <h5 style="color: white;">Out of stock</h5>

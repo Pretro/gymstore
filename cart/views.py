@@ -22,6 +22,7 @@ def _cart_id(request):
 def add_cart_size(request, product_id, product_size):
     product = Product.objects.get(id=product_id)
     product_size = ProductSize.objects.get(name=product_size)
+
     print('size', product_size)
     try:
         cart = Cart.objects.get(cart_id=_cart_id(request))

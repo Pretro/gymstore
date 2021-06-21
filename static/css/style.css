@@ -284,7 +284,7 @@ body {
 }
 
 /* Media Queries*/
-@media (min-width: 280px) and (max-width: 768px) {
+@media (min-width: 280px) and (max-width: 767px) {
 
     .shop-button{
         margin: 20px 0 0 80px;
@@ -338,7 +338,6 @@ body {
     .titulos2{
         padding: 0 0 0 50px;
     }
-
     .prod_titu{
         margin-top: 4%;
     }
@@ -346,11 +345,10 @@ body {
         padding: 0 19px 5px 1px;
         font-size: 12px;
     }
-
     .boton-compra {
         margin: 0 0 15px 0;
+        width: 100%;
     }
-
     .signup_par, .signups, #signup_form{
     padding: 0 0 0 0px;
     font-size: 14px;
@@ -359,5 +357,57 @@ body {
     .prod_title{
         color:white;
     }
-   
+    .boton_verde {
+        font-size: 7px;
+    }
+    .parrafo, .tabla {
+        font-size: 12px;
+    }
+    .checkout-text{
+        font-size: 12px;
+    }
+    .knapp_sub{
+    padding: 0 0 0 0px;
+    margin: 0 0 0 90px;
+    font-size: 25px;
+    }
+    .signout{
+    padding: 0 0 0 0px;
+    margin: 10px 0 35px 80px ;
+    font-size: 35px;
+    }
+    .pregunta{
+    padding: 0 0 0 20px;
+    margin: 0 10px 35px 10px;
+    }
+    .pass_res, .order_his {
+        color: white;
+        font-size: 20px;
+        padding: 90px 0 0 75px;
+    }
+    .boton_pass{
+        margin: 6px 0 20px 75px;
+    }
+    .def_dele{
+        color: white;
+        margin: 0 0 45px 12px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .navegacion{
+        margin-top: 0;
+    }
+    .content{
+        padding-left: 5vw;
+        margin: 20vh 30vw;
+    }
+
+    .card-body{
+        font-size: 10px;
+    }
+    .col-6 .logo{
+    max-width: 61%;
+}
+
 }
