@@ -296,34 +296,6 @@
         "pk": 22,
         "model": "products.product",
         "fields": {
-            "sku": "90007100R",
-            "name": "Star High Tops, Black",
-            "description": "Perry High Tops Pro has a flat sole that gives you better contact with the surface, facilitates balance and a correct position of your feet.",
-            "price": 91.15,
-            "category": 5,
-            "rating": 5,
-            "image_url": "",
-            "image": "90007100r_gorilla_wear_perry_shoe.2png.jpg"
-        }
-    },
-    {
-        "pk": 23,
-        "model": "products.product",
-        "fields": {
-            "sku": "SNA4000-BLK-R",
-            "name": "Perry High Tops Pro, White",
-            "description": "Star High Tops from Star Nutrition is a training shoe perfect for fitness and tough gym training.",
-            "price": 54.66,
-            "category": 5,
-            "rating": 3.5,
-            "image_url": "",
-            "image": "sna4000-blk-r5.jpg"
-        }
-    },
-    {
-        "pk": 24,
-        "model": "products.product",
-        "fields": {
             "sku": "10393-001R",
             "name": "Activity Zip Hoodie, Black",
             "description": "A ziphoodie from ICIW that all girls should have in their wardrobe. Timeless and stylish design with a stretchy and durable material.",
@@ -335,7 +307,7 @@
         }
     },
     {
-        "pk": 25,
+        "pk": 23,
         "model": "products.product",
         "fields": {
             "sku": "69001R",
@@ -349,21 +321,7 @@
         }
     },
     {
-        "pk": 26,
-        "model": "products.product",
-        "fields": {
-            "sku": "90001905-RED-41R",
-            "name": "GW High Tops, Red",
-            "description": "Lightweight training shoes in a comfortable model! G! WEAR High Tops from Gorilla Wear are excellent for indoor training with their flat sole and stable buttoning.",
-            "price": 72.9,
-            "category": 6,
-            "rating": 3.5,
-            "image_url": "",
-            "image": "g-wear-high-tops-red-41-gorilla-wear_3.jpg"
-        }
-    },
-    {
-        "pk": 27,
+        "pk": 24,
         "model": "products.product",
         "fields": {
             "sku": "121013999R",
@@ -377,7 +335,7 @@
         }
     },
     {
-        "pk": 28,
+        "pk": 25,
         "model": "products.product",
         "fields": {
             "sku": "220894999R",
@@ -391,7 +349,7 @@
         }
     },
     {
-        "pk": 29,
+        "pk": 26,
         "model": "products.product",
         "fields": {
             "sku": "CNG4000-BLK.MASTER",
@@ -405,7 +363,7 @@
         }
     },
     {
-        "pk": 30,
+        "pk": 27,
         "model": "products.product",
         "fields": {
             "sku": "SNA1010-BLKR",
@@ -419,7 +377,7 @@
         }
     },
     {
-        "pk": 31,
+        "pk": 28,
         "model": "products.product",
         "fields": {
             "sku": "105236-020R",
@@ -433,7 +391,7 @@
         }
     },
     {
-        "pk": 32,
+        "pk": 29,
         "model": "products.product",
         "fields": {
             "sku": "1089-105.MASTER",
@@ -447,7 +405,7 @@
         }
     },
     {
-        "pk": 33,
+        "pk": 30,
         "model": "products.product",
         "fields": {
             "sku": "230110-999-LR",
@@ -461,7 +419,7 @@
         }
     },
     {
-        "pk": 34,
+        "pk": 31,
         "model": "products.product",
         "fields": {
             "sku": "1086-02.MASTER",
@@ -475,7 +433,7 @@
         }
     },
     {
-        "pk": 35,
+        "pk": 32,
         "model": "products.product",
         "fields": {
             "sku": "1081-3R",
@@ -489,7 +447,7 @@
         }
     },
     {
-        "pk": 36,
+        "pk": 33,
         "model": "products.product",
         "fields": {
             "sku": "270-200040.MASTER",
@@ -503,7 +461,7 @@
         }
     },
     {
-        "pk": 37,
+        "pk": 34,
         "model": "products.product",
         "fields": {
             "sku": "CN-69861.MASTER",
@@ -517,7 +475,7 @@
         }
     },
     {
-        "pk": 38,
+        "pk": 35,
         "model": "products.product",
         "fields": {
             "sku": "SETIRONGYM1",
@@ -531,7 +489,7 @@
         }
     },
     {
-        "pk": 39,
+        "pk": 36,
         "model": "products.product",
         "fields": {
             "sku": "373383.MASTER",
@@ -545,7 +503,7 @@
         }
     },
     {
-        "pk": 40,
+        "pk": 37,
         "model": "products.product",
         "fields": {
             "sku": "2009-A-01.MASTER",
@@ -559,7 +517,7 @@
         }
     },
     {
-        "pk": 41,
+        "pk": 38,
         "model": "products.product",
         "fields": {
             "sku": "NDR-858-1R",
@@ -573,7 +531,7 @@
         }
     },
     {
-        "pk": 42,
+        "pk": 39,
         "model": "products.product",
         "fields": {
             "sku": "62071-1.MASTER",
@@ -587,7 +545,7 @@
         }
     },
     {
-        "pk": 43,
+        "pk": 40,
         "model": "products.product",
         "fields": {
             "sku": "62432.MASTER",
@@ -601,7 +559,7 @@
         }
     },
     {
-        "pk": 44,
+        "pk": 41,
         "model": "products.product",
         "fields": {
             "sku": "52214R",
@@ -615,7 +573,7 @@
         }
     },
     {
-        "pk": 45,
+        "pk": 42,
         "model": "products.product",
         "fields": {
             "sku": "NDR-843-1R",
@@ -629,7 +587,7 @@
         }
     },
     {
-        "pk": 46,
+        "pk": 43,
         "model": "products.product",
         "fields": {
             "sku": "62710R",
@@ -643,7 +601,7 @@
         }
     },
     {
-        "pk": 47,
+        "pk": 44,
         "model": "products.product",
         "fields": {
             "sku": "500620.MASTER",
@@ -657,7 +615,7 @@
         }
     },
     {
-        "pk": 48,
+        "pk": 45,
         "model": "products.product",
         "fields": {
             "sku": "289-80106801.MASTER",
@@ -671,7 +629,7 @@
         }
     },
     {
-        "pk": 49,
+        "pk": 46,
         "model": "products.product",
         "fields": {
             "sku": "11220-001.MASTER",
@@ -685,7 +643,7 @@
         }
     },
     {
-        "pk": 50,
+        "pk": 47,
         "model": "products.product",
         "fields": {
             "sku": "110513S126ONE.MASTER",

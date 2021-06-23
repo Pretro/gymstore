@@ -24,7 +24,6 @@
                 </p>
             </div>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-
                 {% for product in products %}
                 <div class="col">
                     <div class="card-1 shadow-sm">
@@ -32,7 +31,6 @@
                             <img class="img-fluid" alt="No image found" src="{{ product.get_image }}"
                                 title="Click to view">
                         </a>
-
                         <div class="card-body">
                             <p class="mb-0 text-light">{{product.name}}</p>
                             {% if product.rating %}
@@ -46,9 +44,8 @@
                                 <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                             </small>
                             {% endif %}
-
                             <p class="small mt-1 mb-0">
-                                <a class="text-light" href="{% url 'products' %}?category={{ product.category.name }}">
+                                <a class="text-light" href="{% url 'products' %}?category={{ product.category.name | urlencode }}">
                                     <i class="fas fa-box-open mr-1"></i>{{ product.category.friendly_name }}
                                 </a>
                             </p>

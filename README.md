@@ -1,14 +1,16 @@
 # __GymStore__
 
-The goal of this project is to create an e-commerce webpage that allows users to create buying orders. Users can navigate through the site and choose products to buy as they 
+The goal of this project is to create an ecommerce site that allows users to make purchase. The main task is that they can make purchases of different products, pay with a card paying system, just as an environment in a real e-store.
 
-please. This project aims to create a real environment like that of a shopping site. This virtual store has a profile section area which allows users to become members and save information about their purchases. 
+This e-store has a profile section area which allows users to become members and save information about their purchases. The user has the possibility of executing different tasks, similar to an online store. Choose products by category and quantity of products to buy.
+Create a membership profile by email verification. 
 
-You can also buy without having the need to become a member of the store. In the making of this project CRUD functionality where programmed in python.
+The site also has an administrator area which is in charge of the distribution of the products, this means, add, edit and delete products in the system. In addition to selecting them in different categories, add or remove categories as necessary.
 
-In future updates, the goal is to make the store already in real mode, selling products and making payments and not only in a demo enviroment. One other more ambitious update is that the store will be available in other languages, 
+In the making of this project CRUD functionality where programmed in python. In future updates, the goal is to make the online store work in a real environment, with more features. Another goal is to make the online store available in other languages.
 
-this will make it possible to expand the branch of clients that visit the store. This is the fourth MS4 project from Code Institute.
+One other more ambitious update is that the store will be available in other languages, this makes it possible to expand the reach to more clients from different locations.
+This is the fourth MS4 project from Code Institute.
 
 # User Experience __(UX)__
 
@@ -17,7 +19,6 @@ this will make it possible to expand the branch of clients that visi
 As a user of this site, I want to
 
 1. As a user, i want to be able to easily understand what the site is about so that i can decide if this is a site of my interest.
-
 2. As a user, i want to easy navigate through the different pages so that i can use the site.
 
 3. As a user, i want to search for products by price and rating so that I can compare which one is better for me to buy.
