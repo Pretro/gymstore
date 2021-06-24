@@ -19,6 +19,7 @@ This is the fourth MS4 project from Code Institute.
 As a user of this site, I want to
 
 1. As a user, i want to be able to easily understand what the site is about so that i can decide if this is a site of my interest.
+
 2. As a user, i want to easy navigate through the different pages so that i can use the site.
 
 3. As a user, i want to search for products by price and rating so that I can compare which one is better for me to buy.
