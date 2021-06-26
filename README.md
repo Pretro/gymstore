@@ -1,16 +1,16 @@
 # __GymStore__
 
-The goal of this project is to create an ecommerce site that allows users to make purchase. The main task is that they can make purchases of different products, pay with a card paying system, just as an environment in a real e-store.
+The goal of this project is to create an ecommerce site that allows users to make purchases. The main task is that they can make purchases of different products, pay with a card paying system.
 
-This e-store has a profile section area which allows users to become members and save information about their purchases. The user has the possibility of executing different tasks, similar to an online store. Choose products by category and quantity of products to buy.
-Create a membership profile by email verification. 
+This ecommerce site has a profile section area which allows users/customers to become members and save information about their purchases. They create a membership-profile by email verification. 
 
-The site also has an administrator area which is in charge of the distribution of the products, this means, add, edit and delete products in the system. In addition to selecting them in different categories, add or remove categories as necessary.
+The customer can search products to buy by category and sort by price and rating. The customer can also search for products in the search engine.
 
-In the making of this project CRUD functionality where programmed in python. In future updates, the goal is to make the online store work in a real environment, with more features. Another goal is to make the online store available in other languages.
+There is also an administrator area which is in charge of the distribution of the products. This means, add, edit and delete products in the system. The administrator can select products in different categories, add or remove categories as necessary.
 
-One other more ambitious update is that the store will be available in other languages, this makes it possible to expand the reach to more clients from different locations.
-This is the fourth MS4 project from Code Institute.
+In the making of this project CRUD functionality was programmed in python. In future updates, the goal is to make the online store work in a real environment, with more features. The goal is to make the online store available in other languages.
+This makes it possible to expand the reach to more customers from different locations.
+This is the fourth MS4 project from Code Institute.
 
 # User Experience __(UX)__
 
@@ -24,39 +24,41 @@ As a user of this site, I want to
 
 3. As a user, i want to search for products by price and rating so that I can compare which one is better for me to buy.
 
-4. As a user, i want to register an account so that i can become a member.
+4. As a user, i want to be able to register an account so that i can become a member.
 
-5. As a user, i want the process of registration to be simple so that i can start make use of the site and not lose interest with registration processes that take a long time.
+5. As a user, i want the process of registration to be simple so that i can start make use of the site as soon as possible.
 
-6. As a user, i want to view a description of the products so that i can see if it is what I am really looking for and it interests me.
+6. As a user, i want to view a description of the products so that i can see if it is what I am really looking for.
 
-7. As a user, i would like to easily be able to add products to the cart . 
+7. As a user, i would like to easily be able to add products to the cart so that i can continue my shopping.
 
-8. As a user, i want to see a list of the products that I buy so that i can be able to take an order of my purchases .
+8. As a user, i want to see a list of the products that I buy so that i can have an overview over the products and the total sum of my products.
 
-9. As a user, i want to add and delete products from my shopping cart.
+9. As a user, i want to add and delete products from my shopping cart so that i can make changes to my purchases in case I regret buying something.
 
-10. As a user, i want the checkout form to be as clear as possible. i want to see/fill my user information. See a list of what I have bought and have in my cart, the total 
+10. As a user, i want the checkout form to be as clear as possible, so that i can be able to see the detail of my purchases.
 
-amount to pay.
+11. As a User, i want to receive an order confirmation by email, so that I can be able to see the detail of my purchases and that the purchase has been successful.
 
-11. As a User, i want to receive emails with details of my purchases so that I can compare when you arrive the products that everything is received in order to how it was 
+12. As a User, i want to receive verification emails, so that I can be aware that my registration as a user has been successful.
 
-purchased.
+13. As a User, i want to easily recover my password in case I forget it, so that i can be able to always use my account.
 
-12. As a User, i want to easily recover my password in case I forget it.
+14. As a User, i want to be able to sort a product-category by price or rating.
+
+15. As a User, i want to be able to see if a product or a size is out of stock.
+
+16. As a User, i want to be able to see why a product has such a good rating through comments from previous buyers who left the rating.
 
 ## __The purpose of the GymStore is to :__
 
-+ Create an online commercial store where people can have access to buy products for exercise and nutrition.
++ Create an e-commerce site where everyone who performs some form of fitness training, you will find everything to buy for their training, such as clothes, tools and nutrition.
 
 + Create an environment of commerce that assimilates as much as possible to reality.
 
 + Today online shopping is more common than before. The sale of products from different areas has become a lifestyle. Which opens a way to competition between different 
 
-companies.
-
-The idea of making this online store was born from the ms4 project for Code Institute. The inspiration for this site comes from the Swedish site [gymgrossisten]
+companies. The idea of making this online store comes from the ms4 project for Code Institute. The inspiration for this site comes from the Swedish site [gymgrossisten]
 
 (https://www.gymgrossisten.com/).
 
@@ -69,9 +71,13 @@ To meet the goal of this project, the following strategy has been implemented.
 
 + The site is built to easy navigate and this makes it also easy to use.
 
-+ A secure checkout page where user can see a detailed list of their products
++ The site is built so that the user can easily shop what they want to shop.
 
-+ A registration section thus giving the option of being able to track purchases by sending emails
++ The site is built so that the user can easily register as a member.
+
++ The site is built with a secure checkout page so that the user can see a detailed list of their products.
+
++ 
 
 ### __Design__
 
@@ -91,9 +97,9 @@ The colours that I used for the site:
 
 * (Grey) is the hover color for the add to cart button in the all product page and the color main color for the button in the product detail page.
 
-The reason why did i choose these colors is because since the background color is black. It was necessary to use strong colors that contrast with the environment. This contrast allows the user to be more focused 
+The reason why did i choose these colors is because the background color is black. It was necessary to use strong colors that contrast with the environment. This contrast allows the user to be more focused 
 
-on what they need and also gives at the same time a typical atmosphere of the gym world. Since in most of these sites and from the site in which this project was inspired, the main background color is black.
+on what they need and at the same time gives a typical atmosphere of the gym world. Since in most of these sites and from the site in which this project was inspired, the main background color is black.
 
 
 ### __Typography__
@@ -154,17 +160,23 @@ The images taken from the gymgrossisten page are only use as images of the produ
 
 * Checkout page where the payment is generated.
 
-* Email sending to users with details of their purchases
+* verification emails send to customers that register.
 
 ## __Features left to implement in the future__
 
-* Make it possible to have the e-commerce site in several languages, not just in english.
+* Make it possible to have the e-commerce site in several languages.
 
 * Create more product areas with their categories.
 
 * Add another payment system, giving the user the option to choose the payment system that is most convenient for them.
 
 * Create a function that allows to send advertasing for new products to registered users.
+
+* Create a function that allows the customer sort a product-category by price or rating.
+
+* Create a function that allows showing an "out of stock" message by product size.
+
+* Create a function that allows customers to leave comments on the products they buy and rate them according to their convenience.
 
 ## __Technologies Used__
 
@@ -382,9 +394,9 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 2. As a user, i want to easy navigate through the different pages so that i can use the site.
 
-    i. The main page has a navigation menu in which there are some options. One is a product section where the categories are shown. 
+    i. The main page has a navigation menu in which there are some options. One is the product section where the categories are displayed. 
 
-   ii. A section of entry and registration of members of the page as well as the option of shopping bag shown with an icon.
+   ii. There is also a section of login and registration of members as well as the option of shopping bag shown with an icon.
 
 3. As a user, i want to search for products by price and rating so that I can compare which one is better for me to buy.
 
@@ -392,59 +404,72 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 4. As a user, i want to register an account so that i can become a member.
 
-    i. The user has the option of registering an account in the navigation menu. Once this is done, the user is a registered member.
+    i. The user has the possibility to register a membership account. Once this is done, a confirmation mail is sent to verify the account.
 
-5. As a user, i want the process of registration to be simple so that i can start make use of the site and not lose interest with registration processes that takes a long time.
+5. As a user, i want the process of registration to be simple so that i can start make use of the site as soon as possible.
 
     i. To register, enter your email, choose a username and a password in the register form. 
 
 6. As a user, i want to view a description of the products so that i can see if it is what I am really looking for.
 
-    i. There are two ways to get to the product description page. The first is by pressing the "Shop now" button on the main page. The second is by going to the navigation menu 
-    
-    and pressing the all product option.
+    i. Press the "Shop now" button on the main page. The user is directed to the "all products" page, where he can see the detail of each product, by pressing the "view" button. 
 
-    ii. Once on the products page press the "view" button, being directed to the product description page.
+7. As a user, i would like to easily be able to add products to the cart so that i can continue my shopping.
 
-7. As a user, i would like to easily be able to add products to the cart.
-
-    i. On the "all products" page, as well as on the product detail page, there is the "add to cart" button which allows the chosen product to be entered into the shopping cart.
+    i. On the product detail page, there is the "add to cart" button which allows the customer to choose the product to be entered into the shopping cart.
 
 8. As a user, i want to see a list of the products that I buy so that i can be able to take an order of my purchases.
 
     i. Once the "add to cart" button is pressed, the user is directed to the cart page a detail list of the products to buy appears.
-
-9. As a user, i want to add and delete products from my shopping cart.
-
-    i. On the cart page, the user also has the possibility of adding, reducing or completely eliminating the product from the shopping cart. This is achieved through icons on
-    
-    each product detail card.
-
-10. As a user, i want the checkout form to be as clear as possible.
-
-    i. Once the products have been chosen, the user is taken to the checkout page, where a list of the products purchased is displayed, in addition to a form to fill out with 
-    
-    their personal data.
+   
+   ii. In the product cards, there is also the "add to cart" button. This takes the user directly to the cart, as long as it is not a product that contains a size.
   
-   ii. In this section there is also the payment section, where the user can fill in the credit card details and proceed to pay for the purchase. 
+  iii. By pressing "add to cart" button on a product with a size, the user is directed to the product description page so that he/she can choose the size of their choice. 
 
-11. As a User, i want to receive emails with details of my purchases so that I can compare that everything is received in order to how it was purchased.
+9. As a user, i want to add and delete products from my shopping cart so that i can make changes to my purchases in case I regret buying something.
 
-    i. When the data is filled in at the checkout, the email is also filled out. At the end of the purchase, an email is sent with the details to the email that was entered in 
-    
-    the checkout form.
+    i. On the cart page, the user has the possibility of adding, reducing or completely removing the product from the shopping cart.
 
-12. As a User, i want to easily recover my password in case I forget it.
+10. As a user, i want the checkout form to be as clear as possible, so that i can be able to see the detail of my purchases.
 
-    i. In the sign in form there is an option "forgot password". The user is sent to the reset form, where it should enter the email which use to register the account.
+    i. Once the products have been chosen, the user can click to the checkout page, where a list of the products purchased is displayed, in addition to a form to fill out with 
+    their personal information.
 
-   ii. The user receives an email with a link where they will be taken to the reset form. There it can write the new password.
+   ii. In this section there is also the payment section, where the user can fill in the credit card details and proceed to pay for the purchases.
+
+11. As a User, i want to receive an order confirmation by email, so that I can be able to see the detail of my purchases and that the purchase has been successful.
+
+    i. At the end of the purchase, an email is sent with the details to the email that was entered in the checkout form.
+
+12. As a User, i want to receive verification emails, so that I can be aware that my registration as a user has been successful.
+
+    i. When a user has registered, a verification email is sent to the email entered in the registration form.
+
+13. As a User, i want to easily recover my password in case I forget it, so that i can be able to always use my account.
+
+    i. In the sign in form there is an option "forgot password". where it is possible to enter a the email the register with.
+
+   ii. The user then receives an email with a link where it will be taken to the reset form. There it is possible to enter a new password.
+
+14. As a User, i want to be able to sort a product-category by price or rating.
+
+    i. In future updates, a function will be implemented where the user can sort a product category by price or rating.
+
+15. As a User, i want to be able to see if a product or a size is out of stock.
+
+    i. At the moment it is only possible to see when a product in general is out of stock. 
+
+   ii. In future updates it is intended to create the function where the user is alerted by a message in the description of the product, which size is "out of stock.
+
+16. As a User, i want to be able to see why a product has such a good rating through comments from previous buyers who left the rating.
+
+    i. This function is not available today. However, it is thought to be implemented in a near future.
 
 * During my test period i focus on the user stories.
 
 # __Further Testing__
 
-## The testing of the Navbar and pages. 
+## The testing of the Navbar and pages.
 
 ### __Home Page__
 
