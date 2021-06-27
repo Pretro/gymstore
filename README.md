@@ -57,10 +57,7 @@ As a user of this site, I want to
 + Create an environment of commerce that assimilates as much as possible to reality.
 
 + Today online shopping is more common than before. The sale of products from different areas has become a lifestyle. Which opens a way to competition between different 
-
-companies. The idea of making this online store comes from the ms4 project for Code Institute. The inspiration for this site comes from the Swedish site [gymgrossisten]
-
-(https://www.gymgrossisten.com/).
+  companies. The idea of making this online store comes from the ms4 project for Code Institute. The inspiration for this site comes from the Swedish site [gymgrossisten](https://www.gymgrossisten.com/).
 
 
 ### __Project Strategy__
@@ -77,8 +74,6 @@ To meet the goal of this project, the following strategy has been implemented.
 
 + The site is built with a secure checkout page so that the user can see a detailed list of their products.
 
-+ 
-
 ### __Design__
 
 __Color Scheme__
@@ -89,7 +84,7 @@ The colours that I used for the site:
 
 * (White) For the titles in the navbar, and for the texts in the other templates of the website such as buttons, product descriptions, etc.
 
-* (Blue) Is used by the text box where the visa card number is placed on the checkout page
+* (Blue) Is used by the text box where the visa card number is placed on the checkout page. Also the text and logo for My account and the text for Products Home.
 
 * (Green) Is the default color of the buttons in the checkout page. Also the hover color for the view button in the all product page.
 
@@ -97,7 +92,7 @@ The colours that I used for the site:
 
 * (Grey) is the hover color for the add to cart button in the all product page and the color main color for the button in the product detail page.
 
-The reason why did i choose these colors is because the background color is black. It was necessary to use strong colors that contrast with the environment. This contrast allows the user to be more focused 
+The reason why did i choose these colors is because the backgroundcolor is black. It was necessary to use strong colors that contrast with the environment. This contrast allows the user to be more focused 
 
 on what they need and at the same time gives a typical atmosphere of the gym world. Since in most of these sites and from the site in which this project was inspired, the main background color is black.
 
@@ -390,13 +385,13 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 1. As a user, i want to be able to easily understand what the site is about so that i can decide if this is a site of my interest.
 
-    i. Entering the page, there is a title, a paragraph and a picture in which it is clearly read what the site is about.
+    i. Entering the page, there is a title, a paragraph and a picture in which it is clearly read what the site is about. The big red button as well as the shopping cart in the top of the site makes it easy to understand that this is a ecommerce site.
 
 2. As a user, i want to easy navigate through the different pages so that i can use the site.
 
     i. The main page has a navigation menu in which there are some options. One is the product section where the categories are displayed. 
 
-   ii. There is also a section of login and registration of members as well as the option of shopping bag shown with an icon.
+   ii. There is also a section of login and registration of members as well as the option of shopping cart shown with an icon.
 
 3. As a user, i want to search for products by price and rating so that I can compare which one is better for me to buy.
 
@@ -404,15 +399,15 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 4. As a user, i want to register an account so that i can become a member.
 
-    i. The user has the possibility to register a membership account. Once this is done, a confirmation mail is sent to verify the account.
+    i. The user has the possibility to register a membership account. Once this is done, a confirmation mail is sent to verify the account. The button is clearly visible at the top of the site.
 
 5. As a user, i want the process of registration to be simple so that i can start make use of the site as soon as possible.
 
-    i. To register, enter your email, choose a username and a password in the register form. 
+    i. To register, enter your email, choose a username and a password in the register form, displayed below the button My Account and register.
 
 6. As a user, i want to view a description of the products so that i can see if it is what I am really looking for.
 
-    i. Press the "Shop now" button on the main page. The user is directed to the "all products" page, where he can see the detail of each product, by pressing the "view" button. 
+    i. Press the "Shop now" button on the main page. The user is directed to the "all products" page, where the user can see the detail of each product, by pressing the view-button. 
 
 7. As a user, i would like to easily be able to add products to the cart so that i can continue my shopping.
 
@@ -424,7 +419,7 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
    
    ii. In the product cards, there is also the "add to cart" button. This takes the user directly to the cart, as long as it is not a product that contains a size.
   
-  iii. By pressing "add to cart" button on a product with a size, the user is directed to the product description page so that he/she can choose the size of their choice. 
+   iii. By pressing "add to cart" button on a product with a size, the user is directed to the product description page so that he/she can choose the size of their choice. 
 
 9. As a user, i want to add and delete products from my shopping cart so that i can make changes to my purchases in case I regret buying something.
 
@@ -447,7 +442,7 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 13. As a User, i want to easily recover my password in case I forget it, so that i can be able to always use my account.
 
-    i. In the sign in form there is an option "forgot password". where it is possible to enter a the email the register with.
+    i. In the sign in form there is an option "forgot password", where it is possible for the user to enter the email address that is registered.
 
    ii. The user then receives an email with a link where it will be taken to the reset form. There it is possible to enter a new password.
 
@@ -459,7 +454,7 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
     i. At the moment it is only possible to see when a product in general is out of stock. 
 
-   ii. In future updates it is intended to create the function where the user is alerted by a message in the description of the product, which size is "out of stock.
+   ii. In future updates it is intended to create the function where the user is alerted by a message in the description of the product, which size is "out of stock".
 
 16. As a User, i want to be able to see why a product has such a good rating through comments from previous buyers who left the rating.
 
@@ -477,9 +472,9 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 + Test result: The user is directed to the home page when pressing the logo in the site.
 
-+ Test result: The user is directed to the "All Product page" when pressing the "Products" option in the navbar.
++ Test result: The user is directed to the "All Product page" when pressing the "All Products" option in the navbar under Products.
 
-+ Test result: The user can choose different categories when pressing the "Products" option in the navbar, a menu with a list of different categories is displayed.
++ Test result: The user can choose different other categories when pressing the "Products" option in the navbar, a menu with a list of different categories is displayed.
 
 + Test result: The user can search products by rating and price when pressing the "Sort" option in the navbar.
 
@@ -487,19 +482,19 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 + Test result: The user can log and register in the "My Account" icon and label in all the pages where it is displayed.
 
-+ Test result: The user is directed to the cart page when pressing the bag icon in the navbar.
++ Test result: The user is directed to the cart page when pressing the shopping cart icon in the navbar.
 
 ### __Product Page__
 
 + Test result: The user can view the description of the product by presing the "view" button on the product page. 
 
-+ Test result: The user can add products to the shopping cart by pressing the "Add product" button in the product page.
++ Test result: The user can add products to the shopping cart by pressing the "Add product" button in the product pages.
 
 ### __Product detail Page__
 
 + Test result: The user can add products to the shopping cart by pressing the "Add product" in the product detail page.
 
-+ Test result: The user can choose sizes for the products with this option available and added to the cart in the product detail page.
++ Test result: The user can choose sizes for the products with this option available and add to the cart in the product detail page.
 
 ### __Product add__
 
@@ -517,13 +512,11 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 + Test result: The user has the possibility to continue shopping by pressing the button "Continue shopping".
 
-+ Test result: The user can add, remove and delete products from the cart page.
-
 + Test result: The user can go to the checkout page by pressing the "Continue to checkout" button.
 
 ### __Checkout Page__
 
-+ Test result: The user was able to fill in his data in the checkout form and complete the order by pressing the button "Complete order"
++ Test result: The user was able to fill in his data in the checkout form and complete the order by pressing the button "Complete order". When pressing the button a comfirmation of the order appears.
 
 ### __Sign Up Page__
 
@@ -567,9 +560,33 @@ Friends and family tested the site by login in and writing about their stories. 
 
 ### __Known Bugs__
 
- *****
+ + On the cart page when selecting different products, this generates a list. When pressing the increase or decrease icon in a specific product, the location is change. 
+ This do not affect the purchase but only the line where the product is exchanged. (See photos)
+    
+    [Picture 1](media/pictures/bug1.png)
+    
+    [Picture 2](media/pictures/bug2.png)
 
-### __Deployment__
++ In the checkout form on the phone text box, there is a 0, but it is not impeded that the user can enter his phone number.
+    
+    [Picture 3](media/pictures/bug3.png)
+
++ The size of the product does not appear on the payment page, only the title.
+
+## __Deployment__ 
+
+To deploy this project, I used the hosting platform of Github and heroku. The step to deploy this project are as follows.
+
++ GitPod is used for the creation of this project.
+
++ GitHub was use for the creation of the project repository. 
+
++ The repository is connected to Gitpod. All the changes during the creation of the project are committed and push to GitHub.
+
++ As a final part, the project is deployed to heroku. This is achieved by the linking between github and heroku.
+
++ AWS was is used to store static files and images.
+
 
 ### __Heroku__
 
@@ -820,6 +837,28 @@ when making a deploy toi Heroku.
 ![Image of the settings file](media/pictures/pic25.png)
 
 33.- Last thing to do, is to Add/commit changes and git push. This will trigger an automatic deployment to heroku.
+
+### __Local Deployment__
+
+1. On GitHub, navigate to the main page of the repository.
+
+2. Above the list of files, click "Code".
+
+3. Mark the HTTPS tag and press the copy icon at the end of the link.
+
+4. Open Git Bash
+
+5. Change the current working directory to the place where you want the cloned directory to be made.
+
+   Type  "git clone", and then paste the URL you copied.
+
+    $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+
+6. Press enter and you should see the following code on the screen.
+
+    ![example image of git clone](images/git-clone.png)
+
+7. Open the index.html in the folder that you clone the project.
 
 ### __Credits__
 
