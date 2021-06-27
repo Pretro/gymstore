@@ -427,8 +427,7 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 10. As a user, i want the checkout form to be as clear as possible, so that i can be able to see the detail of my purchases.
 
-    i. Once the products have been chosen, the user can click to the checkout page, where a list of the products purchased is displayed, in addition to a form to fill out with 
-    their personal information.
+    i. Once the products have been chosen, the user can click to the checkout page, where a list of the products purchased is displayed, in addition to a form to fill out with their personal information.
 
    ii. In this section there is also the payment section, where the user can fill in the credit card details and proceed to pay for the purchases.
 
@@ -452,7 +451,7 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 15. As a User, i want to be able to see if a product or a size is out of stock.
 
-    i. At the moment it is only possible to see when a product in general is out of stock. 
+    i. At the moment it is only possible to see when a product in general is out of stock.
 
    ii. In future updates it is intended to create the function where the user is alerted by a message in the description of the product, which size is "out of stock".
 
@@ -502,9 +501,9 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 ### __Product edit__
 
-+ Test result: The administrator can edit products by going to the Products option in the navbar. Choosing the option of all the products or a category".
++ Test result: The administrator can edit products by going to the Products option in the navbar. Choosing the option of all the products or a category.
 
-+ Test result: The administrator can delete products. The procedure is as shown above ".
++ Test result: The administrator can delete products. The procedure is as shown above.
 
 ### __Cart Page__
 
@@ -587,7 +586,6 @@ To deploy this project, I used the hosting platform of Github and he
 
 + AWS was is used to store static files and images.
 
-
 ### __Heroku__
 
 The Project is deployed to Heroku using the following steps..
@@ -614,87 +612,65 @@ The Project is deployed to Heroku using the following steps..
  
  9.- To get the database setup. Go to settings.py and import dj_database_url:
 
+![Image of the settings file](media/pictures/pic20.png)
+
 10.- Next, in the database settings, comment out default configuration.
 
 ![Image of the settings file](media/pictures/pic3.png)
 
-11.- Replace the default database with a call to dj_database_url.parse.
+11.- Replace the default database with a call to dj_database_url.parse. Give the database URL from Heroku. You can get this from your config variables in Heroku or by typing Heroku config from the command line.
 
-![Image of the settings file](media/pictures/pic4.png)
+![Image of the settings file](media/pictures/pic4.1.png)
 
-12.- Go to your heroku account and to "Seetings".
+12.- Save and migrate the changes.
 
-13.- Scroll down to "Config vars" and copy the "DATABASE_URL"
-
-![Image of the settings file](media/pictures/pic5.png)
-
-10.- Next, in the database settings, comment out default configuration.
-
-![Image of the settings file](media//pictures/pic3.png)
-
-11.- Replace the default database with a call to dj_database_url.parse.
-
-![Image of the settings file](media/pic4.png)
-
-12.- Go to your heroku account and to "Seetings".
-
-13.- Scroll down to "Config vars" and copy the "DATABASE_URL"
-
-![Image of the settings file](media/pic5.png)
-
-14.- Back in the settings file. Paste the Database_url code within the parentheses after "...url.parse" (look at the image in point 11).
-
-15.- Save and migrate the changes.
-
-16.- Now, to import all of the product data use the fixtures by loading first the categories and then the products.
+13.- Now, to import all of the product data, use the fixtures by loading first the categories and then the products.
 
 + python3 manage.py loaddata categories
 
 + python3 manage.py loaddata products
 
-17.- Create a superuser with the following command.
+14.- Create a superuser with the following command.
 
 + python3 manage.py create superuser
 
-18.- After creating the superuser. Go back to the settings file, remove the Heroku database config and uncomment the original (look at pictures in point 10 and 11). This is to 
+15.- After creating the superuser. Go back to the settings file, remove the Heroku database config and uncomment the original. This is done so that the database url don't end up in version control. 
 
-so that the database url dont end up in version control. 
+![Image of the settings file](media/pictures/pic26.png)
 
-19.- When this is done, commit the changes.
+16.- After it's done, commit the changes.
 
-20.- Go to the settings file and write an if statement. This is done so that when our app is running on Heroku, where database URL environment variable is defined, we connect to 
+17.- Go to the settings file and write an if statement. This is done so that when our app is running on Heroku, where the database URL environment variable is defined, we connect to Postgres, and not to sqlite.
 
-Postgres, and not to sqlite.
+![Image of the settings file](media/pictures/pic6.png)
 
-![Image of the settings file](media/pic6.png)
-
-21.- Next install unicorn, which acts as our webserver.
+18.- Next install unicorn, which acts as our webserver.
 
 + pip3 install unicorn
 
-22.- Then freeze that into our requirements.txt file.
+19.- Then freeze that into our requirements.txt file.
 
 + pip3 freeze > requirements.txt 
 
-23.- Now lets create our Procfile. This will tell Heroku to create a web dyno, that will run unicorn and serve our django app.
+20.- Now lets create our Procfile. This will tell Heroku to create a web dyno, that will run unicorn and serve our django app.
 
 ![Image of the settings file](media/pictures/pic7.png)
 
-+ python3 manage.py loaddata categories
-
-+ python3 manage.py loaddata products
-
-24.- Now temporarily disable collecstatic. In the terminal type the following.
+21.- Now temporarily disable collecstatic. In the terminal type the following.
 
 ![Image of the settings file](media/pictures/pic8.png)
 
-25.- Add the hostname of our Heroku app to allowed hosts in settings.py, add localhost and: ALLOWED_HOSTS = ['YOUR-APP-NAME.herokuapp.com', 'localhost'].
+22.- Add the hostname of your Heroku app to allowed hosts in settings.py.
 
-26.- Commit the changes and push to Heroku with.
++ ALLOWED_HOSTS = ['YOUR-APP-NAME.herokuapp.com', 'localhost']
+
+![Image of the settings file](media/pictures/pic27.png)
+
+23.- Commit the changes and push to Heroku with.
 
 ![Image of the settings file](media/pictures/pic9.png)
 
-27.- To automatically deploy on Heroku when we push to github, take the following steps.
+24.- Now set the app to automatically deploy on Heroku when you push to github. To do this, follow these steps.
 
 + Go to your Heroku app and in into the "Deploy" tab. 
 
@@ -704,21 +680,23 @@ Postgres, and not to sqlite.
 
 ![Image of the settings file](media/pictures/pic10.png)
 
-28.-Next step is top enable automatic deploys. To do that click the "Enable Automatic Deploys" button in the Automatic deploys section.
+25.-Next step is top enable automatic deploys. To do that click the "Enable Automatic Deploys" button in the Automatic deploys section.
 
 ![Image of the settings file](media/pictures/pic11.png)
 
-29.- You will need a new secret key to enter in your Heroku Config Vars (you can create one by using an online [Django secret key generator](https://miniwebtool.com/django-secret-key-generator/).
+26.- To test if our automatic deploys works, we need to remove our secret key from our settings and make a new commit.
 
-30.- Once you got your secret key, go to your heroku app and enter the key into the cofig vars in settings.
+27.- To get a new secret key to enter in your Heroku Config Vars (you can create one by using an online [Django secret key generator](https://miniwebtool.com/django-secret-key-generator/).
+
+28.- Once you got your secret key, go to your heroku app and enter the key into the cofig vars in settings.
 
 ![Image of the settings file](media/pictures/pic12.png)
 
-31.- Now go back to you settings file and replace the secret key with the call to get it from the environment.
+29.- Now go back to you settings file and replace the secret key with the call to get it from the environment.
 
 ![Image of the settings file](media/pictures/pic13.png)
 
-32.- Finally, commit and push this changes to github.
+30.- Finally, commit and push this changes to github.
 
 ### __AWS account__
 
@@ -790,7 +768,7 @@ AWS is a cloud based storage service, used to store static files and images
 
 ![Image of the settings file](media/pictures/pic19.png)
 
-21.- Create a user to put in the group. On the user's page, click "add user", create a user ("YOUR_STORE_NAME-staticfiles-user) , give them programmatic access, and select "next".
+21.- Create a user to put in the group. On the user's page, click "add user", create a user ("YOUR_STORE_NAME-staticfiles-user), give them programmatic access, and select "next".
 
 ![Image of the settings file](media/pictures/pic20.png)
 
