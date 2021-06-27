@@ -724,23 +724,25 @@ AWS is a cloud based storage service, used to store static files and images
 
 ![Image of the settings file](media/pictures/pic16.png)
 
-11.- Next, got to the "Permissions" tab and make three changes.
+11.- Next, go to the "Permissions" tab and make three changes.
 
 + First, paste a CORS configuration. This is to set up the required access between the Heroku app and the s3 Bucket.
 
-![Image of the settings file](media/pictures/pic14.png)
-
 + Go to the bucket policy tab and select policy generator so we can create a security policy for this bucket.
+
+![Image of the settings file](media/pictures/pic28.png)
 
 + The policy type is going to be s3 bucket policy. This will allow all principals by using a star, and the action will be, get object
 
-![Image of the settings file](media/pictures/pic15.png)
+![Image of the settings file](media/pictures/pic15.1.png)
 
-+ Next copy the ARN which stands for Amazon resource name from bucket policy tab and paste it into the ARN box here at the bottom, click Add Statement, click Generate Policy and 
++ Next copy the ARN which stands for Amazon resource name from bucket policy tab and paste it into the ARN box at the bottom, click Add Statement, click Generate Policy and 
 
   copy the policy into the bucket policy editor.
 
 ![Image of the settings file](media/pictures/pic17.png)
+
+![Image of the settings file](media/pictures/pic29.png)
 
 + Before clicking Save, add a slash star into the end of the resource key. This is done so we can have allow access to all resources in the bucket.
 
@@ -774,8 +776,6 @@ AWS is a cloud based storage service, used to store static files and images
 
 22.- Now add the user to your group. You can verify that also the policy is attached. Click through to the end and create the user.
 
-![Image of the settings file](media/pictures/pic21.png)
-
 23.- Now download the CSV file which will contain this users access key and secret access key which we'll use to authenticate them from our Django app.
 
 + Important! After downloading the CSV file save it. This is because once you go through this process, you can't download it again.
@@ -790,23 +790,25 @@ AWS is a cloud based storage service, used to store static files and images
 
 + pip3 freeze > requirements.txt
 
-26.- Next add storages to the installed app since Django need to know about it.
+26.- Next add storages in the settings file, to the installed app since Django need to know about it.
+
+![Image of the settings file](media/pictures/pic30.png)
 
 27.- To connect Django to s3 you need to add some settings in settings.py to tell it which bucket it should be communicating with.
 
-![Image of the settings file](media/pictures/pic22.png)
+![Image of the settings file](media/pictures/pic31.png)
 
-28.- Go to Heroku and add your AWS keys to the "Config variables". Also the key called "USE_AWS" and set it to true. This is for the settings file knows to use AWS configuration 
+28.- Go to Heroku and add your AWS keys to the "Config variables". Also the key called "USE_AWS" set it to true. This is for the settings file knows to use AWS configuration 
 
-when making a deploy toi Heroku.
+when making a deploy to Heroku.
 
-29.- Next remove the disable collectstatic variable.
+29.- Next remove the disable collectstatic variable in the "Config variables".
 
 30.- In our settings file, we need to tell django where our static files will be coming from in production.
 
 ![Image of the settings file](media/pictures/pic23.png)
 
-31.- Create custom storages file.
+31.- Next step is to create custom storages file.
 
 ![Image of the settings file](media/pictures/pic24.png)
 
@@ -815,6 +817,14 @@ when making a deploy toi Heroku.
 ![Image of the settings file](media/pictures/pic25.png)
 
 33.- Last thing to do, is to Add/commit changes and git push. This will trigger an automatic deployment to heroku.
+
+34.- To upload files(images), go to s3 and create a new folder, with the name of your choice.(Usually we call this folder "media")
+
+35.- Double click on the folder you created and click the upload button. Select the images you want to upload.
+
+36.- Click next and under "Manage public permission" grant public read access to your images you upload.
+
+37.- Continue click next to the end and finally click upload.
 
 ### __Local Deployment__
 
