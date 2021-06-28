@@ -70,7 +70,10 @@ def checkout(request):
 
     if request.method == 'POST':
         total = calculate_order_total(cart_items)
-        delivery = total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+        if (float(total) >= float(settings.FREE_DELIVERY_THRESHOLD)):
+            delivery = 0
+        else:
+            delivery = total * settings.STANDARD_DELIVERY_PERCENTAGE / 100 
         form_data = {
             'billingName': request.POST['billingName'],
             'emailAddress': request.POST['emailAddress'],

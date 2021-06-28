@@ -38,20 +38,20 @@
                     </div>
                 </div>
                 {% for item in cart_items %}
-                    <div class="row">
+                    <div class="row" style="margin-bottom:25px;">
                         <div class="col-2 mb-1">
                             <a href="{% url 'product_detail' item.product.id %}">
                                 {% if item.product.image %}
-                                    <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                                    <img class="mini_image" src="{{ item.product.image.url }}" alt="{{ product.name }}">
                                 {% else %}
-                                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    <img class="mini_image" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 {% endif %}
                             </a>
                         </div>
                         <div class="col-7">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                            <p class="my-0 small" style="font-size:15px;">{% if item.product.has_sizes %}Size: {{ item.product.size|upper }}{% else %}{% endif %}</p>
-                            <p class="my-0 small text-white">Qty: {{ item.quantity }} </p>
+                            <p class="my-0 small" style="font-size:15px;">{% if item.product.has_sizes %}Size: {{ item.size }}{% else %}{% endif %}</p>
+                            <p class="my-0 small text-white" style="font-size:15px;">Qty: {{ item.quantity }} </p>
                         </div>
                         <div class="col-3 text-right">
                             <p class="my-0 small text-white">${{ item.product.price | calc_subtotal:item.quantity }}</p>

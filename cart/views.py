@@ -7,7 +7,6 @@ from checkout.models import Order, OrderLineItem
 
 # Create your views here.
 
-
 def shopping_cart(request):
     return render(request, 'cart/cart.html')
 
