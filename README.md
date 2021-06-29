@@ -2,15 +2,13 @@
 
 The goal of this project is to create an ecommerce site that allows users to make purchases. The main task is that they can make purchases of different products, pay with a card paying system.
 
-This ecommerce site has a profile section area which allows users/customers to become members and save information about their purchases. They create a membership-profile by email verification. 
+This ecommerce site has a profile section area which allows users/customers to become members. The customer becomes a member by filling a sign up form and then get an email verification. 
 
-The customer can search products to buy by category and sort by price and rating. The customer can also search for products in the search engine.
+The customer can search products to buy by category and sort by price and rating in the search box. There is also an administrator area which is in charge of the distribution of the products. This means, add, edit and delete products in the system. 
 
-There is also an administrator area which is in charge of the distribution of the products. This means, add, edit and delete products in the system. The administrator can select products in different categories, add or remove categories as necessary.
+The administrator can select products in different categories, add or remove categories as necessary. In the making of this project CRUD functionality was programmed in python. In future updates, the goal is to make the online store work in a real environment, with more features. 
 
-In the making of this project CRUD functionality was programmed in python. In future updates, the goal is to make the online store work in a real environment, with more features. The goal is to make the online store available in other languages.
-This makes it possible to expand the reach to more customers from different locations.
-This is the fourth MS4 project from Code Institute.
+The goal is to make the online store available in other languages. This makes it possible to expand the reach to more customers from different locations.This is the fourth MS4 project from Code Institute.
 
 # User Experience __(UX)__
 
@@ -52,13 +50,12 @@ As a user of this site, I want to
 
 ## __The purpose of the GymStore is to :__
 
-+ Create an e-commerce site where everyone who performs some form of fitness training, you will find everything to buy for their training, such as clothes, tools and nutrition.
++ Create an e-commerce site dedicated for all those who practice some kind of sport. Also for those who are starting out on the exercise route. Here customers will find products of different categories whose use is for different purposes. These can be clothing, nutrition, etc.
 
 + Create an environment of commerce that assimilates as much as possible to reality.
 
-+ Today online shopping is more common than before. The sale of products from different areas has become a lifestyle. Which opens a way to competition between different 
-  companies. The idea of making this online store comes from the ms4 project for Code Institute. The inspiration for this site comes from the Swedish site [gymgrossisten](https://www.gymgrossisten.com/).
-
++ Today online shopping is more common than before. The sale of products from different areas has become a lifestyle. Which opens a way to competition between different companies. The idea of making this online store comes from the ms4 project for Code Institute. 
+The inspiration for this site comes from the Swedish site [gymgrossisten](https://www.gymgrossisten.com/).
 
 ### __Project Strategy__
 
@@ -92,10 +89,9 @@ The colours that I used for the site:
 
 * (Grey) is the hover color for the add to cart button in the all product page and the color main color for the button in the product detail page.
 
-The reason why did i choose these colors is because the backgroundcolor is black. It was necessary to use strong colors that contrast with the environment. This contrast allows the user to be more focused 
+The reason why did i choose these colors is because the background color is black. It was necessary to use strong colors that contrast with the environment. This contrast allows the user to be more focused 
 
 on what they need and at the same time gives a typical atmosphere of the gym world. Since in most of these sites and from the site in which this project was inspired, the main background color is black.
-
 
 ### __Typography__
 
@@ -555,7 +551,7 @@ Default Billing City     | default_billingCity     | CharField     | max_length=
 
 4. Laptop
 
-Friends and family tested the site by login in and writing about their stories. This was also made to point out any bugs and/or user experience issues.
+Friends and family tested the site registering and testing the mail verification function They made purchases without problem. This was also made to point out any bugs and/or user experience issues.
 
 ### __Known Bugs__
 
@@ -571,6 +567,8 @@ Friends and family tested the site by login in and writing about their stories. 
     [Picture 3](media/pictures/bug3.png)
 
 + The size of the product does not appear on the payment page, only the title.
+
++ The logo image looks larger on some devices more than others. This does not affect the operation of the page.
 
 ## __Deployment__ 
 
@@ -624,7 +622,7 @@ The Project is deployed to Heroku using the following steps..
 
 12.- Save and migrate the changes.
 
-13.- Now, to import all of the product data, use the fixtures by loading first the categories and then the products.
+13.- Import all of the product data, use the fixtures by loading first the categories and then the products.
 
 + python3 manage.py loaddata categories
 
@@ -638,7 +636,7 @@ The Project is deployed to Heroku using the following steps..
 
 ![Image of the settings file](media/pictures/pic26.png)
 
-16.- After it's done, commit the changes.
+16.- Commit the changes.
 
 17.- Go to the settings file and write an if statement. This is done so that when our app is running on Heroku, where the database URL environment variable is defined, we connect to Postgres, and not to sqlite.
 
@@ -652,7 +650,7 @@ The Project is deployed to Heroku using the following steps..
 
 + pip3 freeze > requirements.txt 
 
-20.- Now lets create our Procfile. This will tell Heroku to create a web dyno, that will run unicorn and serve our django app.
+20.- Next step is to create our Procfile. This will tell Heroku to create a web dyno, that will run unicorn and serve our django app.
 
 ![Image of the settings file](media/pictures/pic7.png)
 
@@ -670,7 +668,7 @@ The Project is deployed to Heroku using the following steps..
 
 ![Image of the settings file](media/pictures/pic9.png)
 
-24.- Now set the app to automatically deploy on Heroku when you push to github. To do this, follow these steps.
+24.- Set the app to automatically deploy on Heroku when you push to github. To do this, follow these steps.
 
 + Go to your Heroku app and in into the "Deploy" tab. 
 
@@ -680,7 +678,7 @@ The Project is deployed to Heroku using the following steps..
 
 ![Image of the settings file](media/pictures/pic10.png)
 
-25.-Next step is top enable automatic deploys. To do that click the "Enable Automatic Deploys" button in the Automatic deploys section.
+25.-Enable automatic deploys. To do that click the "Enable Automatic Deploys" button in the Automatic deploys section.
 
 ![Image of the settings file](media/pictures/pic11.png)
 
@@ -692,7 +690,7 @@ The Project is deployed to Heroku using the following steps..
 
 ![Image of the settings file](media/pictures/pic12.png)
 
-29.- Now go back to you settings file and replace the secret key with the call to get it from the environment.
+29.- Go back to you settings file and replace the secret key with the call to get it from the environment.
 
 ![Image of the settings file](media/pictures/pic13.png)
 
@@ -702,29 +700,33 @@ The Project is deployed to Heroku using the following steps..
 
 AWS is a cloud based storage service, used to store static files and images
 
-1.- To create an account, go to [aws.amazon.com](https://aws.amazon.com/) and click "Create an AWS Account".
+1.- To create an account, go to [aws.amazon.com](https://aws.amazon.com/).
 
-2.- After filling the required information and creating the account (using the free version will be sufficient).
+2.- Click at the top right of the screen on "My account".
 
-3.- Go back tto [aws.amazon.com](https://aws.amazon.com/) and sign into "AWS Management Console", located in the upper right part of the screen under "My Account".
+3.- Click on "AWS Management Console", and then click the "Create a new AWS account" button.
 
-4.- Once you signed in, search for the S3 service.
+4.- Fill the required information and create the account (using the free version will be sufficient).
 
-5.- Open S3 and create a new bucket. This will be use to store our files.
+5.- Go back tto [aws.amazon.com](https://aws.amazon.com/) and sign into "AWS Management Console", located in the upper right part of the screen under "My Account".
 
-6.- Choose a name for your bucket and select the region closest to you, just like you did in the Heroku app.
+6.- Once you signed in, search for the S3 service.
 
-7.- Uncheck "Block all public access" and acknowledge that the bucket will be public. This must be done so that our static files can have public access.
+7.- Open S3 and create a new bucket. This will be use to store our files.
 
-8.- Once the bucket is creted, we must set a few settings.
+8.- Choose a name for your bucket and select the region closest to you, just like you did in the Heroku app.
 
-9.- Go to the properties tab and turn on "Static website hosting".
+9.- Uncheck "Block all public access" and acknowledge that the bucket will be public. This must be done so that our static files can have public access.
 
-10.- In the index and error document , just fill some deafult values since they will not be use. 
+10.- Once the bucket is creted, we must set a few settings.
+
+11.- Go to the properties tab and turn on "Static website hosting".
+
+12.- In the index and error document , just fill some deafult values since they will not be use. 
 
 ![Image of the settings file](media/pictures/pic16.png)
 
-11.- Next, go to the "Permissions" tab and make three changes.
+13.- Next, go to the "Permissions" tab and make three changes.
 
 + First, paste a CORS configuration. This is to set up the required access between the Heroku app and the s3 Bucket.
 
@@ -750,81 +752,81 @@ AWS is a cloud based storage service, used to store static files and images
 
 + The last thing to do, is to go to the access control list tab, and set the list objects permission for everyone under the Public Access section.
 
-12.- Now we need to create a user to access the bucket. This is done by using another service called IAM which stands for Identity and Access Management.
+14.- Now we need to create a user to access the bucket. This is done by using another service called IAM which stands for Identity and Access Management.
 
-13.- Go to the services menu and click IAM.
+15.- Go to the services menu and click IAM.
 
-14.- Click groups under "Access management" and create a new group (keep clicking "next" button to Create Group).
+16.- Click groups under "Access management" and create a new group (keep clicking "next" button to Create Group).
 
-15.- Create the policy to access our bucket by clicking policies and then create policy.
+17.- Create the policy to access our bucket by clicking policies and then create policy.
 
-16.- Next, go to the JSON tab and then select import managed policy, search for s3 in the list and import the s3 full access policy.
+18.- Next, go to the JSON tab and then select import managed policy, search for s3 in the list and import the s3 full access policy.
 
-17.- Get the bucket ARN from the bucket policy page in s3, and paste it in the JSON section.
+19.- Get the bucket ARN from the bucket policy page in s3, and paste it in the JSON section.
 
-18.- Click review policy, give it a name and a description, and then click create policy.
+20.- Click review policy, give it a name and a description, and then click create policy.
 
-19.- Go to groups and click the group you created. And last click attach policy.
+21.- Go to groups and click the group you created. And last click attach policy.
 
-20.- Search for the policy you just created, select it and click "Attach policy" button.
+22.- Search for the policy you just created, select it and click "Attach policy" button.
 
 ![Image of the settings file](media/pictures/pic19.png)
 
-21.- Create a user to put in the group. On the user's page, click "add user", create a user ("YOUR_STORE_NAME-staticfiles-user), give them programmatic access, and select "next".
+23.- Create a user to put in the group. On the user's page, click "add user", create a user ("YOUR_STORE_NAME-staticfiles-user), give them programmatic access, and select "next".
 
 ![Image of the settings file](media/pictures/pic20.png)
 
-22.- Now add the user to your group. You can verify that also the policy is attached. Click through to the end and create the user.
+24.- Now add the user to your group. You can verify that also the policy is attached. Click through to the end and create the user.
 
-23.- Now download the CSV file which will contain this users access key and secret access key which we'll use to authenticate them from our Django app.
+25.- Now download the CSV file which will contain this users access key and secret access key which we'll use to authenticate them from our Django app.
 
 + Important! After downloading the CSV file save it. This is because once you go through this process, you can't download it again.
 
-24.- To Connect Django to s3 bucket, Install 2 new packages:
+26.- To Connect Django to s3 bucket, Install 2 new packages in the gitpod terminal:
 
 + pip3 install boto3
 
 + pip3 install django-storages
 
-25.- Then freeze requirements.
+27.- Then freeze requirements.
 
 + pip3 freeze > requirements.txt
 
-26.- Next add storages in the settings file, to the installed app since Django need to know about it.
+28.- Add storages in the settings file, to the installed app since Django need to know about it.
 
 ![Image of the settings file](media/pictures/pic30.png)
 
-27.- To connect Django to s3 you need to add some settings in settings.py to tell it which bucket it should be communicating with.
+29.- To connect Django to s3 you need to add some settings in settings.py to tell it which bucket it should be communicating with.
 
 ![Image of the settings file](media/pictures/pic31.png)
 
-28.- Go to Heroku and add your AWS keys to the "Config variables". Also the key called "USE_AWS" set it to true. This is for the settings file knows to use AWS configuration 
+30.- Go to Heroku and add your AWS keys to the "Config variables". Also the key called "USE_AWS" set it to true. This is for the settings file knows to use AWS configuration 
 
 when making a deploy to Heroku.
 
-29.- Next remove the disable collectstatic variable in the "Config variables".
+31.- Remove the disable collectstatic variable in the "Config variables".
 
-30.- In our settings file, we need to tell django where our static files will be coming from in production.
+32.- In our settings file, we need to tell django where our static files will be coming from in production.
 
 ![Image of the settings file](media/pictures/pic23.png)
 
-31.- Next step is to create custom storages file.
+33.- Next step is to create custom storages file.
 
 ![Image of the settings file](media/pictures/pic24.png)
 
-32.- Go to settings.py, and write the following code for "Static and media files" and also the code to override and set the URLs for static and media files.
+34.- Go to settings.py, and write the following code for "Static and media files" and also the code to override and set the URLs for static and media files.
 
 ![Image of the settings file](media/pictures/pic25.png)
 
-33.- Last thing to do, is to Add/commit changes and git push. This will trigger an automatic deployment to heroku.
+35.- Last thing to do, is to Add/commit changes and git push. This will trigger an automatic deployment to heroku.
 
-34.- To upload files(images), go to s3 and create a new folder, with the name of your choice.(Usually we call this folder "media")
+36.- To upload files(images), go to s3 and create a new folder, with the name of your choice.(Usually we call this folder "media")
 
-35.- Double click on the folder you created and click the upload button. Select the images you want to upload.
+37.- Double click on the folder you created and click the upload button. Select the images you want to upload.
 
-36.- Click next and under "Manage public permission" grant public read access to your images you upload.
+38.- Click next and under "Manage public permission" grant public read access to your images you upload.
 
-37.- Continue click next to the end and finally click upload.
+39.- Continue click next to the end and finally click upload.
 
 ### __Local Deployment__
 
@@ -871,6 +873,8 @@ __Content__
 + Part of the code written is my code and ideas and guidance from my mentor Antonio Rodriguez.
 
 + I use the readme file template from Code Institute for the making of my readme file.
+
++ The photos in the deployment section, they were made by print screen of the Boutique Ado tutorial from Code institute.
 
 __Media__
 
