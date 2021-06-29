@@ -319,7 +319,10 @@ body {
     font-size: 2.5rem;
     padding: 0 0 0 750px;
 }
-
+.pass_confirm{
+    padding: 15px 0 0 750px;
+    color: white;
+}
 .password_change{
     margin: 15px 0 0 750px;
     color: white;
@@ -497,7 +500,15 @@ body {
     }
 
     .password_change{
-        margin: 35px 0 0 25px;
+        margin: 15px 0 0 40px;
+    }
+
+    .pass_title{
+    padding: 90 0 0 40px;
+    }
+
+    .pass_confirm{
+    padding: 0 0 0 40px;
     }
 }
 
@@ -655,5 +666,9 @@ body {
     .change_button{
     color: white;
     background: red;
+    }
+
+    .pass_confirm{
+        padding: 0 0 0 310px;
     }
 }
