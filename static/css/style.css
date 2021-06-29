@@ -323,6 +323,7 @@ body {
 .password_change{
     margin: 15px 0 0 750px;
     color: white;
+    font-size: 14px;
 }
 
 .change_button{
@@ -493,6 +494,10 @@ body {
 
     .boton_pass_2{
         margin: 0 0 0 4.5rem;
+    }
+
+    .password_change{
+        margin: 35px 0 0 25px;
     }
 }
 
