@@ -314,11 +314,18 @@ body {
     margin: 0 0 0 7rem;
 }
 /*Change password*/
-.pass_title, .pass_title_2{
+.pass_title {
     color: white;
     font-size: 2.5rem;
     padding: 0 0 0 750px;
 }
+
+.pass_title_2{
+    color: white;
+    padding: 10px 0 0 750px;
+    font-size: 30px;
+}
+
 .pass_confirm{
     padding: 15px 0 0 750px;
     color: white;
@@ -508,11 +515,12 @@ body {
     }
 
     .pass_title{
-    padding: 90 0 0 40px;
+    padding: 90px 0 0 40px;
     }
 
     .pass_title_2{
     padding: 150px 0 0 35px;
+    font-size: 30px;
     }
 
     .pass_confirm{
