@@ -318,15 +318,12 @@ body {
     .shop-button{
         margin: 20px 0 0 80px;
     }
-
     .mt-3, .my-3 {
         margin-top: -2rem !important;
     }
-
     .product_description, .product_title {
         font-size: 10px;
     }
-
     .nav-last{
         justify-content:center !important;
         margin-top: 15px !important;
@@ -335,23 +332,19 @@ body {
     .main-nav{
         justify-content:center !important;
     }
-
    .imagen_model{
        visibility: hidden;
    }
     .navegacion {
         margin-top: 0px;
     }
-
     .logo-small{
         max-width: 220px;
         max-height: 80px;
         margin-top: -7px;
-
     }
     .nav-link{
         padding: 5px !important;
-
     }
     .navbar-brand{
         margin-right: 0px !important;
@@ -363,7 +356,6 @@ body {
         font-size: 28px;
         margin-top: 10%;
     }
-
     .titulos2{
         font-size: 10px;
         margin: 0 0 0 34px;
@@ -422,9 +414,6 @@ body {
         color: white;
         margin: 0 0 45px 12px;
     }
-    .parrafo_2{
-        padding: 0 0 0 70px;
-    }
     .mini_image{
         visibility: hidden;
     }
@@ -433,10 +422,13 @@ body {
         font-size: 12px;
     }
     .parrafo_2{
-        margin: 0 0 15px -55px;
         font-size: 10px;
+        margin: 0 0 2rem -35rem;
     }
-    .parrafo_3, .parrafo_4{
+    .parrafo_3{
+        margin: 16px 0 0 10px;
+    }
+    .parrafo_4{
         padding: 11px 0 0 10px;
         font-size: 10px;
     }
@@ -458,16 +450,13 @@ body {
         margin-top: 0;
         position: fixed;
     }
-
     .content{
         padding-left: 5vw;
         margin: 20vh 30vw;
     }
-
     .card-body{
         font-size: 10px;
     }
-    
     .logo{
     flex: 0 0 45%;
     }
@@ -483,23 +472,21 @@ body {
     color: white;
     min-width: 260px;
     border-radius: 20%;
-}
+    }
     .header-container {
         padding-top: 164px;
     }
     .principal{
-        margin:-250px 0 0 -165px;
+        margin:-150px 0 0 -165px;
     }
-
     .estilo_linea{
-        margin: 0 -65px 0 -390px;
+       margin: 0 -65px 0 -390px;
     }
     #nav{
         font-size: 10px;
     }
-
     .shop_icons{
-        margin: 0 0 0 -0px;
+        margin: 0 0 0 -50px;
     }
     .product_text {
         font-size: 10px;
@@ -517,23 +504,22 @@ body {
         max-width:100%;
     }
     .signout{
-        padding: 6rem 0 0 27rem;
+        padding: 200px 0 0 330px;
     }
     .pregunta{
-        padding: 0 0 0 25rem;
+        padding: 0 0 0 300px;
     }
-
     .knapp_sub{
-        margin: 0 0 0 30rem;
-}
+        margin: 0 0 0 380px;
+    }
     .parrafo_2{
-        padding: 0 0 0 5rem;
+        padding: 0 0 0 50px;
     }
     .pass_res{
-        padding: 5rem 0 0 22rem;
+        padding: 10rem 0 0 22rem;
     }
     .formulario{
-        margin: 3rem 0 0 15rem;
+        margin: 0 0 0 225px;
     }
     .parrafo_3{
         margin: 17px 0 0 225px;
@@ -541,6 +527,26 @@ body {
     .parrafo_4{
         padding: 0 0 0 10rem;
     }
-  
+    .ver_email{
+        padding: 20vh 0 0 25vw;
+    }
+    .text_email{
+        font-size: 15px;
+        padding: 0 0 0 0.5vw;
+    }
+    .product_title{
+        padding-top: 100px;
+        padding-bottom: 30px;
+    }
+    .buscar{
+        z-index: 4;
+    }
+    .navbar-nav{
+        z-index: 4;
+    }
+
+.navbar{
+    z-index: 6;
+}
 }
 
