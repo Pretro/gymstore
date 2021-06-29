@@ -333,7 +333,11 @@ body {
     color: white;
     background: red;
 }
-
+.confirm_button{
+    color: white;
+    background: red;
+    margin: 15px 0 0 750px;
+}
 
 /* Media Queries*/
 @media (min-width: 280px) and (max-width: 767px) {
