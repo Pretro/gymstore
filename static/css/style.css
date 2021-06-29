@@ -317,6 +317,7 @@ body {
 .pass_title{
     color: white;
     font-size: 2.5rem;
+    padding: 0 0 0 750px;
 }
 
 .password_change{
@@ -328,6 +329,7 @@ body {
     color: white;
     background: red;
 }
+
 
 /* Media Queries*/
 @media (min-width: 280px) and (max-width: 767px) {
