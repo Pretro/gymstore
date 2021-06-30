@@ -1,5 +1,7 @@
 # __GymStore__
 
+(https://gymstore.herokuapp.com/)
+
 The goal of this project is to create an ecommerce site that allows users to make purchases. The main task is that they can make purchases of different products, pay with a card paying system.
 
 This ecommerce site has a profile section area which allows users/customers to become members. The customer becomes a member by filling a sign up form and then get an email verification. 
@@ -566,9 +568,9 @@ Friends and family tested the site registering and testing the mail verification
     
     [Picture 3](media/pictures/bug3.png)
 
-+ The size of the product does not appear on the payment page, only the title.
++ The logo image looks larger on some devices more than others.
 
-+ The logo image looks larger on some devices more than others. This does not affect the operation of the page.
++ Some titles and paragraphs appear differently on different screen sizes.
 
 ## __Deployment__ 
 
