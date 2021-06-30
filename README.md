@@ -570,7 +570,6 @@ Friends and family tested the site registering and testing the mail verification
 
 + The logo image looks larger on some devices more than others.
 
-+ Some titles and paragraphs appear differently on different screen sizes.
 
 ## __Deployment__ 
 
